@@ -1,0 +1,31 @@
+<div class="row" style="margin-bottom: 3em;">
+  <div class="col-sm-12  col-md-6">
+  
+{% set segOne = craft.request.getSegment(1) %}
+{% set segTwo = craft.request.getSegment(2) %}
+{% set segThree = craft.request.getSegment(3) %}
+{% set segFour = craft.request.getSegment(4) %}
+{% set path = craft.request.path %}
+{% set segments = craft.request.getSegment(1) %}
+
+    <a href="{{ siteUrl }}">Home</a>  
+
+{% if segOne %}
+   / <a href="{{ siteUrl }}{{ segOne }}">{{ segOne|capitalize }}</a>  
+{% endif %}
+
+{% if segTwo %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}">{{ segTwo|capitalize }}</a>  
+{% endif %}
+
+{% if segThree %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}/{{ segThree }}">{{ segThree|capitalize }}</a>  
+{% endif %}
+
+{% if segFour %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}/{{ segThree }}/{{ segFour }}">{{ segFour|capitalize }}</a> 
+{% endif %}
+
+
+  </div>
+</div>

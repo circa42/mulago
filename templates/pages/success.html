@@ -1,0 +1,50 @@
+
+{# ===== localhost :: pages/contact ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+
+   
+<!-- Main content -->
+<div class="main-content">
+   
+    <div class="contact-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container">
+       <div class="row">
+        <h1 class="text-uppercase">SUCCESS</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container contact">
+        <div class="row row-home">
+              <div class="side-contact col-md-4 col-xs-12"> <hr>
+                  
+                  {{ address.copy }}
+
+          {% if entry.contacts | length %} 
+            {% for row in entry.contacts %}       
+                <hr>
+                  <h3 class="contact">{{ row.contactFor }}</h3>
+                <a class="contact" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
+                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+                </a>
+            {% endfor %}
+          {% endif %}
+
+              </div>
+                  
+        <div class="col-md-8 col-xs-12">  <hr>
+        	<div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 clearfix left-container">
+
+                    <h3 class="success text-center">{{ entry.text }}</h3>
+            </div>
+        </div>
+      	</div> 
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{# ===== mulagofoundation.org :: fellows/index ===== #}
+
+{% extends "_layout" %} 
+  {% set title = ('Fellows') %}
+ {% block content %}
+
+
+  
+<!-- Main content -->
+<div class="main-content">
+
+{% if craft.request.getSegment(2) == null %}
+
+   {% include 'fellows/_categoryListing.twig' %} 
+
+{% else %}
+
+   {% include 'fellows/_categoryEntries.twig' %} 
+
+{% endif %}
+
+
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+  {% for matrixBlock in entry.fellowsEntry %}
+    {% if matrixBlock.type == 'entryContent' %}
+
+      <a href="{{ entry.url }}" class="portfolio-view bio"> 
+         <div class="portfolio-index inner bio m-white col-md-12">
+              {% for image in matrixBlock.fellowImage %} 
+                 <img src="{{ image.getUrl('sq300x300') }} " alt="" class="image-portfolio">
+               {% endfor %} 
+              <h3 class="name text-center p22-ltp">{{ entry.title }}</h3>
+              
+              {# === comment the year out for production === 
+                {% set tags = entry.fellowsYearTag.first() %}
+                <h4 class="text-center">{{ tags }}</h4>
+              {#  ==== // ==== #}
+              <hr> 
+              <h3 class="text-center p22-ltp">{{ matrixBlock.organization }} </h3>
+          </div>
+          <div>&nbsp;</div><!-- safari hack -->
+
+
+      </a> 
+
+    {% endif %}<!--matrixBlock.type-->
+  {% endfor %} <!--matrixBlock in entry.fellowsEntry-->

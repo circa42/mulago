@@ -1,0 +1,26 @@
+{# ===== mulagofoundation.org :: past-fellows-rainer/index ===== #}
+{% extends "_layout" %}  
+  {% set title = ('Past Rainer Fellows') %}
+{% block content %}
+  
+
+
+{# {% cache %}#}
+
+<!-- Main content -->
+<div class="container">
+  <div class="main-content" style="margin-top: 8em;">
+  
+
+    {% set pastFellowCat = craft.categories.group('fellowsCat').slug('rainer-fellows') %}
+    {% for entry in craft.entries.section('fellows').relatedTo(pastFellowCat).limit(null) %}
+
+    {% include 'partials/_fellows-past.twig' %}
+
+    {% endfor %}
+  </div>
+</div>
+       
+   
+{# {% endcache %}#}
+{% endblock %} 

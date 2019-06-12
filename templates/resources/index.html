@@ -1,0 +1,46 @@
+
+{# ===== mulagofoundation.org :: resources/index ===== #}
+
+{% extends "_layout" %}
+  {% set title = ('Resources') %}
+{% block content %}
+
+{# {% cache %}
+ #}
+
+
+
+<div class="container container-fluid">
+  <div class="main-content">
+
+
+
+{% set catUrl = craft.request.getLastSegment() %}
+{% if catUrl == 'resources' %}
+    {% include 'resources/_articles.twig' %}
+    {% include 'resources/_videos.twig' %}
+    {% include 'resources/_tools.twig' %}
+
+      {% elseif catUrl == 'articles' %}
+    {% include 'resources/_articles_all.twig' %}
+
+      {% elseif catUrl == 'videos' %}
+    {% include 'resources/_videos_all.twig' %}
+
+      {% elseif catUrl == 'tools' %}
+    {% include 'resources/_tools_all.twig' %}
+
+      {% else %}
+    {% include 'resources/_articles_all.twig' %}
+
+
+{% endif %}
+
+
+
+  </div> {# end main content #}
+</div> {# end container #}
+
+
+{# {% endcache %}
+ #}{% endblock %} 

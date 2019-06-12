@@ -1,0 +1,258 @@
+
+{# ===== mulagofoundation.org :: portfolio/index ===== #}
+
+{% extends "_layout" %}
+  {% set title = ('portfolio') %}
+   {% set title = entry.title %}
+{% block content %}
+
+
+
+
+{% cache %}
+
+ <!-- Main content -->
+
+
+<div class="">
+
+    <div class="w-100 bg-blue-600 pt-32 px-12">
+        <div class="">
+          <h1 class="tracking-tighter text-blue-200 leading-none opacity-75 text-shadow font-light xs:text-4xl md:text-6xl lg:text-8xl">
+            {{ entry.heading1 }}
+          </h1>
+        </div>
+    </div>
+
+{% for matrixBlock in entry.sectionHeadings %}
+  {% if matrixBlock.type == 'sectionBlock' %}
+
+
+
+
+{# Education #}    
+    <div class="section m-ltltgray">
+       <div class="p-cat m-lime clearfix" data-scroll-index="5">
+          
+           <h3>{{ matrixBlock.name5 }} <span class="hide-mobile"> - {{ matrixBlock.description5 }} </span> </h3>
+       </div>
+         <div class="container-p">
+               
+ {% set params = {
+            section: 'portfolio',
+            type: 'education',
+            order: 'title'
+            } %} 
+            
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+
+        </div>
+    </div>
+
+{# Livelihood #}    
+    <div class="section m-ltltgray">
+       <div class="p-cat m-yellow clearfix" data-scroll-index="1">
+          
+           <h3>{{ matrixBlock.name1 }} <span class="hide-mobile"> - {{ matrixBlock.description1 }} </span></h3>
+       </div>
+        <div class="container-p">
+           
+ {% set params = {
+            section: 'portfolio',
+            type: 'livelihood',
+            order: 'title'
+            } %} 
+            
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+        </div>
+    </div>
+
+    
+{# Health #}     
+    <div class="section m-ltltgray">
+       <div class="p-cat m-ltblue clearfix" data-scroll-index="3">
+           
+            
+           <h3>{{ matrixBlock.name3 }} <span class="hide-mobile"> - {{ matrixBlock.description3 }} </span></h3>
+       </div>
+        <div class="container-p">
+
+ {% set params = {
+            section: 'portfolio',
+            type: 'health',
+            order: 'title'
+            } %} 
+            
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+            
+        </div>
+    </div>
+
+{# Energy #}    
+    <div class="section m-ltltgray">
+       <div class="p-cat m-orange clearfix" data-scroll-index="2">
+        
+          
+           <h3>{{ matrixBlock.name2 }} <span class="hide-mobile"> - {{ matrixBlock.description2 }} </span></h3>
+       </div>
+         <div class="container-p">
+               
+ {% set params = {
+            section: 'portfolio',
+            type: 'energy',
+            order: 'title'
+            } %} 
+            
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+        </div>
+    </div>
+
+
+
+{# Conservation #}
+    <div class="section m-ltltgray">
+       <div class="p-cat m-green clearfix" data-scroll-index="4">
+
+           <h3>{{ matrixBlock.name4 }}<span class="hide-mobile"> – {{ matrixBlock.description4 }}</span></h3>
+       </div>
+       
+        <div class="container-p">
+
+ {% set params = {
+            section: 'portfolio',
+            type: 'conservation',
+            order: 'title'
+            } %}          
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+        </div>
+    </div>
+
+{# Amplify #}    
+    <div class="section m-ltltgray">
+       <div class="p-cat m-teal clearfix" data-scroll-index="6">
+          
+          
+           <h3>{{ matrixBlock.name6 }} <span class="hide-mobile"> - {{ matrixBlock.description6 }} </span></h3>
+       </div>
+         <div class="container-p">
+ {% set params = {
+            section: 'portfolio',
+            type: 'amplify',
+            order: 'title'
+            } %} 
+            
+        {% for portfolio in craft.entries.find(params) %}
+            {% for matrixBlock in portfolio.portfolioEntry %}
+                {% if matrixBlock.type == 'entryContent' %}
+
+                <a href="{{ portfolio.url }}" class="portfolio-view">
+                    {% for image in matrixBlock.indexImage %}
+                    <div class="portfolio-index inner m-white col-md-12">
+                        <img src="{{ image.getUrl('pIndex270x180') }}" alt="" class="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                    {% for image in matrixBlock.logo %}
+                        <img class="logo-portfolio" src="{{ image.getUrl('logos260x100') }}" alt="{{ image.title }}">
+                    {% endfor %}
+                        <hr>
+                </div></a>
+
+              {% endif %}
+            {% endfor %} 
+         {% endfor %} 
+        </div>
+    </div>
+    
+    {% endif %}
+    {% endfor %}
+    {% endcache %} {% endblock %}

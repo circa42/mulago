@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+  {% set title = 'Search Results' %}
+{% block content %}
+
+{% cache %}   
+
+
+<div class="main-content">
+	<div class="ideas-panel-1 m-ltgray" data-scroll-index="0">
+		<div class="container">
+			<div class="row">
+				<h1 class="text-uppercase">Search Results</h1>
+			</div>
+		</div>
+	</div>
+					
+
+
+	<div class="container-p clearfix" style="margin-left: 4em; margin-bottom: 30em;">
+
+		{% set query = craft.request.getParam('q') %}
+		{% set entries = craft.entries.search(query).order('score') %}
+
+		{% if entries|length %}
+		    <h2>{{ entries|length }} results:</h2>
+
+		    
+		        {% for entry in entries %}
+		            <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+		            <br>
+
+		        {% endfor %}
+		    
+		{% else %}
+		    <p>Your search for “{{ query }}” didn’t return any results.</p>
+		{% endif %}
+
+	</div>
+</div>
+
+{% endcache %}
+{% endblock %}

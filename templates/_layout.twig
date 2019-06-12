@@ -1,0 +1,22 @@
+
+{# =====  mulagofoundation.org :: _layout template ===== #}
+
+{% include 'partials/_header.twig' %}
+<body class="font-sans m-0">
+{% set entry = entry is defined ? entry : null %}
+{% set category = category is defined ? category : null %}
+
+    {% include 'partials/_nav.twig' %}
+
+	{% block content %}
+		
+	{% endblock %}
+
+    {% include "partials/_footer.twig" %}
+    
+
+{# <!-- end .main-content --> #}
+
+    {% include 'partials/_js.twig' %}
+    </body>
+</html>

@@ -1,0 +1,154 @@
+
+{# ===== mulagofoundation.org :: pages/contact ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+
+   
+<!-- Main content -->
+<div class="main-content">
+   
+    <div class="contact-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container">
+       <div class="row">
+        <h1 class="text-uppercase">CONTACT</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container contact">
+        <div class="row row-home">
+              <div class="side-contact col-md-4 col-xs-12"> <hr>
+                  
+                  {{ address.copy }}
+
+          {% if entry.contacts | length %} 
+            {% for row in entry.contacts %}       
+                <hr>
+                  <h3 class="contact">{{ row.contactFor }}</h3>
+                <a class="contact" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
+                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+                </a>
+            {% endfor %}
+          {% endif %}
+
+              </div>
+                  
+        <div class="col-md-8 col-xs-12">  <hr>
+        	<div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 clearfix left-container">
+
+{# Sprout form #}
+{% macro errorList(errors) %}
+          
+          {% if errors %}
+              <ul class="errors">
+                  {% for error in errors %}
+                      <li>{{ error }}</li>
+                  {% endfor %}
+              </ul>
+          {% endif %}
+        {% endmacro %}
+
+        {% from _self import errorList %}
+
+        {% if craft.request.getParam('message') == 'success' %}
+
+          
+          {% set lastEntry = craft.sproutForms.lastEntry() %}
+
+          {% if lastEntry %}
+
+            <p>Thanks <strong>{{ lastEntry.fullName }}</strong>! We'll be in touch soon!</p>
+
+          {% endif %}
+
+        {% else %}
+            
+      <form class="contact" method="post" accept-charset="utf-8">
+          {{ getCsrfInput() }}
+          <input type="hidden" name="action" value="sproutForms/entries/saveEntry">
+          <input type="hidden" name="handle" value="contact">
+          <input type="hidden" name="redirect" value="{{ siteUrl }}success?message=partner-request">
+
+          {{ craft.sproutInvisibleCaptcha.protect() }}
+
+          {# Email Field #}
+          <div class="field">
+            <div class="header">
+              <h4 class="text-center text-uppercase">
+              <label for="textEmail">Email<span class="a-m-orange">*</span></label></h4>
+            </div>
+            <div class="body">
+              <input class="p22-light" type="email" id="textEmail" name="fields[email]" required {%- if contact is defined %}value="{{ contact.email }}"{% endif -%}>
+            </div>
+            {% if contact is defined %}
+            <div class="error">
+              {{ errorList(contact.getErrors('email')) }}
+            </div>
+            {% endif %}
+          </div>
+
+          {# Full Name Field #}
+          <div class="field">
+            <div class="header">
+              <h4 class="text-center text-uppercase">
+              <label for="textName">Name<span class="a-m-orange">*</span></label></h4>
+            </div>
+            <div class="body">
+              {# Custom Field handles should be named in your inputs and added in the fields[] array #}
+              <input class="p22-light" type="text" id="textName" name="fields[fullName]" required {%- if contact is defined %}value="{{ contact.fullName }}"{% endif -%}>
+            </div>
+            {% if contact is defined %}
+            <div class="error">
+              {{ errorList(contact.getErrors('fullName')) }}
+            </div>
+            {% endif %}
+          </div>
+
+          {# Subject plain text Field #}
+          <div class="field" id="fields-subject-field">
+            <div class="heading">
+              <h4 class="text-center text-uppercase">
+              <label class="required" for="fields-subject">Subject<span class="a-m-orange">*</span></label></h4>
+            </div>
+            <div class="input">
+              <input class="text nicetext fullwidth p22-light" type="text" id="fields-subject" name="fields[subject]" {%- if contact is defined %}value="{{ contact.subject }}"{% endif -%}>
+            </div>
+            {% if contact is defined %}
+            <div class="error">
+              {{ errorList(contact.getErrors('subject')) }}
+            </div>
+            {% endif %}
+          </div>    
+
+          {# Message Field #}
+          <div class="field">
+            <div class="header">
+              <h4 class="text-center text-uppercase">
+              <label for="textareaMessage">Message<span class="a-m-orange">*</span></label></h4>
+            </div>
+            <div class="body">
+              <textarea class="text nicetext fullwidth p22-light textarea-message" rows="4" cols="50" id="fields-message" name="fields[message]" required  placeholder="">{%- if contact is defined %}{{ contact.message }}{% endif -%}</textarea>
+            </div>
+            {% if contact is defined %}
+            <div class="error">
+              {{ errorList(contact.getErrors('message')) }}
+            </div>
+            {% endif %}
+          </div>
+
+             <input class="btn btn-send p22-ltp m-blue" type="submit" value="Send">
+              
+            </form>
+{% endif %}   
+             
+            </div>
+        </div>
+      	</div> 
+    </div>
+</div>
+
+{% endblock %}

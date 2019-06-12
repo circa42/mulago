@@ -1,0 +1,36 @@
+{# ===== mulagofoundation.org :: fellows/index listing ===== #}
+
+ {% set title = ('Fellows') %}
+ {% block content %}
+{% set category = null %}
+
+
+<!-- Main content -->
+<div class="main-content">
+
+    <div class="ideas-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container">
+       <div class="row">
+        <h1 class="text-uppercase">{{ category }}</h1>
+        </div>
+      </div>
+    </div>
+
+      <div class="container-p clearfix">
+
+        {% set categories = craft.categories.group('fellowsCat') %}
+
+         <ul>
+          {% nav category in craft.categories.group('fellowsCat') %}
+
+            <div class="col-sm-12 col-md-6">
+                <h2><a href="{{ category.url }}">{{ category.title }}</a></h2>
+             </div>
+
+          {% endnav %}
+        </ul> 
+      </div>
+ 
+
+
+{% endblock %}

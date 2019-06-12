@@ -2,4 +2,9 @@
 /.idea
 /vendor
 .DS_Store
+web/assets/img/fellows/
+web/assets/pdf
 node_modules
+mulago.sublime-project
+mulago.sublime-workspace
+web/assets/img/

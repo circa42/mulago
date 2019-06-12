@@ -1,0 +1,49 @@
+
+
+
+  <nav class="sub-nav hide-mobile" style="height: 1.4em; margin-right: 4em; padding-right: 2.2em;">
+        <ul class="scroll-to">
+
+
+        {% set fellowsUrl = craft.request.getSegment(1) %}
+
+          {% if fellowsUrl ends with 'rainer' %}
+                                      
+              {% for year in 2016..2006 %} 
+                    <li>
+
+          			{% set tagUrl = craft.request.getSegment(2) %}
+          			{% if tagUrl > 1 %}
+                     
+                      	<a href="{{ year }}">
+          			{% else %}
+                      	<a href="{{ fellowsUrl }}/{{ year }}">
+              		{% endif %}
+
+                    		<h5 class="text-uppercase p22-demi"> {{ year }}</h5></a></li>
+
+
+              {% endfor %}
+
+            <li><a href="2003"><h5 class="text-uppercase p22-demi"> 2003 </h5></a></li>
+
+            {% else %}
+              
+              <li><a href="2016"><h5 class="text-uppercase p22-demi"> 2016 </h5></a></li>
+
+            {% endif %}
+
+
+
+         </ul>
+    </nav>
+
+
+
+
+{# Trying to get auto tags to work.       
+      {% set fellowStatus = craft.entries.fellowStatus.relatedTo('fellowsYearTag') %}
+      {% if fellowStatus %}
+      I'm on!
+        {% for year in craft.tags.group('fellowsYearTag').limit(null) | reverse %} 
+ #}

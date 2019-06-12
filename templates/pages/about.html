@@ -1,0 +1,206 @@
+
+{# ===== mulagofoundation.org :: pages/about ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+{#     <nav class="sub-nav hide-mobile">
+        <ul class="scroll-to">
+           
+            <li><a  data-scroll-nav="0"><h5 class="p22-demi">OUR STORY</h5></a></li>
+            
+            <li><a  data-scroll-nav="1"><h5 class="p22-demi">RAINER ARNHOLD</h5></a></li>
+            
+            <li><a class="last"  data-scroll-nav="2"><h5 class="p22-demi">OUR TEAM</h5></a></li>
+            
+        </ul>
+    </nav> #}
+
+
+<nav class="sub-nav-mobile-scroll-about show hide">
+   
+    <a data-scroll-nav="0" class="scroll-down m-ltgray"><h5 class="sub-nav-mobile-scroll-about p22-demi">OUR STORY</h5>
+    </a>
+    <a data-scroll-nav="1" class="scroll-down m-ltgray"><h5 class="sub-nav-mobile-scroll-about p22-demi">RAINER</h5>
+    </a>
+        <a data-scroll-nav="2" class="scroll-down m-ltgray"><h5 class="sub-nav-mobile-scroll-about p22-demi">OUR TEAM</h5>
+        </a>
+            
+</nav>
+   
+<!-- Main content -->
+<div class="main-content">
+
+{% for matrixBlock in entry.panelsAbout %}
+  {% if matrixBlock.type == 'panel1' %}
+
+      {# for dynamic header image in css #}
+        {% set myCss %}
+          {% for image in matrixBlock.image %}      
+                .about-panel-1 .container {
+                  background: url( {{ image.getUrl('lg1400x310') }} ) center center no-repeat;
+                  background-size: cover;
+                  -webkit-background-size: cover;
+                   -moz-background-size: cover;
+                   -o-background-size: cover;
+                  position: relative;
+                  display: block;
+                  margin-right: auto;
+                  margin-left: auto;
+                  width: 80%;
+                  height: 310px;
+                }
+          {% endfor %}
+        {% endset %}
+      {% includeCss myCss %}
+
+    <div class="about-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container">
+        <h1 class="text-uppercase">{{ matrixBlock.heading1 }}</h1>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-home">
+            <div class="col-md-10 col-md-offset-1">
+
+              {{ matrixBlock.copy }}
+
+            </div>
+        </div>
+    </div>
+     
+  {% endif %}
+{% endfor %}
+
+{% for matrixBlock in entry.panelsAbout %}
+  {% if matrixBlock.type == 'panel2' %}
+
+      {# for dynamic header image in css #}
+        {% set myCss %}
+          {% for image in matrixBlock.image %}      
+                
+                .about-panel-2 .container {
+                  background: url( {{ image.getUrl('lg1400x310') }} ) center center no-repeat;
+                  background-size: cover;
+                  -webkit-background-size: cover;
+                   -moz-background-size: cover;
+                   -o-background-size: cover;
+                  position: relative;
+                  display: block;
+                  margin-right: auto;
+                  margin-left: auto;
+                  width: 80%;
+                  height: 310px;
+                }
+          {% endfor %}
+        {% endset %}
+      {% includeCss myCss %}
+
+    <div class="about-panel-2 m-ltgray" data-scroll-index="1">
+      <div class="container">
+        <h1 class="text-uppercase">{{ matrixBlock.heading1 }}</h1>
+      </div>
+    </div>
+
+    <div class="container">
+        <div class="row row-home">
+            <div class="col-md-10 col-md-offset-1">
+
+              {{ matrixBlock.copy }}
+
+            </div>
+        </div>
+    </div>
+  {% endif %}
+{% endfor %}
+
+{% for matrixBlock in entry.panelsAbout %}
+  {% if matrixBlock.type == 'panel3' %}
+
+      {# for dynamic header image in css #}
+        {% set myCss %}
+          {% for image in matrixBlock.image %}      
+                
+                .about-panel-3 .container {
+                  background: url( {{ image.getUrl('lg1400x310') }} ) center center no-repeat;
+                  background-size: cover;
+                  -webkit-background-size: cover;
+                   -moz-background-size: cover;
+                   -o-background-size: cover;
+                  position: relative;
+                  display: block;
+                  margin-right: auto;
+                  margin-left: auto;
+                  width: 80%;
+                  height: 310px;
+                }
+          {% endfor %}
+        {% endset %}
+      {% includeCss myCss %}
+
+    <div class="about-panel-3 m-ltgray" data-scroll-index="2">
+      <div class="container">
+        <h1 class="text-uppercase">{{ matrixBlock.heading1 }}</h1>
+      </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
+{% cache %}  
+  <div class="wrapper-team m-ltltgray clearfix">
+    <div class="container-p  clearfix">        
+          {% for matrixBlock in entry.team %}
+            {% if matrixBlock.type == 'teamContent' %}
+
+              <a data-toggle="modal" data-target="#{{ matrixBlock.id }}" class="portfolio-view bio">
+                <div class="portfolio-index inner bio m-white col-md-12">
+                  {% for image in matrixBlock.image %}
+                    <img src="{{ image.getUrl('sq300x300') }}" alt="{{ image.title }}" class="image-portfolio">
+                  {% endfor %}
+                    <h3 class="name text-center p22-ltp"> {{ matrixBlock.bioName }} </h3>
+                    <hr>
+                    <h4 class="title text-center p22-ltp"> {{matrixBlock.position}} </h4>
+                </div>
+              </a>
+         
+            {% endif %}
+          {% endfor %}
+    </div>
+  </div>
+
+{# <!-- model team --> #}
+  {% for matrixBlock in entry.team %}
+    {% if matrixBlock.type == 'teamContent' %}
+     <div class="modal fade bs-example-modal-lg" id="{{ matrixBlock.id }}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          
+          <div class="modal-body">
+           <button type="button" class="close top" data-dismiss="modal" aria-label="Close"> <img src="{{ siteUrl }}assets/X-close.png" alt=""> </button>
+          {% for image in matrixBlock.image %}
+            <img src="{{ image.getUrl('sq300x300') }}" alt="{{ image.title }}" class="image-portfolio modal">
+          {% endfor %}
+            <h3 class="name text-center p22-ltp">{{ matrixBlock.bioName }}</h3>
+            <hr>
+            <h4 class="title-modal text-center p22-ltp">{{matrixBlock.position}}</h4>
+            <hr>
+
+                {{matrixBlock.copy}}
+
+            {% if matrixBlock.emailName | length %}
+            <hr>
+              <a href="mailto:{{ matrixBlock.emailName }}@mulagofoundation.org" class="e-contact"><p class="a-m-blue text-center"> {{ matrixBlock.emailName }}@mulagofundation.org</p></a>
+            {% endif %}
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <img src="{{ siteUrl }}assets/X-close.png" alt=""> </button>
+          </div>
+        </div>
+      </div>
+    </div>   
+    {% endif %}
+  {% endfor %}
+  {% endcache %}  
+{% endblock %}

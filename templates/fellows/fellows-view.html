@@ -1,0 +1,153 @@
+
+{# ===== mulagofoundation.org :: fellows/fellows-view ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+{# {% cache %}  #}  
+<!-- Main content -->
+<div class="main-content">
+
+{% for matrixBlock in entry.fellowsEntry %}
+  {% if matrixBlock.type == 'entryContent' %}
+
+    <div class="p-view-panel-1 m-ltgray" style="position: relative;"data-scroll-index="0">
+      <div class="container-fluid">
+        {% for image in matrixBlock.featureImage %}
+        <img src="{{ image.url('view1400x610') }}" alt="">
+        {% endfor %}
+{#            <div class="m-mdltgray-alpha" style="min-height:6.6em; position: relative;">
+            #}           <h1 class="text-uppercase">{{ entry.title }}</h1>
+           {# </div> #}
+        </div>
+
+    </div>
+
+    <div class="container p-view">
+        <div class="row row-home">
+           <div class="side-view col-md-3 col-sm-3">
+              {% for image in matrixBlock.fellowImage %}
+               <img src="{{ image.getUrl('sq300x300') }}" alt="" class="logo-view">
+             {% endfor %}
+
+              {% set relatedPortfolio = craft.entries.section('portfolio').relatedTo(entry).limit(1) %}
+            {% if relatedPortfolio | length %} 
+                <hr>
+              {% for entry in relatedPortfolio %}
+               <a href="{{ entry.url }}">
+                  <h4 class="p22-demi a-m-blue">Mulago Portfolio</h4>
+                 </a>
+              {% endfor %}
+            {% endif %}
+                 <hr class="p-hide">
+               <a class="p-website" href="http://{{ matrixBlock.webLink}}" target="_blank" >
+                   <h4 class="p22-demi a-m-blue">View Website</h4>
+                </a>
+
+                {% if matrixBlock.videoLink | length %}
+                  {# {% include '_video_modal.twig' %} #}
+                  <a class="p-website" href="{{ matrixBlock.videoLink }}" target="_blank">
+                     <h4 class="p22-demi a-m-blue">View video</h4>
+                  </a>
+                {% endif %}
+               <hr class="p-hide">
+               <h5 class="share-title">SHARE</h5>
+                    <div class="social-share">
+
+                        {% include "includes/_share" %}
+                        
+
+
+{# for testing only 
+
+               <hr class="p-hide">
+
+    <h4>&nbsp;</h4>
+
+<p>
+Status: 
+{% if entry.fellowStatus == 1 %}
+ Active
+{% else %}
+  Not active
+  {% endif %}
+</p>
+
+{% if entry.fellowsYearTag | length %}
+
+  {% set tags = entry.fellowsYearTag.first() %}
+  <p>
+    Year: {{ tags }}
+  </p>
+{% endif %}
+
+{% set category = entry.fellowsCategory.first() %}
+
+ <p> {{ category }}
+</p>
+
+          
+
+{# //end test #}
+
+                    </div>
+                <hr class="p-hide">
+           </div>
+           
+            <div class="col-md-9  col-sm-9">
+             <div class="row">
+               <div class="col-xs-12">
+                   <h2 class="fellow-name">{{ matrixBlock.organization}}</h2>
+               </div>
+           </div>
+             <div class="md-col-12"> <hr>
+              
+              {{ matrixBlock.copy }}
+              
+              </div>
+            </div>
+        </div>
+  {% endif %}
+{% endfor %}
+
+<!--pagination-->
+
+<!-- Updated to stay within categories 180412 12:12 AMH -->
+          <div class="clearfix pagination-bottom"> <hr>
+            <div class="clearfix paginate-view">
+
+                {# Set parameters for prev/next elements list #}
+                {% set params = craft.entries.section('fellows').order('title asc') %}
+
+                {# Get the prev/next elements #}
+                {% set prevEntry = entry.getPrev(params) %}
+                {% set nextEntry = entry.getNext(params) %}
+
+                {# And make sure to only output the links if the element exists #}
+
+                {% if prevEntry %}
+                <a href="{{ prevEntry.url }}" class="prev">
+                    <img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                {% endif %}
+
+                {% if nextEntry %}
+                <a href="{{ nextEntry.url }}" class="next">
+                    <img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" />
+                    </a>
+                {% endif %}
+                  {% set allPosts = craft.entries.section('fellows').type('fellowsEntry').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %}               
+
+
+             </div>
+           </div>
+
+    </div>
+{# {% endcache %} #}
+{% endblock %}

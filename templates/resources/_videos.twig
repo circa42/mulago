@@ -1,0 +1,50 @@
+    {# Videos #}
+
+    <div class="row">
+      <div class="col" style="padding-top: 3em;">
+        {% set category = craft.categories.slug('videos') %}
+        {% set entries = craft.entries.section('resources').relatedTo(category).limit(3) %}
+
+           <a href="{{ craft.request.getSegment(1) }}/{{ category.slug }}"><h2 style="margin-top:0px; text-transform: uppercase;"> {{ category.slug }} </h2>
+           </a>
+
+
+        {% if entries | length %}
+
+            {% for entry in entries  %}
+              <div class="col-sm-6 col-md-4">
+
+                {% for matrixBlock in entry.ideasPost.limit(1) %}
+                {% switch matrixBlock.type %}
+                     
+                 {% case "ideasCopy" %}
+
+                    {# {{ matrixBlock.copy }} #}
+
+                 {% case "ideasImage" %}
+
+                  {% for image in matrixBlock.image %}
+
+                    <img class="full" src="{{ image.getUrl('resources270x180') }}" alt="">
+                  {% endfor %}
+
+                 {% case "ideasVideo" %}
+                  {# <h3>{{ matrixBlock.videoTitle }}</h3> #}
+                 <div class="embed-responsive embed-responsive-16by9">
+                   <iframe class="embed-responsive-item ideas" src="{{ matrixBlock.video | raw }}" frameborder="0" allowfullscreen></iframe>
+                 </div>
+              
+                {% endswitch %}
+
+
+              {% endfor %}
+
+                <h3><a href="{{ entry.url }}">{{ entry.title }}</a></h3>
+              </div>
+            {% endfor %}
+
+        {% endif %}
+
+
+      </div> {# end col #}
+    </div> {# end row #}

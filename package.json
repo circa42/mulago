@@ -17,6 +17,9 @@
     "browser-sync": "^2.26.5",
     "gulp-postcss": "^8.0.0",
     "gulp-sourcemaps": "^2.6.5",
-    "precss": "^4.0.0"
+    "precss": "^4.0.0",
+    "tailwindcss-transitions": "^2.0.1",
+    "tailwindcss-typography": "^2.1.1",
+    "vue": "^2.6.10"
   }
 }

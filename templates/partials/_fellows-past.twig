@@ -1,0 +1,55 @@
+{% set tags = entry.fellowsYearTag.first() %}
+{% set active = entry.fellowStatus %}
+{% set tagUrl = craft.request.getLastSegment() %}
+  {% if active == 0 %}
+  {% if tags == tagUrl %}
+
+     {% for matrixBlock in entry.fellowsEntry %}
+      {% if matrixBlock.type == 'entryContent' %}
+        <div class="row">
+          <div class="col-md-12" style="margin-top: 4em;"> 
+            <div class="side-ideas fellow-image col-xs-12 col-sm-4">
+              {% for image in matrixBlock.fellowImage %}    
+               <img src="{{ image.getUrl('sq300x300') }}" alt="" class="fellow-past">
+              {% endfor %}
+
+{% set relatedPortfolio = craft.entries.section('portfolio').relatedTo(entry).limit(1) %}
+            {% if relatedPortfolio | length %} 
+              {% for entry in relatedPortfolio %}
+               <a href="{{ entry.url }}">
+                   <h3 class="text-center a-m-blue">Mulago Portfolio</h3></a>
+
+                {% endfor %}
+              {% endif %}
+
+              <hr>
+              <a href="http://{{ matrixBlock.webLink }}" target="_blank" >
+                       <h4 class="p22-demi text-center a-m-blue">View Site</h4>
+                   </a> 
+                </div> 
+
+               <div class="col-xs-12 col-sm-8 ideas-index fellow-copy">
+{# not really sure why this if/else is necessary since sometimes it breaks URL links to profile pages 
+                    {% if entry.featureLink | length %} #}  
+                    <a href="{{ entry.url }}"> <h2 class="a-m-blue">{{ entry.title }} :: {{ matrixBlock.organization }}</h2></a> 
+                 {#  {% else %}
+                       <h2 class="">{{ entry.title }} :: {{ matrixBlock.organization }}</h2>
+                     {% endif %} #}
+                    
+                        {{ matrixBlock.archiveCopy }}
+
+                  {# {% if entry.featureLink | length %}  #}
+                    <a href="{{ entry.url }}" class="view"><img class="view" src="{{ siteUrl }}assets/arrow-next.png" alt=""></a>
+                  {# {% endif %} #}
+            </div>
+           </div>
+         </div>
+            <hr>
+
+
+          {% endif %}
+      {% endfor %}
+    
+{# my stuff #}
+    {% endif %}     
+    {% endif %}

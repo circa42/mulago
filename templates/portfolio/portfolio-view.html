@@ -1,0 +1,229 @@
+
+{# ===== mulagofoundation.org :: who-we-fund/portfolio-view ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+
+{% cache %}
+   
+<!-- Main content -->
+<div class="main-content">
+
+{% for matrixBlock in entry.portfolioEntry %}
+  {% if matrixBlock.type == 'entryContent' %}
+
+    <div class="p-view-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container-fluid">
+        {% for image in matrixBlock.featureImage %}
+        <img itemprop="image" src="{{ image.getUrl('view1400x610') }}" alt="">
+      {% endfor %}
+        <h1 itemprop="name" class="text-uppercase">{{ entry.title }}</h1>
+      </div>
+    </div>
+
+    <div class="container p-view">
+        <div class="row row-home">
+           <div class="side-view col-md-3 col-sm-3">
+            {% for image in matrixBlock.logo %}
+               <img src="{{ image.getUrl('logos260x100') }}" alt="" class="logo-view">
+            {% endfor %}
+               <hr>
+               <a class="p-website" href="http://{{ matrixBlock.webLink }}" target="_blank" >
+                   <h4 class="p22-demi a-m-blue">View Website</h4>
+               </a>
+               <hr class="p-hide">
+               <h5 class="share-title">SHARE</h5>
+                    <div class="social-share">
+
+                        {% include "includes/_share" %}
+                        
+                    </div>
+                <hr class="p-hide">
+           </div>
+           
+            <div class="col-md-9  col-sm-9">
+             <div class="row">
+               <div class="info col-md-12 col-xs-12">
+                   <p><strong>Our total investment:</strong> </p> 
+                   {{ matrixBlock.investment }}
+
+              {% if entry.relatedFellow | length %}
+                {% for fellow in entry.relatedFellow %}
+                <p><a class='a-m-blue' href="{{ fellow.url }}"><strong class='a-m-blue'>Rainer Fellow:</strong>
+                 {{ fellow.year}}</a></p>
+              {% endfor %}
+              {% endif %}
+               </div>
+           </div>
+             <div class="md-col-12"> <hr>
+              
+              {{ matrixBlock.copy }}
+              
+              </div>
+            </div>
+        </div>
+  {% endif %}
+{% endfor %}
+{% endcache %}
+<!--pagination-->
+      
+       <div class="clearfix pagination-bottom"> <hr>
+	       <div class="clearfix paginate-view">
+	       <a class="back-index" href="{{ url('who-we-fund') }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a><h5 class="back">Portfolio</h5>
+            {% set params = {
+              section: 'portfolio',
+              type: 'conservation',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('conservation').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %}
+
+            {% set params = {
+              section: 'portfolio',
+              type: 'health',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('health').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %} 
+
+            {% set params = {
+              section: 'portfolio',
+              type: 'livelihood',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('livelihood').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %} 
+
+            {% set params = {
+              section: 'portfolio',
+              type: 'education',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('education').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %}  
+
+            {% set params = {
+              section: 'portfolio',
+              type: 'energy',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('energy').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %}
+
+            {% set params = {
+              section: 'portfolio',
+              type: 'amplify',
+              order: 'title'
+              } %}  
+   
+               {% set prevposts = entry.getPrev(params) %}
+               {% set nextposts = entry.getNext(params) %}
+   
+                   {% if prevposts %}
+                     <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                   {% endif %}
+   
+                   {% if nextposts %}
+                     <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                   {% endif %}
+
+                  {% set allPosts = craft.entries.section('portfolio').type('amplify').order('title') %}
+
+                   {% for post in allPosts %}
+                     {% if entry.title == post %}
+                       <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                     {% endif %}
+                   {% endfor %}                                                                                                   
+	       </div>
+       </div>
+        
+    </div>
+
+{% endblock %}
