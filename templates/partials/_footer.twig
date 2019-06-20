@@ -20,8 +20,8 @@
         
       <div class="flex justify-center m-12">
         <a href="#" class="" data-scroll-nav="0">
-          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-200 border-2 border-white button bg-gray-600">
-            <i class="text-white text-4xl fas fa-angle-up"></i>
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-2 border-white button">
+            <i class="text-white hover:text-gray-300 text-4xl fas fa-angle-up"></i>
           </div>
         </a>
       </div>
@@ -33,11 +33,10 @@
       
       {% if social.socialTable |length %}
         {% for row in social.socialTable %}
-          <div class="m-2 rounded-full h-12 w-12 flex items-center justify-center
-           bg-gray-600 border-white border-2">
+          <div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2">
             <a href="{{ row.socialUrl }}" 
               target="_blank">
-              <i class="text-white text-2xl pt-2 {{ row.socialIcon }}"></i>  
+              <i class="text-white hover:text-gray-300 text-2xl pt-2 {{ row.socialIcon }}"></i>  
             </a>
           </div>
         {% endfor %}

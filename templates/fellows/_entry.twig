@@ -1,0 +1,119 @@
+
+{# ===== mulagofoundation.org :: fellows/fellows-view ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+<div class="">
+
+
+<div class="text-gray-800 text-2xl font-light leading-relaxed">
+
+{% for matrixBlock in entry.fellowsEntry %}
+  {% if matrixBlock.type == 'entryContent' %}
+
+    {% include "partials/_featuredimage.twig" %}
+
+
+
+    <div class="m-auto py-8 xs:mx-8 md:mx-16 lg:mx-32">
+
+      <div class="flex flex-wrap max-w-6xl m-auto">
+           
+          <div class="xs:full md:w-64 pl-8">
+              <div class="border-t border-b border-gray-400 py-4">
+                {% for image in matrixBlock.fellowImage %}
+                  <img src="{{ image.getUrl('sq300x300') }}" alt="" class="">
+                {% endfor %}
+              </div>
+
+{% set relatedPortfolio = craft.entries.section('portfolio').relatedTo(entry).limit(1) %}
+
+            {% if relatedPortfolio | length %} 
+              {% for entry in relatedPortfolio %}
+               <a href="{{ entry.url }}">
+                  <h4 class="py-4">Mulago Portfolio</h4>
+                 </a>
+              {% endfor %}
+            {% endif %}
+
+               <a class="no-underline text-blue-600 hover:text-blue-400 font-semibold text-xl" href="http://{{ matrixBlock.webLink }}" target="_blank" >
+                 <h4 class="py-4">View Website 
+                  <span class="text-sm font-thin pl-2">
+                    <i class="fas fa-external-link-alt"></i>
+                  </span>
+                 </h4>
+                </a>
+
+                {% if matrixBlock.videoLink | length %}
+                  {# {% include '_video_modal.twig' %} #}
+                  <a class="" href="{{ matrixBlock.videoLink }}" target="_blank">
+                     <h4 class="">View video</h4>
+                  </a>
+                {% endif %}
+               <hr class="">
+               <h5 class="text-sm uppercase mt-8">Share</h5>
+                  <div class="border-b border-gray-400 py-4">
+                      {% include "includes/_share" %}
+                  </div>
+          </div>
+           
+          <div class="lg:w-3/4 pl-8">
+             <div class="border-b border-gray-400 pb-2 mb-8">
+                 <h2 class="text-6xl font-light text-gray-700">{{ matrixBlock.organization}}</h2>
+             </div>
+             <div class="">
+              {{ matrixBlock.copy }}
+             {# 
+              {% set cat = entry.fellowsCategory %}
+                {{ cat.title }} 
+              #}
+              </div>
+            </div>
+        </div>
+  {% endif %}
+{% endfor %}
+
+{# pagination #}
+    <div class="flex justify-end  border-t border-gray-400 py-4 mt-8">
+    {% set category = craft.categories.relatedTo(entry) %}
+    {% set categories = category.total() %} 
+      {{ category.title }}
+    {% set entries = craft.entries.relatedTo(category) %}
+    {% paginate entries as pageInfo, pageEntries %}
+    {{ pageInfo.prevUrl }}
+    
+        <div class="flex items-center">
+          <div class="text-xs uppercase mr-2">
+             
+            
+              {% for entry in entries %}
+                {% if entry == title  %}
+                  <h5 class="text-xs uppercase pt-2 mr-2">
+                   {{ category.one() }} —  {{ loop.index }} of {{ loop.length }} 
+                  </h5>
+                {% endif %}
+               {% endfor %}
+          </div>
+          
+          <div class="flex items-center justify-end">
+
+                {# Set parameters for prev/next elements list #}
+                {% set params = craft.entries.section('fellows') %}
+                
+
+                {# And make sure to only output the links if the element exists #}
+                {% set allPosts = craft.entries.section('fellows').type('fellowsEntry') %}
+
+                {% include "partials/_pagination-arrows.twig" %}
+
+
+           </div>
+
+        </div>
+      </div>
+
+    </div>
+{# {% endcache %} #}
+{% endblock %}

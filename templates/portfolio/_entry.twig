@@ -1,0 +1,134 @@
+
+{# ===== mulagofoundation.org :: who-we-fund/portfolio-view ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+
+{% cache %}
+   
+<!-- Main content -->
+<div class="text-gray-800 text-2xl font-light leading-relaxed">
+
+{% for matrixBlock in entry.portfolioEntry %}
+  {% if matrixBlock.type == 'entryContent' %}
+  
+    {% include "partials/_featuredimage.twig" %}
+
+    <div class="m-auto py-8 xs:mx-8 md:mx-16 lg:mx-32">
+
+      <div class="flex flex-wrap max-w-6xl m-auto">
+        
+        <div class="xs:full md:w-64 pl-8">
+          <div class="border-t border-b border-gray-400 py-4">
+            {% for image in matrixBlock.logo %}
+               <img src="{{ image.getUrl('logos260x100') }}" alt="" class="">
+            {% endfor %}
+          </div>   
+             <a class="no-underline text-blue-600 hover:text-blue-400 font-semibold text-xl" href="http://{{ matrixBlock.webLink }}" target="_blank" >
+                 <h4 class="py-4">View Website 
+                  <span class="text-sm font-thin pl-2">
+                    <i class="fas fa-external-link-alt"></i>
+                  </span>
+                 </h4>
+             </a>
+             <div class="border-b border-gray-400">
+             </div>
+             <h5 class="text-sm uppercase mt-8">Share</h5>
+                  <div class="border-b border-gray-400 py-4">
+                      {% include "includes/_share" %}     
+                  </div>
+         </div>
+         
+
+          <div class="lg:w-3/4 pl-8">
+              <p><strong>Our total investment:</strong> 
+               {{ matrixBlock.investment }}</p>
+
+              {% if entry.relatedFellow | length %}
+                {% for fellow in entry.relatedFellow %}
+                  <div class="border-b border-gray-400 mb-8">
+                    <a class="" href="{{ fellow.url }}">
+                      <strong class="">Fellow:</strong>
+                        {{ fellow.title }} 
+                      </a>
+                  </div>
+                {% endfor %}
+              {% endif %}
+            <div class=""> <hr>
+              {{ matrixBlock.copy }}
+            </div>
+
+          </div>
+
+      </div>
+  {% endif %}
+{% endfor %}
+{% endcache %}
+
+<!--pagination-->
+      <div class="flex justify-between border-t border-gray-400 py-4 mt-8">
+    
+    {# return to portfolio #} 
+        <div>
+          <a href="{{ siteUrl }}portfolio" class="" data-scroll-nav="0">
+            <div class="flex items-center">
+              <div class="text-center rounded-full h-8 w-8 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-2 border-white button">
+                <i class="text-white hover:text-gray-300 text-xl fas fa-angle-left"></i>
+
+              </div>
+              <div class="text-xs uppercase ml-2">
+                Portfolio
+              </div>
+            </div>
+          </a>
+        </div>
+
+    
+    {# next entry in category #}
+    {% set category = craft.categories.relatedTo(entry) %}
+    {% set categories = category.total() %} 
+      {{ category.title }}
+    {% set entries = craft.entries.relatedTo(category) %}
+    {% paginate entries as pageInfo, pageEntries %}
+    {{ pageInfo.prevUrl }}
+    
+        <div class="flex items-center">
+          <div class="text-xs uppercase mr-2">
+             
+            
+              {% for entry in entries %}
+                {% if entry == title  %}
+                  <h5 class="text-xs uppercase pt-2 mr-2">
+                   {{ category.one() }} —  {{ loop.index }} of {{ loop.length }} 
+                  </h5>
+                {% endif %}
+               {% endfor %}
+          </div>
+          
+          <div class="flex items-center justify-end">
+
+                {# Set parameters for prev/next elements list #}
+                {% set params = craft.entries.section('portfolio') %}
+                
+
+                {# And make sure to only output the links if the element exists #}
+                {% set allPosts = craft.entries.section('portfolio').type('fellowsEntry') %}
+                 {% for post in allPosts %}
+                   {% if entry.title == post %}
+                     <h5 class="text-xs uppercase pt-2 mr-2">No. {{ loop.index }} of {{ loop.length }}</h5>
+                   {% endif %}
+                 {% endfor %}
+                {% include "partials/_pagination-arrows.twig" %}
+
+
+           </div>
+
+        </div>
+
+      </div>                                                                    
+	</div>
+</div>
+        
+{% endblock %}

@@ -1,23 +1,33 @@
 {# localhost social share #}
             
-<div class="social-share">
+<div class="flex flex-wrap">
 
-    <a class="share-icon" href="https://twitter.com/share" data-lang="en" target="blank"><img src="{{ siteUrl }}assets/twitter-logo.png" alt="" />
+{# twitter #}
+    <a class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-gray-800 ml-2" href="https://twitter.com/share" data-lang="en" target="blank">
+        <i class="text-xl text-white hover:text-gray-200 fab fa-twitter"></i>
     </a>
 
-    <a class="share-icon" 
-          href="#" onclick="
-            window.open(
-              'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
-              'facebook-share-dialog', 
-              'width=626,height=436'); 
-            return false;"><img src="{{ siteUrl }}assets/facebook-logo.png" alt="" />
-    </a>
-            
-    <a class="share-icon" href="mailto:?subject=From Mulago Foundation: {{ entry.title }}&amp;body=Have a look at this article: {{ entry.Url }}" title="Share by Email"><img src="{{ siteUrl }}assets/email-logo.png" alt="" />
+{# facebook #}
+    <a class="rounded-full h-10 w-10 flex items-center justify-center
+           bg-gray-600 hover:bg-gray-800 ml-2" 
+      href="#" onclick="
+        window.open(
+          'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 
+          'facebook-share-dialog', 
+          'width=626,height=436'); 
+        return false;">
+        <i class="text-xl text-white hover:text-gray-200 fab fa-facebook-f"></i>
     </a>
 
-    <a class="share-icon print" href="javascript:window.print()"><img src="{{ siteUrl }}assets/print-logo.png" alt="" alt="print this page"/></a>
+{# email  #}          
+    <a class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-gray-800 ml-2" href="mailto:?subject=From Mulago Foundation: {{ entry.title }}&amp;body=Have a look at this article: {{ entry.Url }}" title="Share by Email">
+      <i class="text-xl text-white hover:text-gray-200 far fa-envelope"></i>
+    </a>
+
+{# print #}
+    <a class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-gray-800 ml-2" href="javascript:window.print()">
+      <i class="text-xl text-white hover:text-gray-200 fas fa-print"></i>
+    </a>
                     
 </div>
 

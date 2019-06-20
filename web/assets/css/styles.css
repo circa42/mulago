@@ -1883,6 +1883,18 @@ video {
   height: 100%;
 }
 
+.h-1\/4 {
+  height: 25vh;
+}
+
+.h-1\/2 {
+  height: 50vh;
+}
+
+.h-3\/4 {
+  height: 75vh;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -3213,6 +3225,10 @@ video {
 
 .opacity-75 {
   opacity: 0.75;
+}
+
+.opacity-90 {
+  opacity: 0.90;
 }
 
 .opacity-100 {
@@ -6042,6 +6058,18 @@ video {
     height: 100%;
   }
 
+  .xs\:h-1\/4 {
+    height: 25vh;
+  }
+
+  .xs\:h-1\/2 {
+    height: 50vh;
+  }
+
+  .xs\:h-3\/4 {
+    height: 75vh;
+  }
+
   .xs\:h-screen {
     height: 100vh;
   }
@@ -7372,6 +7400,10 @@ video {
 
   .xs\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .xs\:opacity-90 {
+    opacity: 0.90;
   }
 
   .xs\:opacity-100 {
@@ -10200,6 +10232,18 @@ video {
     height: 100%;
   }
 
+  .sm\:h-1\/4 {
+    height: 25vh;
+  }
+
+  .sm\:h-1\/2 {
+    height: 50vh;
+  }
+
+  .sm\:h-3\/4 {
+    height: 75vh;
+  }
+
   .sm\:h-screen {
     height: 100vh;
   }
@@ -11530,6 +11574,10 @@ video {
 
   .sm\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .sm\:opacity-90 {
+    opacity: 0.90;
   }
 
   .sm\:opacity-100 {
@@ -14358,6 +14406,18 @@ video {
     height: 100%;
   }
 
+  .md\:h-1\/4 {
+    height: 25vh;
+  }
+
+  .md\:h-1\/2 {
+    height: 50vh;
+  }
+
+  .md\:h-3\/4 {
+    height: 75vh;
+  }
+
   .md\:h-screen {
     height: 100vh;
   }
@@ -15688,6 +15748,10 @@ video {
 
   .md\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .md\:opacity-90 {
+    opacity: 0.90;
   }
 
   .md\:opacity-100 {
@@ -18516,6 +18580,18 @@ video {
     height: 100%;
   }
 
+  .lg\:h-1\/4 {
+    height: 25vh;
+  }
+
+  .lg\:h-1\/2 {
+    height: 50vh;
+  }
+
+  .lg\:h-3\/4 {
+    height: 75vh;
+  }
+
   .lg\:h-screen {
     height: 100vh;
   }
@@ -19846,6 +19922,10 @@ video {
 
   .lg\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .lg\:opacity-90 {
+    opacity: 0.90;
   }
 
   .lg\:opacity-100 {
@@ -22674,6 +22754,18 @@ video {
     height: 100%;
   }
 
+  .xl\:h-1\/4 {
+    height: 25vh;
+  }
+
+  .xl\:h-1\/2 {
+    height: 50vh;
+  }
+
+  .xl\:h-3\/4 {
+    height: 75vh;
+  }
+
   .xl\:h-screen {
     height: 100vh;
   }
@@ -24004,6 +24096,10 @@ video {
 
   .xl\:opacity-75 {
     opacity: 0.75;
+  }
+
+  .xl\:opacity-90 {
+    opacity: 0.90;
   }
 
   .xl\:opacity-100 {

@@ -1,0 +1,25 @@
+{# Get the prev/next elements #}
+{% set prevEntry = entry.getPrev(params) %}
+{% set nextEntry = entry.getNext(params) %}
+
+
+
+
+{% if prevEntry %}
+  <a href="{{ prevEntry.url }}" class="px-2">
+    <div class="text-center rounded-full h-8 w-8 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-2 border-white button">
+      <i class="text-white hover:text-gray-300 text-xl fas fa-angle-left"></i>
+
+    </div>
+  </a>
+{% endif %}
+
+{% if nextEntry %}
+<a href="{{ nextEntry.url }}" class="">
+    <div class="text-center rounded-full h-8 w-8 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-2 border-white button">
+      <i class="text-white hover:text-gray-300 text-xl fas fa-angle-right"></i>
+
+    </div>
+</a>
+{% endif %}
+              

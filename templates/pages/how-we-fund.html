@@ -8,33 +8,45 @@
 
    
 <!-- Main content -->
-<div class="main-content">
 
 {% for matrixBlock in entry.panelsFund %}
-  {% if matrixBlock.type == 'panelContent' %}
-        
-    <div class="fund-panel-1 m-ochre clearfix" data-scroll-index="{{ matrixBlock.scrollTo }}">
-    
-      <div class="container clearfix">
-        <h1 class="funding">{{ matrixBlock.heading1 }}</h1>
-      {% for image in matrixBlock.image %}
-        <img class="funding" src="{{ image.getUrl('h600x310') }}" alt="{{ image.title }}">
-      {% endfor %}
+  {% if matrixBlock.type == 'panelHeader' %}
+  
+
+    <div class="bg-gray-200">
+      <div class="flex justify-between max-w-6xl m-auto">
+        <div class="p-8">
+          <h1 class="xs:text-4xl md:text-6xl lg:text-8xl tracking-tight leading-tight font-light text-gray-700">{{ matrixBlock.heading1 }}</h1>
+        </div>
+        <div>
+         {% for image in matrixBlock.image %}
+          <img class="" src="{{ image.getUrl('h600x410') }}" alt="{{ image.title }}">
+        {% endfor %}
+
+       </div>
       </div>
-     
+    </div>
+    
+    <div class="max-w-6xl xs:mt-2 md:mt-6 lg:mt-8 m-auto p-4">
+      <h2 class="text-gray-800 xs:text-2xl md:text-4xl lg:text-5xl">
+        {{ matrixBlock.heading2}}
+      </h2>
     </div>
 
-    <div class="container fund">
-        <div class="row row-home">
-            <div class="col-sm-12 col-lg-10 col-lg-offset-1">
+{% elseif matrixBlock.type == 'copyContent' %}  
 
-              {{ matrixBlock.copy }}
-
-            </div>
-        </div>
+    <div class="max-w-6xl xs:mb-4 lg:mb-6 lg:mb-12 p-4 m-auto">
+        <h3 class="text-gray-600 xs:text-2xl lg:text-3xl uppercase border-b border-gray-400">
+          {{ matrixBlock.header3 }}
+        </h3>
+        <p class="text-gray-800 leading-relaxed xs:text-lg lg:text-xl mt-2">
+          {{ matrixBlock.copy }}
+        </p>
     </div>
 
   {% endif %}
 {% endfor %}
+
+
 {% endcache %}       
 {% endblock %}

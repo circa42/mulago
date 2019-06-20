@@ -79,6 +79,7 @@ module.exports = {
 		auto: 'auto',
 		cover: 'cover',
 		contain: 'contain',
+
     },
     borderColor: theme => ({
 		...theme('colors'),
@@ -172,6 +173,11 @@ module.exports = {
 		auto: 'auto',
 		...theme('spacing'),
 		full: '100%',
+		'0': '0',
+		'1/4': '25vh',
+		'1/2': '50vh',
+		'3/4': '75vh',
+		'full': '100%',
 		screen: '100vh',
     }),
     inset: {
@@ -246,6 +252,7 @@ module.exports = {
 		'25': '0.25',
 		'50': '0.5',
 		'75': '0.75',
+		'90': '0.90',
 		'100': '1',
     },
     order: {

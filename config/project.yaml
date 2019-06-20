@@ -16,6 +16,11 @@ categoryGroups:
     structure:
       uid: 1348700e-73c2-41a3-b707-b0632522651e
       maxLevels: 1
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        hasUrls: true
+        uriFormat: 'fellows/{slug}'
+        template: fellows/index
     fieldLayouts:
       7fc8c15f-bdbb-4434-a933-45e177481559:
         tabs:
@@ -23,18 +28,40 @@ categoryGroups:
             name: Fellows
             sortOrder: 1
             fields:
-              00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
-                required: false
-                sortOrder: 1
               832d8e0c-4294-48e4-8c96-50c963ebc475:
                 required: false
+                sortOrder: 1
+              c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
+                required: false
                 sortOrder: 2
+              00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
+                required: false
+                sortOrder: 3
+  852822b9-0a82-48ba-9ef9-f49b0ef2e181:
+    name: 'Portfolio Category'
+    handle: portfolioCat
+    structure:
+      uid: 57833f3b-872e-417c-b0b6-fb940f7b1b69
+      maxLevels: null
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         hasUrls: true
-        uriFormat: 'fellows/{slug}'
-        template: fellows/index.html
-dateModified: 1560258400
+        uriFormat: 'portfolio/{slug}'
+        template: ''
+    fieldLayouts:
+      4f6ae16b-5bd1-4f6c-a6b2-d7e8451be118:
+        tabs:
+          -
+            name: Portfolio
+            sortOrder: 1
+            fields:
+              ca18a062-4194-422a-a16f-4fa840664602:
+                required: true
+                sortOrder: 1
+              4da52f8a-a596-4504-8358-230cabf324f6:
+                required: false
+                sortOrder: 2
+dateModified: 1560987889
 email:
   fromEmail: sara@mulagofoundation.org
   fromName: Mulago
@@ -268,15 +295,16 @@ fields:
     handle: panelsFund
     instructions: ''
     searchable: true
-    translationMethod: none
+    translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Matrix
     settings:
-      maxBlocks: '3'
-      localizeBlocks: false
+      minBlocks: ''
+      maxBlocks: ''
       contentTable: '{{%matrixcontent_panelsfund}}'
-    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
+      localizeBlocks: false
     contentColumnType: string
+    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
   1c88a45a-dd00-44b4-91f9-6e3e44ab2600:
     name: Team
     handle: team
@@ -410,8 +438,8 @@ fields:
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: boolean
   832d8e0c-4294-48e4-8c96-50c963ebc475:
-    name: 'Fellows Category Description'
-    handle: fellowsCategoryDescription
+    name: 'Fellows Category Strapline'
+    handle: fellowsStrapline
     instructions: ''
     searchable: true
     translationMethod: none
@@ -419,12 +447,13 @@ fields:
     type: craft\fields\PlainText
     settings:
       placeholder: ''
+      code: ''
       multiline: '1'
       initialRows: '4'
       charLimit: ''
       columnType: text
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: text
+    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
   1a109d8e-6ab2-43a1-8385-6e3c801cfc4e:
     name: 'Fellows Year Tag'
     handle: fellowsYearTag
@@ -527,6 +556,73 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
+  b1873b59-518b-4e37-ab52-2a521503856e:
+    name: 'Portfolio Category'
+    handle: portfolioCategory
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      branchLimit: '1'
+      sources: '*'
+      source: 'group:852822b9-0a82-48ba-9ef9-f49b0ef2e181'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
+  ca18a062-4194-422a-a16f-4fa840664602:
+    name: 'Category Strapline'
+    handle: categoryStrapline
+    instructions: 'The small strapline after the portfolio category on the /portfolio page.'
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
+  c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
+    name: 'Program Link'
+    handle: programLink
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - singles
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: ''
+      selectionLabel: ''
+      localizeRelations: false
+    contentColumnType: string
+    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
+  4da52f8a-a596-4504-8358-230cabf324f6:
+    name: 'Category Color'
+    handle: categoryColor
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Color
+    settings:
+      defaultColor: ''
+    contentColumnType: string(7)
+    fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
 globalSets:
   6ab33fd5-4e12-4ade-870c-1e6b2f14888c:
     name: Address
@@ -608,15 +704,15 @@ globalSets:
                 sortOrder: 1
 imageTransforms:
   7a5c96f2-a949-4959-92a6-4c7b48694cae:
-    name: 'h 600x 310'
-    handle: h600x310
-    mode: crop
-    position: center-center
-    width: 600
-    height: 310
     format: null
-    quality: 82
+    handle: h600x410
+    height: 410
     interlace: none
+    mode: crop
+    name: 'h 600x 310'
+    position: center-center
+    quality: 82
+    width: 600
   68e860b9-5007-457b-860e-1fe91787c960:
     name: 'ideas 300x450'
     handle: ideas300x450
@@ -718,15 +814,15 @@ imageTransforms:
     quality: 82
     interlace: none
   ff487724-2f3e-43db-9d2f-4281f1f9c6f1:
-    name: 'view 1400x610'
-    handle: view1400x610
-    mode: crop
-    position: center-center
-    width: 1400
-    height: 610
     format: null
-    quality: 82
+    handle: view2100x610
+    height: 610
     interlace: none
+    mode: crop
+    name: 'View 2100x610'
+    position: center-center
+    quality: 82
+    width: 2100
   0ccb0e44-2e42-4aae-9a0c-f8927d3421b6:
     name: 'Resources 270x180'
     handle: resources270x180
@@ -757,6 +853,16 @@ imageTransforms:
     format: null
     quality: null
     interlace: none
+  72764379-cb54-4694-aa24-9700d0ce078e:
+    format: null
+    handle: responsiveHeader
+    height: 610
+    interlace: none
+    mode: crop
+    name: 'Responsive Header'
+    position: center-center
+    quality: null
+    width: null
 matrixBlockTypes:
   1d2539cd-ba12-4456-8484-d4e5c07a419a:
     name: 'Entry content'
@@ -1730,10 +1836,71 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: string
   e85bd069-0b96-4e9c-9b47-832cfc716674:
-    name: 'panel content'
-    handle: panelContent
-    sortOrder: 1
     field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
+    name: 'Panel Header'
+    handle: panelHeader
+    sortOrder: 1
+    fields:
+      bdacf746-be18-4f6e-abe3-e3ce61392f8b:
+        name: 'heading 1'
+        handle: heading1
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      22da2b0b-f1bf-4594-8512-89aa70d1a095:
+        name: image
+        handle: image
+        instructions: 'Image: 600px by 310 px'
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+        contentColumnType: string
+        fieldGroup: null
+      17b3c04e-9272-4aff-b951-14d15e825a3e:
+        name: heading2
+        handle: heading2
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
     fieldLayouts:
       140a6b94-5aaa-4a87-9cc3-2a00e8b9074f:
         tabs:
@@ -1747,89 +1914,9 @@ matrixBlockTypes:
               22da2b0b-f1bf-4594-8512-89aa70d1a095:
                 required: true
                 sortOrder: 2
-              beffa99c-09e1-45f2-b20c-4a4e31bd66e2:
+              17b3c04e-9272-4aff-b951-14d15e825a3e:
                 required: false
                 sortOrder: 3
-              e0baa021-7b64-4173-bd5f-0f2c8fc30564:
-                required: false
-                sortOrder: 4
-    fields:
-      bdacf746-be18-4f6e-abe3-e3ce61392f8b:
-        name: 'heading 1'
-        handle: heading1
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: text
-      22da2b0b-f1bf-4594-8512-89aa70d1a095:
-        name: image
-        handle: image
-        instructions: 'Image: 600px by 310 px'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Assets
-        settings:
-          useSingleFolder: ''
-          sources:
-            - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
-          defaultUploadLocationSource: 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
-          defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
-          singleUploadLocationSubpath: ''
-          restrictFiles: ''
-          limit: '1'
-          localizeRelations: false
-        fieldGroup: null
-        contentColumnType: string
-      beffa99c-09e1-45f2-b20c-4a4e31bd66e2:
-        name: copy
-        handle: copy
-        instructions: "Styling instructions:\r\nH1 = Large heading\r\nH2 = Large paragraph text\r\nh3 = Sub heading NOTE: add rule line  below \"–\""
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\redactor\Field
-        settings:
-          configFile: ''
-          cleanupHtml: '1'
-          purifyHtml: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: string
-      e0baa021-7b64-4173-bd5f-0f2c8fc30564:
-        name: 'scroll to'
-        handle: scrollTo
-        instructions: 'Select scroll to panel'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Dropdown
-        settings:
-          options:
-            -
-              label: 'Top panel'
-              value: '0'
-              default: ''
-            -
-              label: 'Second panel'
-              value: '1'
-              default: ''
-            -
-              label: 'Third panel'
-              value: '2'
-              default: ''
-        fieldGroup: null
-        contentColumnType: string
   dc86b82a-0a27-4f1c-8694-23b697f06b7d:
     name: 'Team content'
     handle: teamContent
@@ -2323,6 +2410,63 @@ matrixBlockTypes:
           columnType: string
         fieldGroup: null
         contentColumnType: string
+  1b679347-98a6-4d6a-b86b-dd4d676337a0:
+    field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
+    name: 'Copy content'
+    handle: copyContent
+    sortOrder: 2
+    fields:
+      7180ccd3-6a5d-49d2-a3dd-27895c0d252c:
+        name: 'Header 3'
+        handle: header3
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      eeed6b53-8f33-43ac-943e-175645533ae5:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Simple.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      cdfed98a-e84b-4878-b811-0482f13b9d42:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              7180ccd3-6a5d-49d2-a3dd-27895c0d252c:
+                required: false
+                sortOrder: 1
+              eeed6b53-8f33-43ac-943e-175645533ae5:
+                required: false
+                sortOrder: 2
 plugins:
   compressor:
     settings: null
@@ -2370,8 +2514,12 @@ plugins:
     schemaVersion: 1.0.0
   redactor:
     edition: standard
-    enabled: false
+    enabled: true
     schemaVersion: 2.3.0
+  retour:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.7
 routes:
   479d19ae-9e25-4da1-a1a2-5d8e2dca8982:
     uriParts:
@@ -2513,47 +2661,16 @@ sections:
     type: structure
     enableVersioning: true
     propagateEntries: true
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'fellows/{slug}'
+        template: fellows/_entry
     structure:
       uid: ae2dfa1d-ca48-47c6-85a3-cb14fb95187c
       maxLevels: null
     entryTypes:
-      7233b525-a3b8-4537-943f-a83c99a1cc85:
-        name: '_depreciated Fellows current'
-        handle: fellowsCurrent
-        hasTitleField: true
-        titleLabel: 'Fellows Name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          5f601281-0055-424e-85d1-9292098a5ae9:
-            tabs:
-              -
-                name: 'Fellows current'
-                sortOrder: 1
-                fields:
-                  22a97c98-08c7-4c47-a68d-7721e732e5f3:
-                    required: false
-                    sortOrder: 4
-      25b6a4c5-a097-4704-83e0-7b1dd6100acb:
-        name: '_depreciated Fellows past'
-        handle: fellowsPast
-        hasTitleField: true
-        titleLabel: 'Fellows name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          ddcc3b4f-cf7c-4aee-b50c-b816e07c60ed:
-            tabs:
-              -
-                name: 'Fellows past'
-                sortOrder: 1
-                fields:
-                  00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
-                    required: false
-                    sortOrder: 3
-                  22a97c98-08c7-4c47-a68d-7721e732e5f3:
-                    required: false
-                    sortOrder: 5
       10a5842e-a148-4efd-9432-5c18f0d6b672:
         name: 'Fellows Entry'
         handle: fellowsEntry
@@ -2583,12 +2700,6 @@ sections:
                   00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
                     required: false
                     sortOrder: 5
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: '{% if object.level == 1 %}fellows/{slug}{% else %}fellows/{category}/{slug}{% endif %}'
-        template: fellows/fellows-view
   32c4efef-acd7-445a-a86b-c127a02d1b8d:
     name: 'Rainer Arnhold Fellows Program'
     handle: fellowsProgram
@@ -2700,136 +2811,42 @@ sections:
   4d4fc959-99a6-401d-9c82-0e54478e02a4:
     name: Portfolio
     handle: portfolio
-    type: channel
+    type: structure
     enableVersioning: true
     propagateEntries: true
-    entryTypes:
-      4c8310fd-5a14-4d6c-8164-b2b6ce2474e8:
-        name: Conservation
-        handle: conservation
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          683e1eda-3aa6-4a43-b533-725a82866f7a:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
-      7c9893c8-9ae7-433d-893e-7920c618d8e9:
-        name: Health
-        handle: health
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          2093b006-ca78-4b8b-b2b2-a2ded6f15fdd:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
-      940e2383-84c7-41d7-be7e-875a2c7c2d35:
-        name: Livelihood
-        handle: livelihood
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          49f5b3f6-f27e-4429-8bfb-fc0771b6b2b1:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
-      070d6fdc-37f3-462a-87eb-bf3a1df8f205:
-        name: Education
-        handle: education
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          91bc867d-ff51-44b4-b5c0-b9ed5951689e:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
-      5d563869-c31a-4f9d-af2a-922cd11d66dc:
-        name: Energy
-        handle: energy
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          40728a8d-e555-4b2f-9904-86a54fcf973f:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
-      c6ddb0fd-0f23-445f-8418-e97199c5f6de:
-        name: Amplify
-        handle: amplify
-        hasTitleField: true
-        titleLabel: 'Organization name'
-        titleFormat: null
-        sortOrder: 0
-        fieldLayouts:
-          5f0012eb-66ad-4498-97b9-b535b17a356c:
-            tabs:
-              -
-                name: Content
-                sortOrder: 1
-                fields:
-                  46950084-5904-4d50-8bd0-a39150c6489c:
-                    required: false
-                    sortOrder: 1
-                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
-                    required: false
-                    sortOrder: 2
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: '{section}/{slug}'
-        template: portfolio/portfolio-view
+        uriFormat: 'portfolio/{slug}'
+        template: portfolio/_entry
+    structure:
+      uid: a60d1e2c-2e54-43de-ae6c-dc278d6bb052
+      maxLevels: null
+    entryTypes:
+      189b2ba1-e31e-40c7-acc5-156f738a3a69:
+        name: Default
+        handle: default
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          e2cc8cc0-b734-4c49-b30a-84a6a3094694:
+            tabs:
+              -
+                name: Portfolio
+                sortOrder: 1
+                fields:
+                  46950084-5904-4d50-8bd0-a39150c6489c:
+                    required: false
+                    sortOrder: 1
+                  b1873b59-518b-4e37-ab52-2a521503856e:
+                    required: false
+                    sortOrder: 2
+                  27bd607e-4729-4bd6-b03e-2a4f628cc442:
+                    required: false
+                    sortOrder: 3
   ea9515d0-1629-4005-b1b1-370aa1e63f9f:
     name: Success
     handle: success
@@ -2926,6 +2943,26 @@ sections:
         hasUrls: true
         uriFormat: henry-fellows-program
         template: pages/how-we-design
+  652df0af-6fee-4667-9724-2846027f8558:
+    name: 'Fellows Index'
+    handle: fellowsIndex
+    type: single
+    enableVersioning: true
+    propagateEntries: true
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '{category}'
+        template: fellows/index
+    entryTypes:
+      8ae08ecd-7553-4e7e-bfb2-f1b2762796e3:
+        name: 'Fellows Index'
+        handle: fellowsIndex
+        hasTitleField: false
+        titleLabel: null
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
 siteGroups:
   05fba193-3b51-48c5-9a91-95ac237f45a6:
     name: 'Mulago (en-US)'

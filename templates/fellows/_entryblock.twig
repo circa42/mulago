@@ -1,22 +1,22 @@
   {% for matrixBlock in entry.fellowsEntry %}
     {% if matrixBlock.type == 'entryContent' %}
 
-      <a href="{{ entry.url }}" class="portfolio-view bio"> 
-         <div class="portfolio-index inner bio m-white col-md-12">
+      <a href="{{ entry.url }}" class=""> 
+         <div class="bg-white p-4 m-4">
               {% for image in matrixBlock.fellowImage %} 
                  <img src="{{ image.getUrl('sq300x300') }} " alt="" class="image-portfolio">
                {% endfor %} 
-              <h3 class="name text-center p22-ltp">{{ entry.title }}</h3>
+              <h3 class="uppercase text-xl text-center text-gray-700 py-4">
+                {{ entry.title }}
+              </h3>
               
-              {# === comment the year out for production === 
-                {% set tags = entry.fellowsYearTag.first() %}
-                <h4 class="text-center">{{ tags }}</h4>
-              {#  ==== // ==== #}
-              <hr> 
-              <h3 class="text-center p22-ltp">{{ matrixBlock.organization }} </h3>
+              <div class="border-b border-gray-400">
+              </div> 
+              <h3 class="uppercase text-base text-center text-gray-700 py-4">
+                {{ matrixBlock.organization }} 
+              </h3>
           </div>
-          <div>&nbsp;</div><!-- safari hack -->
-
+          <div>&nbsp;</div>
 
       </a> 
 
