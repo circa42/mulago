@@ -26,9 +26,11 @@
       		{{ category.fellowsStrapline }}</em>
         </h3>
          <button class="rounded bg-blue-600 hover:bg-blue-300 xs:py-2 xs:px-4 lg:py-4 lg:px-8">
-            <a href="{{ category.programLink }}" class="text-white hover:text-blue-200">
-            	ABOUT THE PROGRAM
-            </a>
+         	{# {% for rel in items %} #}
+	            <a href="{{ category.programLink }}" class="text-white hover:text-blue-200">
+        	    	ABOUT THE PROGRAM
+    	        </a>
+            {# {% endfor %} #}
           </button>
     </div>
 

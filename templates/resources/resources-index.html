@@ -8,39 +8,39 @@
 
    
 <!-- Main content -->
-<div class="main-content">
+<div class="">
    
-    <div class="ideas-view-panel-1 m-ltgray clearfix" data-scroll-index="0">
-      <div class="container ideas clearfix">
-        <div class="row">
-          <h1 class="ideas-view">{{ entry.title }}</h1>
+    <div class="" data-scroll-index="0">
+      <div class="">
+        <div class="">
+          <h1 class="">{{ entry.title }}</h1>
         </div>
       </div>
     </div>
 
-    <div class="container ideas">
-        <div class="row row-home">
+    <div class="">
+        <div class="">
 
-            <div class="side-ideas-view col-sm-3"> 
+            <div class=""> 
               <hr>
 
-              {% if entry.ideasLinks | length %} 
+              {% if entry.links | length %} 
                 {% set category = entry.category.first() %}
                   {% if category %}
-                  <h4 class="cat col-sm-12 p22-demi">Links to {{ category.title }}</h4>
+                  <h4 class="">Links to {{ category.title }}</h4>
                   {% endif %} 
-                {% for row in entry.ideasLinks %}
+                {% for row in entry.links %}
                 <a href="{{ row.weblink | raw }}" target="_blank" >
-                 <h4 class="p22-demi a-m-blue">{{ row.nameOfLink }}</h4>
+                 <h4 class="">{{ row.nameOfLink }}</h4>
                 </a>
                 {% endfor %}
                <hr>
               {% endif %}
 
-              {% if entry.ideasDownload | length %}
-                {% for pdf in entry.ideasDownload %}
+              {% if entry.download | length %}
+                {% for pdf in entry.download %}
                <a href="{{ pdf.url }}" target="_blank" >
-                   <h4 class="p22-demi a-m-blue">Download document</h4>
+                   <h4 class="">Download document</h4>
                    <img src="{{ siteUrl }}assets/d-pdf.png" alt="" class="icon-download">
                </a>
                 {% endfor %}
@@ -48,17 +48,17 @@
               {% endif %}
 
                <h5>SHARE</h5>
-                    <div class="social-share">
+                    <div class="">
 
                       {% include "includes/_share" %}
 
                     </div>
             </div>
                   
-            <div class="col-sm-9 ideas">
-              <div class="md-col-12"> <hr>
-                   <h4 class="author col-xs-6 p22-demi">&nbsp;{# Author: {{ entry.ideasAuthor }} #}</h4>
-                 <h4 class="date col-xs-6 p22-demi">&nbsp; {{ entry.postDate|date("F d, Y") }}</h4>
+            <div class="">
+              <div class=""> <hr>
+                   <h4 class="">&nbsp;{# Author: {{ entry.ideasAuthor }} #}</h4>
+                 <h4 class="">&nbsp; {{ entry.postDate|date("F d, Y") }}</h4>
                   
               {% for matrixBlock in entry.ideasPost %}
                 {% switch matrixBlock.type %}
@@ -71,10 +71,10 @@
 
                   {% for image in matrixBlock.image %}
 
-                    <img class="full" src="{{ image.getUrl('ideas900x600') }}" alt="">
+                    <img class="" src="{{ image.getUrl('ideas900x600') }}" alt="">
                   {% endfor %}
 
-                 {% case "ideasVideo" %}
+                 {% case "videoBlock" %}
                   <h3>{{ matrixBlock.videoTitle }}</h3>
                  <div class="embed-responsive embed-responsive-16by9">
                    <iframe class="embed-responsive-item ideas" src="{{ matrixBlock.video | raw }}" frameborder="0" allowfullscreen></iframe>
@@ -89,11 +89,12 @@
 
       </div>
     
-       <div class="clearfix pagination-bottom"> <hr>
-	       <div class="clearfix paginate-view">
+       <div class=""> <hr>
+	       <div class="">
 	     {% set category = entry.category.first() %}
         {% if category %}
-         <a class="back-index" href="{{ url('resources') }}/{{ category.slug }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a><h5 class="back">Resources / {{ category.title }}</h5>
+
+          <a class="" href="{{ url('resources') }}/{{ category.slug }}"><img class="" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a><h5 class="">Resources / {{ category.title }}</h5>
         {% endif %}
 
              {% set params = {
@@ -104,18 +105,18 @@
                {% set nextposts = entry.getNext(params) %}
    
                {% if prevposts %}
-                 <a class="prev" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
+                 <a class="" href="{{ prevposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a>
                {% endif %}
 
                {% if nextposts %}
-                 <a class="next" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
+                 <a class="" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
                {% endif %}
 
                {% set allPosts = craft.entries.section('resources').ids() %}
 
                {% for post in allPosts %}
                  {% if entry.id == post %}
-                   <h5 class="number">No. {{ loop.index }} of {{ loop.length }}</h5>
+                   <h5 class="">No. {{ loop.index }} of {{ loop.length }}</h5>
                  {% endif %}
                {% endfor %}
 	       </div>

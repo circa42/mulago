@@ -49,7 +49,7 @@
  
   <div>
     <h4 class="xs:text-center md:text-right text-sm text-gray-600">
-      &copy; {{ now.year }} {{ copyright.text }}
+      &copy; {{ now |date('Y') }} {{ copyright.text }}
     </h4>
   </div>
 </footer>     

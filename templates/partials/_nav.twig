@@ -31,24 +31,19 @@
                 <li>
                   <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red 
                   {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+                  {% if row.linkUrl == 'fellows' %}
+                    {{ row.linkName }}
+                     <i class="fal fa-angle-down"></i>
+                    
+                  {% else %} 
                      {{ row.linkName }}
+                  {% endif %}
                   </a>
                 </li>
               </ul>
             </div>
           {% endfor %}
           
-{#           <div class="group text-center pl-2 xs:border-0 my-4">
-              <div class="group-hover:bg-gray-300 cursor-pointer uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red 
-              border-red xs:text-center p-2">
-                 Fellas
-                <a href="#" class="group-hover:text-red text-gray-800">
-                  drop
-                </a>
-              </div>
-              
-          </div>
- #}
 
 {# search #}
           <div class="border-r border-gray-400 text-center pl-2 xs:border-0 my-4">
@@ -58,7 +53,10 @@
           </div>
 
       </div>
-
+          <div> {#testing shim #}
+            {% include "partials/_dropnav.twig" %}
+          
+          </div>
     </div>
   </nav>
 </div>

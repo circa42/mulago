@@ -1,154 +1,90 @@
-
-{# ===== mulagofoundation.org :: pages/contact ===== #}
-
 {% extends "_layout" %}
-  {% set title = entry.title %}
+
 {% block content %}
+    <div class="flex flex-col bg-gray-400 py-16 px-12 mb-12">
 
-
-   
-<!-- Main content -->
-<div class="main-content">
-   
-    <div class="contact-panel-1 m-ltgray" data-scroll-index="0">
-      <div class="container">
-       <div class="row">
-        <h1 class="text-uppercase">CONTACT</h1>
+        <div class="relative">
+           <h1 class="text-gray-700 leading-none text-uppercase font-normal xs:text-4xl md:text-6xl md:text-8xl ml-8">
+            {{ entry.title }}
+          </h1>        
         </div>
-      </div>
     </div>
+<div class="flex-wrap flex m-12">
+	<div class="xs:w-full md:w-1/3 border-t border-gray-400 py-8 px-2 my-8">
+		<div class="my-4">
+			{% if entry.links |length %}
+				<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
+					//
+				</h5>
+				{% for row in entry.links %}
+					<div class="xs:text-center md:text-left">
+						<a href="{{ row.linkUrl }}" class="text-blue-600 hover:text-blue-400">{{ row.linkTitle }}</a>
+					</div>
+				{% endfor %}
+			{% endif %}
+			{% if entry.download |length %}
+				<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
+					//
+				</h5>
+			{% endif %}
+		</div>
 
-    <div class="container contact">
-        <div class="row row-home">
-              <div class="side-contact col-md-4 col-xs-12"> <hr>
-                  
-                  {{ address.copy }}
 
-          {% if entry.contacts | length %} 
-            {% for row in entry.contacts %}       
-                <hr>
-                  <h3 class="contact">{{ row.contactFor }}</h3>
-                <a class="contact" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
-                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
-                </a>
-            {% endfor %}
-          {% endif %}
+			<div class="xs:w-full md:w-1/3 xs:text-center md:text-left xs:mb-8 md:mb-4">
+		      <p class="text-gray-800 text-sm">
+		        {{ address.copy |nl2br }}
+		      </p>
+		      {% if entry.contacts | length %} 
+	            {% for row in entry.contacts %}       
+	                <hr>
+	                  <h3 class="text-gray-800 text-sm uppercase mt-4">{{ row.contactFor }}</h3>
+	                <a class="text-gray-800 hover:text-blue-800" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
+	                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+	                </a>
+	            {% endfor %}
+	          {% endif %}
+		    </div>
+	</div>
+	
+	<div class="xs:w-full md:w-2/3 border-t border-gray-400 p-8 my-8">
+		<div>
+			{% macro errorList(errors) %}
+			    {% if errors %}
+			        <ul class="errors">
+			            {% for error in errors %}
+			                <li class="uppercase text-red text-sm">{{ error }}</li>
+			            {% endfor %}
+			        </ul>
+			    {% endif %}
+			{% endmacro %}
 
-              </div>
-                  
-        <div class="col-md-8 col-xs-12">  <hr>
-        	<div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 clearfix left-container">
+			{% from _self import errorList %}
 
-{# Sprout form #}
-{% macro errorList(errors) %}
-          
-          {% if errors %}
-              <ul class="errors">
-                  {% for error in errors %}
-                      <li>{{ error }}</li>
-                  {% endfor %}
-              </ul>
-          {% endif %}
-        {% endmacro %}
+			<form method="post" action="" accept-charset="UTF-8">
+			    {{ csrfInput() }}
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" type="hidden" name="action" value="contact-form/send">
+			    {{ redirectInput('contact/thanks') }}
 
-        {% from _self import errorList %}
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="from-name">Your Name</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
 
-        {% if craft.request.getParam('message') == 'success' %}
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="from-email">Your Email</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
 
-          
-          {% set lastEntry = craft.sproutForms.lastEntry() %}
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="subject">Subject</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
 
-          {% if lastEntry %}
-
-            <p>Thanks <strong>{{ lastEntry.fullName }}</strong>! We'll be in touch soon!</p>
-
-          {% endif %}
-
-        {% else %}
-            
-      <form class="contact" method="post" accept-charset="utf-8">
-          {{ getCsrfInput() }}
-          <input type="hidden" name="action" value="sproutForms/entries/saveEntry">
-          <input type="hidden" name="handle" value="contact">
-          <input type="hidden" name="redirect" value="{{ siteUrl }}success?message=partner-request">
-
-          {{ craft.sproutInvisibleCaptcha.protect() }}
-
-          {# Email Field #}
-          <div class="field">
-            <div class="header">
-              <h4 class="text-center text-uppercase">
-              <label for="textEmail">Email<span class="a-m-orange">*</span></label></h4>
-            </div>
-            <div class="body">
-              <input class="p22-light" type="email" id="textEmail" name="fields[email]" required {%- if contact is defined %}value="{{ contact.email }}"{% endif -%}>
-            </div>
-            {% if contact is defined %}
-            <div class="error">
-              {{ errorList(contact.getErrors('email')) }}
-            </div>
-            {% endif %}
-          </div>
-
-          {# Full Name Field #}
-          <div class="field">
-            <div class="header">
-              <h4 class="text-center text-uppercase">
-              <label for="textName">Name<span class="a-m-orange">*</span></label></h4>
-            </div>
-            <div class="body">
-              {# Custom Field handles should be named in your inputs and added in the fields[] array #}
-              <input class="p22-light" type="text" id="textName" name="fields[fullName]" required {%- if contact is defined %}value="{{ contact.fullName }}"{% endif -%}>
-            </div>
-            {% if contact is defined %}
-            <div class="error">
-              {{ errorList(contact.getErrors('fullName')) }}
-            </div>
-            {% endif %}
-          </div>
-
-          {# Subject plain text Field #}
-          <div class="field" id="fields-subject-field">
-            <div class="heading">
-              <h4 class="text-center text-uppercase">
-              <label class="required" for="fields-subject">Subject<span class="a-m-orange">*</span></label></h4>
-            </div>
-            <div class="input">
-              <input class="text nicetext fullwidth p22-light" type="text" id="fields-subject" name="fields[subject]" {%- if contact is defined %}value="{{ contact.subject }}"{% endif -%}>
-            </div>
-            {% if contact is defined %}
-            <div class="error">
-              {{ errorList(contact.getErrors('subject')) }}
-            </div>
-            {% endif %}
-          </div>    
-
-          {# Message Field #}
-          <div class="field">
-            <div class="header">
-              <h4 class="text-center text-uppercase">
-              <label for="textareaMessage">Message<span class="a-m-orange">*</span></label></h4>
-            </div>
-            <div class="body">
-              <textarea class="text nicetext fullwidth p22-light textarea-message" rows="4" cols="50" id="fields-message" name="fields[message]" required  placeholder="">{%- if contact is defined %}{{ contact.message }}{% endif -%}</textarea>
-            </div>
-            {% if contact is defined %}
-            <div class="error">
-              {{ errorList(contact.getErrors('message')) }}
-            </div>
-            {% endif %}
-          </div>
-
-             <input class="btn btn-send p22-ltp m-blue" type="submit" value="Send">
-              
-            </form>
-{% endif %}   
-             
-            </div>
-        </div>
-      	</div> 
-    </div>
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="message">Message</label></h3>
+			    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
+			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+				<div class="flex justify-center mt-8">
+			    	<input class="rounded-full bg-blue-800 hover:bg-blue-600 text-white h-16 w-16 flex items-center justify-center mb-8" type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
-
 {% endblock %}
