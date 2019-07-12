@@ -22,20 +22,15 @@
  {% else %}
      <script src="{{ siteUrl }}assets/js/vue.min.js"></script> 
  {% endif %}   
-<script>
-  new Vue({
-    el: '#drop',
-    data: {
-      open: false,
-    },
-    methods: {
-      toggle() {
-        this.open = !this.open
-      }
-    }
-  })
+
+
+{##} <script>
+  
+ 
 </script>
-<script>
+ 
+
+ <script>
   new Vue({
     el: '#mobile',
     data: {
@@ -48,4 +43,36 @@
     }
   })
 </script>
-
+{# <script> 
+  new Vue({
+    el: '#drop',
+    data: {
+      open: false,
+    },
+    methods: {
+      toggle() {
+        this.open = !this.open
+      }
+    }
+  })
+</script>  #}
+{# 
+<script>
+  new Vue({
+    el: '#mobile',
+    data: {
+      openMobile: false,
+      openDrop: false,
+    },
+    methods: {
+      toggleMobile() {
+        this.openMobile = !this.openMobile
+      },
+      toggleDrop() {
+        this.openDrop = !this.openDrop
+      },
+    }
+  })
+</script>
+ #}
+ 
