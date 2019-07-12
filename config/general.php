@@ -44,7 +44,7 @@ return [
     'staging' => [
         // Set this to `false` to prevent administrative changes from being made on staging
         'allowAdminChanges' => false,
-        'siteUrl'  => 'http://dev.mulagofoundation.org/',
+        'siteUrl'  => 'http://165.227.1.52/',
     
     ],
 
