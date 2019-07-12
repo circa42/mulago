@@ -1,11 +1,12 @@
 
-
+{# establishes if the user is on that page #}
 {% set segment = craft.app.request.segments|first %}
 
 
 
 
-<div class="font-sans antialiased w-full z-50 bg-white opacity-90 shadow-lg fixed h-24" id="mobile">
+<div class="font-sans antialiased w-full z-40 bg-white md:opacity-90 shadow-lg fixed h-24" id="mobile">
+
   <nav class="flex justify-between flex-wrap p-6">
     <div class="flex flex-shrink text-white mr-6">
       <div class="h-8 mr-2 flex-shrink xs:w-32 lg:w-56 m-auto">
@@ -22,28 +23,71 @@
     
 
     <div :class="open ? 'block': 'hidden'" class="bg-white w-full flex-grow md:flex md:items-center md:w-auto">
-        
-      <div class="md:flex md:flex-grow justify-end">
+        <div class="md:flex md:flex-grow justify-end">
           
+
+{# 
           {% for row in navigation.navTable %}
-            <div class="text-center pl-2 xs:border-0 my-4">
-              <ul class="list-none">
-                <li>
-                  <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red 
-                  {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
-                  {% if row.linkUrl == 'fellows' %}
-                    {{ row.linkName }}
-                     <i class="fal fa-angle-down"></i>
-                    
-                  {% else %} 
-                     {{ row.linkName }}
-                  {% endif %}
-                  </a>
-                </li>
-              </ul>
+            <div id="dropdown">
+              <div class="text-center pl-2 xs:border-0 my-4">                    
+                  
+                    {% if (row.linkUrl == true) and (row.subMenu == false) %}                     
+                        <div>
+                          <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:border-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+                            {{ row.linkName }}
+                          </a>
+                        </div>
+
+                    {% elseif row.linkUrl == false %}  
+                      <div @click="toggle" class="cursor-pointer pb-2">
+                          <a class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:border-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+                            {{ row.linkName }}
+                          </a>
+                      </div>
+                    {% elseif row.subMenu == true %}
+                      <div :class="open ? 'block': 'hidden'" class="absolute">
+                        <a href="/fellows/rainer-fellows" class="text-xs uppercase no-underline block text-gray-darkest hover:text-blue-600 hover:bg-gray-100">
+                          <div class="block bg-white border-gray-400 border-b-2 py-2 px-8">
+                            {{ row.linkName }}
+                          </div>
+                        </a>
+                      </div>
+                    {% endif %}
+              </div>
             </div>
           {% endfor %}
           
+ #}
+          
+
+
+ 
+
+          {% for row in navigation.navTable %}
+              <div class="text-center pl-2 xs:border-0 my-4">                    
+                  
+                    {% if row.linkUrl == 'fellows' %}                     
+                       {% include "partials/_dropnav.twig" %} 
+                     {% else %}   
+                      <div>
+                        <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:border-red 
+                      {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+                          {{ row.linkName }}
+                        </a>
+                      </div>
+                  {% endif %}
+              </div>
+          {% endfor %}
+          
+
+ 
+
+
+
+
+
+
+
 
 {# search #}
           <div class="border-r border-gray-400 text-center pl-2 xs:border-0 my-4">
@@ -53,88 +97,10 @@
           </div>
 
       </div>
-          <div> {#testing shim #}
-            {% include "partials/_dropnav.twig" %}
-          
-          </div>
+
     </div>
   </nav>
 </div>
 {# bumper div to prevent content under the menu #}
 <div class="pb-24 bg-white"></div>
-
-
-
-
-
-  {# dropdown - works on click 
-
-           <div id="app" class="bg-gray-300">
-            <dropdown-link>
-              <div slot="link" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red {% if segment == 'fellows' %} border-red {% endif %} xs:text-center p-2">
-                Our Fellows
-              </div>
-              <nav slot="dropdown" class="bg-white overflow-hidden">
-                  <a href="fellows/henry-fellows" class="block uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red border-red xs:text-center p-2">
-                    Henry Fellows
-                  </a>
-                  <a href="fellows/rainer-fellows" class="block uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-t-2 border-transparent hover:border-red border-red xs:text-center p-2">
-                    Rainer Fellows
-                  </a>
-              </nav>
-            </dropdown-link> 
-          </div>
-
-<div type="text/x-template" id="dropdown-link-template">
-  <div class="relative">
-     <div role="button" class="inline-block select-none" @click="open = !open">
-      <slot name="link"></slot>
-    </div>
-    <div class="" v-show="open">
-      <slot name="dropdown"></slot>
-    </div>
-  </div> 
-
-
-
-{% js %}
-  Vue.component('dropdown-link', {
-  template: '#dropdown-link-template',
-  data() {
-    return {
-      open: false
-    }
-  }
-})
-
-var app = new Vue({
-  el: '#app'
-})
-{% endjs %}
-#}
-
-
-
-
-
-
-
-{% js %}
-
-new Vue({
-  el: '#mobile',
-  data: {
-    open: false,
-  },
-  methods: {
-    toggle() {
-      this.open = !this.open
-    }
-  }
-})
-
-
-
-
-{% endjs %}
 

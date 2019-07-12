@@ -8,7 +8,7 @@
 <div class="">
 
 
-<div class="text-gray-800 text-2xl font-light leading-relaxed">
+<div class="text-gray-800 text-xl font-light leading-relaxed">
 
 {% for matrixBlock in entry.fellowsEntry %}
   {% if matrixBlock.type == 'entryContent' %}
@@ -38,7 +38,7 @@
               {% endfor %}
             {% endif %}
 
-               <a class="no-underline text-blue-600 hover:text-blue-400 font-semibold text-xl" href="http://{{ matrixBlock.webLink }}" target="_blank" >
+               <a class="no-underline text-blue-600 hover:text-blue-400 font-semibold text-lg" href="http://{{ matrixBlock.webLink }}" target="_blank" >
                  <h4 class="py-4">View Website 
                   <span class="text-sm font-thin pl-2">
                     <i class="fas fa-external-link-alt"></i>

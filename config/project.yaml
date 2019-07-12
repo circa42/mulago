@@ -58,7 +58,7 @@ categoryGroups:
               4da52f8a-a596-4504-8358-230cabf324f6:
                 required: false
                 sortOrder: 2
-dateModified: 1562716430
+dateModified: 1562892859
 email:
   fromEmail: sara@mulagofoundation.org
   fromName: Mulago
@@ -549,10 +549,16 @@ fields:
           handle: linkUrl
           width: ''
           type: singleline
+        col6:
+          heading: 'Sub menu'
+          handle: subMenu
+          width: ''
+          type: lightswitch
       defaults:
         -
           col1: ''
           col3: ''
+          col6: ''
       columnType: text
     contentColumnType: text
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
@@ -717,6 +723,36 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
+  34bd3063-e691-4faf-90cc-bb2113cc9e40:
+    name: 'Sub Nav Table'
+    handle: subNavTable
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Add a row'
+      maxRows: ''
+      minRows: ''
+      columns:
+        col1:
+          heading: 'Sub Link Name'
+          handle: subLinkName
+          width: ''
+          type: singleline
+        col2:
+          heading: 'Sub Link URL'
+          handle: subLinkUrl
+          width: ''
+          type: singleline
+      defaults:
+        -
+          col1: ''
+          col2: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
 globalSets:
   6ab33fd5-4e12-4ade-870c-1e6b2f14888c:
     name: Address
@@ -796,6 +832,9 @@ globalSets:
               63165945-f5bb-41b3-81d9-cb67bb99d022:
                 required: false
                 sortOrder: 1
+              34bd3063-e691-4faf-90cc-bb2113cc9e40:
+                required: false
+                sortOrder: 2
 imageTransforms:
   7a5c96f2-a949-4959-92a6-4c7b48694cae:
     format: null
@@ -3126,19 +3165,19 @@ siteGroups:
     name: 'Mulago (en-US)'
 sites:
   9256c07c-fdaa-41a1-a0a6-0fe587708517:
-    name: 'Mulago (en-US)'
+    siteGroup: 05fba193-3b51-48c5-9a91-95ac237f45a6
+    name: Mulago
     handle: en_us
     language: en-US
     hasUrls: true
-    baseUrl: '{ siteUrl }'
+    baseUrl: '@rootUrl'
     sortOrder: 1
     primary: true
-    siteGroup: 05fba193-3b51-48c5-9a91-95ac237f45a6
 system:
   edition: pro
   live: true
   name: Mulago
-  timeZone: UTC
+  timeZone: America/Los_Angeles
   schemaVersion: 3.1.28
 tagGroups:
   eeb8b6dd-a651-4913-b071-87f777b48561:

@@ -1,45 +1,26 @@
-<div id="app">
-  <nav class="flex flex-wrap items-center bg-gray-100 p-6 font-sans antialiased">
-    <div class="flex items-center flex-no-shrink text-gray-600 mr-6">
-      <span class="font-bold italic text-xl tracking-tight">TicketAssist</span>
-    </div>
-    <div class="flex items-center">
-      <dropdown-link>
-        <span slot="link" class="appearance-none flex items-center inline-block text-gray-600">
-        
-        </span>
-        <div slot="dropdown" class="bg-white shadow rounded border overflow-hidden">
-          <a href="#" class="no-underline block px-4 py-3 border-b text-gray-800 bg-white hover:text-gray-600 hover:bg-blue">Henry</a>
-          <a href="#" class="no-underline block px-4 py-3 border-b text-gray-800 bg-white hover:text-gray-600 hover:bg-blue">Rainer</a>
+<div id="drop" class="z-50 bg-white">
+
+  <button class="">
+      <a @click="toggle" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:border-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+      {{ row.linkName }}
+      </a>
+  </button>
+
+  <div :class="open ? 'block': 'hidden'" class="absolute"> 
+     
+     <a href="/fellows/rainer-fellows" class="text-xs uppercase no-underline block text-gray-darkest hover:text-blue-600 hover:bg-gray-100">
+        <div class="block bg-white border-gray-400 border-b-2 py-2 px-8">
+          Rainer-static
         </div>
-      </dropdown-link>
-    </div>
-  </nav>
-</div>
-<script type="text/x-template" id="dropdown-link-template">
-  <div class="relative">
-    <div role="button" class="inline-block select-none" @click="open = !open">
-      <slot name="link"></slot>
-    </div>
-    <div class="absolute right-0 w-full mt-2" v-show="open">
-      <slot name="dropdown"></slot>
-    </div>
+      </a>
+          
+      <a href="/fellows/henry-fellows" class="text-xs uppercase no-underline block text-gray-darkest hover:text-blue-600 hover:bg-gray-100">
+        <div class="block bg-white border-gray-400 py-2 px-8">
+          henry-static
+        </div>
+      </a> 
+
   </div>
-</script>
 
+</div>
 
-{% js %}
-  Vue.component('dropdown-link', {
-  template: '#dropdown-link-template',
-  data() {
-    return {
-      open: false
-    }
-  }
-})
-
-var app = new Vue({
-  el: '#app'
-})
-
-{% endjs %}

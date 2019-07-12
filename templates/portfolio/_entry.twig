@@ -9,7 +9,7 @@
 {% cache %}
    
 <!-- Main content -->
-<div class="text-gray-800 text-2xl font-light leading-relaxed">
+<div class="text-gray-800 text-xl font-light leading-relaxed">
 
 {% for matrixBlock in entry.portfolioEntry %}
   {% if matrixBlock.type == 'entryContent' %}
@@ -58,7 +58,7 @@
                   </div>
                 {% endfor %}
               {% endif %}
-            <div class=""> <hr>
+            <div class="text-lg"> <hr>
               {{ matrixBlock.copy }}
             </div>
 

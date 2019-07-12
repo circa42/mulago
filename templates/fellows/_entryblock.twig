@@ -2,17 +2,17 @@
     {% if matrixBlock.type == 'entryContent' %}
 
       <a href="{{ entry.url }}" class=""> 
-         <div class="bg-white p-4 m-4">
+         <div class="bg-white max-w-xxs p-4 m-4">
               {% for image in matrixBlock.fellowImage %} 
                  <img src="{{ image.getUrl('sq300x300') }} " alt="" class="image-portfolio">
                {% endfor %} 
-              <h3 class="uppercase text-xl text-center text-gray-700 py-4">
+              <h3 class="uppercase text-lg text-center text-gray-700 py-4">
                 {{ entry.title }}
               </h3>
               
               <div class="border-b border-gray-400">
               </div> 
-              <h3 class="uppercase text-base text-center text-gray-700 py-4">
+              <h3 class="uppercase text-sm text-center text-gray-700 py-4">
                 {{ matrixBlock.organization }} 
               </h3>
           </div>

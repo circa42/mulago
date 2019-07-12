@@ -6,7 +6,7 @@ module.exports = {
     screens: {
 		xs: '300px',
 		sm: '640px',
-		md: '820px',
+		md: '920px',
 		lg: '1024px',
 		xl: '1280px',
     },
@@ -215,6 +215,7 @@ module.exports = {
 		screen: '100vh',
     },
     maxWidth: {
+		xxs: '16rem',
 		xs: '20rem',
 		sm: '24rem',
 		md: '28rem',
