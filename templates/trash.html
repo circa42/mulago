@@ -5,43 +5,88 @@
 <div class="h-screen">
   
 
-	<div class="topnav" id="myTopnav">
-		<div class="flex flex-shrink text-white mr-6">
-			<div class="h-8 mr-2 flex-shrink xs:w-32 lg:w-56 m-auto">
-				<a href="{{ siteUrl }}">
-					<img src="{{ siteUrl }}assets/img/mulago-signature600.png" alt="{{ tagline.text }}">
-				</a>
-			</div>
-		</div>
-	<a href="#">How we fund</a>
-	<a href="#">Our Portfolio</a>
-		<div class="dropdown">
-			<button class="dropbtn">Our Fellows
-				<i class="fa fa-caret-down"></i>
-			</button>
-			<div class="dropdown-content">
-				<a href="#">Henry</a>
-				<a href="#">Rainer</a>
-			</div>
-		</div>
-	<a href="#">About</a>
-	<a href="#">Resources</a>
-	<a href="#">Contact</a>
+<div class="relative group">
+  <div class="flex items-center cursor-pointer text-sm text-blue border border-white border-b-0  group-hover:border-grey-light rounded-t-lg py-1 px-2">
+    <img src="https://placekitten.com/30/30" class="rounded-full mr-2">
+    John Doe
+    <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+  </div>
+  <div class="items-center absolute border border-t-0 rounded-b-lg p-1 bg-white p-2 invisible group-hover:visible w-full">
+   <a href="#" class="px-4 py-2 block text-black hover:bg-grey-lighter">View Profile</a>
+   <a href="#" class="px-4 py-2 block text-black hover:bg-grey-lighter">Edit Profile</a>
+   <hr class="border-t mx-2 border-grey-ligght">
+   <a href="#" class="px-4 py-2 block text-black hover:bg-grey-lighter">Logout</a>
+  </div>
+</div>
 
-	<a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+	<div class="mt-32 flex flex-wrap bg-white overflow-hidden font-sans uppercase text-gray-800" id="myTopnav">
+		{# <div class="flex flex-shrink text-white mr-6">
+					<div class="h-8 mr-2 flex-shrink xs:w-32 lg:w-56 m-auto">
+						<a href="{{ siteUrl }}">
+							<img src="{{ siteUrl }}assets/img/mulago-signature600.png" alt="{{ tagline.text }}">
+						</a>
+					</div>
+				</div> #}
+	<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+		How we fund
+	</a>
+	<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+		Our Portfolio
+	</a>
+		{# <div class="overflow-hidden text-center">
+					<button class="uppercase uppercase no-underline text-center text-xs py-2 px-4">
+							Our Fellows
+						<i class="fal fa-angle-down"></i>
+					</button>
+					<div class="dropdown-content">
+						<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+							Henry
+						</a>
+						<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+							Rainer
+						</a>
+					</div>
+				</div> #}
+	<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+		About
+	</a>
+	<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+		Resources
+	</a>
+	<a href="#" class="uppercase no-underline text-center text-xs py-2 px-4">
+		Contact
+	</a>
+
+	<a href="javascript:void(0);" class="icon xs:block md:hidden" onclick="myFunction()"><i class="fal fa-bars"></i></a>
 	</div>  
 
 </div>
 
 
 {% css %}
- /* Add a black background color to the top navigation */
+ /* Add a black background color to the top navigation 
 .topnav {
   background-color: #333;
   overflow: hidden;
 }
-
-/* Style the links inside the navigation bar */
+*/
+/* Style the links inside the navigation bar 
 .topnav a {
   float: left;
   display: block;
@@ -51,25 +96,25 @@
   text-decoration: none;
   font-size: 17px;
 }
-
-/* Add an active class to highlight the current page */
+*/
+/* Add an active class to highlight the current page 
 .active {
   background-color: #4CAF50;
   color: white;
 }
-
-/* Hide the link that should open and close the topnav on small screens */
+*/
+/* Hide the link that should open and close the topnav on small screens 
 .topnav .icon {
   display: none;
 }
-
-/* Dropdown container - needed to position the dropdown content */
+*/
+/* Dropdown container - needed to position the dropdown content 
 .dropdown {
   float: left;
   overflow: hidden;
 }
-
-/* Style the dropdown button to fit inside the topnav */
+*/
+/* Style the dropdown button to fit inside the topnav 
 .dropdown .dropbtn {
   font-size: 17px;
   border: none;
@@ -80,8 +125,8 @@
   font-family: inherit;
   margin: 0;
 }
-
-/* Style the dropdown content (hidden by default) */
+*/
+/* Style the dropdown content (hidden by default) 
 .dropdown-content {
   display: none;
   position: absolute;
@@ -90,8 +135,8 @@
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
-/* Style the links inside the dropdown */
+*/
+/* Style the links inside the dropdown 
 .dropdown-content a {
   float: none;
   color: black;
@@ -100,13 +145,13 @@
   display: block;
   text-align: left;
 }
-
-/* Add a dark background on topnav links and the dropdown button on hover */
+*/
+/* Add a dark background on topnav links and the dropdown button on hover 
 .topnav a:hover, .dropdown:hover .dropbtn {
   background-color: #555;
   color: white;
 }
-
+*/
 /* Add a grey background to dropdown links on hover */
 .dropdown-content a:hover {
   background-color: #ddd;

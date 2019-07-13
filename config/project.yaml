@@ -58,7 +58,7 @@ categoryGroups:
               4da52f8a-a596-4504-8358-230cabf324f6:
                 required: false
                 sortOrder: 2
-dateModified: 1562892859
+dateModified: 1562970916
 email:
   fromEmail: sara@mulagofoundation.org
   fromName: Mulago
@@ -2649,13 +2649,6 @@ routes:
       - /resources/tools
     uriPattern: /resources/tools
     sortOrder: 8
-    siteUid: null
-  f9d25125-59a5-48c0-8fef-6dd0dc6edc2d:
-    template: pages/search
-    uriParts:
-      - search
-    uriPattern: search
-    sortOrder: 9
     siteUid: null
 sections:
   b6c5f243-860d-43ed-81bb-d1b4f6af6d19:

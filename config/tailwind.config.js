@@ -84,6 +84,7 @@ module.exports = {
     borderColor: theme => ({
 		...theme('colors'),
 		default: theme('colors.gray.300', 'currentColor'),
+		["responsive", "hover", "focus", "group-hover"],
     }),
     borderRadius: {
 		none: '0',
