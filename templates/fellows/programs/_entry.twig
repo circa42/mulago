@@ -1,0 +1,62 @@
+
+{# ===== mulagofoundation.org :: fellows/programs/{slug} ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+{% cache %}  
+
+   
+<!-- Main content -->
+
+{% for matrixBlock in entry.panels %}
+  {% if matrixBlock.type == 'panelHeader' %}
+  
+
+
+      
+{# featured image + title #}         
+      <div class="flex flex-col z-40">
+
+            <div class="relative m-auto">     
+             {% for image in matrixBlock.image %}
+              <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
+            {% endfor %}
+            <div class="absolute bottom-0 left-0">
+              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl ml-8">
+              {{ matrixBlock.heading1 }}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+
+
+{% elseif matrixBlock.type == 'copyContent' %}  
+
+    <div class="max-w-6xl xs:mb-4 lg:mb-6 lg:mb-12 p-4 py-12 m-auto">
+        <h3 class="text-gray-600 xs:text-2xl lg:text-3xl uppercase border-b border-gray-400">
+          {{ matrixBlock.header3 }}
+        </h3>
+        <div class="text-gray-800 leading-relaxed text-lg mt-2">
+          {{ matrixBlock.copy |replace
+
+          	({
+	          	'<ul>': '<ul class=“list-disc”>',
+	          	'<p>': '<p class=“mb-10”>',
+	          	'<a href': '<a class="text-gray-800 hover:text-blue-600 text-bold underline" href',
+	          	'<h3>': '<h3 class="text-4xl mt-4">',
+	          	'<ol>': '<ol class="list-decimal my-4 mx-12">',
+				'<ul>': '<ul class="list-disc my-4 mx-12">',
+          	})|raw }}
+
+        </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
+
+
+
+{% endcache %}       
+{% endblock %}

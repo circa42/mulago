@@ -10,7 +10,7 @@ gulp.task('css', function () {
         .pipe( postcss([ 
             require('precss'), 
             require('autoprefixer'),
-            tailwindcss('./config/tailwind.js')
+            tailwindcss('./config/tailwind.config.js')
             ]) 
             )
         .pipe( sourcemaps.write('.') )

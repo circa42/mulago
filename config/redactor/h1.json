@@ -1,0 +1,5 @@
+{
+	"buttons": ["formatting"],
+	"toolbarFixed": true,
+	"formatting": ["h1"]
+}

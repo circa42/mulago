@@ -1,0 +1,27 @@
+
+{% for image in matrixBlock.image %}      
+
+  <div class="bg-cover bg-auto bg-center" 
+  style="background-image: url( {{ image.getUrl('lg1600x600') }}">
+    <div class="xs:p-8 md:p-16 lg:p-32" data-scroll-index="1">
+      {% if matrixBlock.pageLink |length %}
+      <a class="" href="{{ matrixBlock.pageLink }}">
+      {% endif %}
+        <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl">
+        {{ matrixBlock.heading1 |nl2br }}
+        </h2>
+      {% if matrixBlock.pageLink |length %}
+      </a>
+      {% endif %}
+    </div>
+ </div> 
+{% endfor %}
+
+<div class="max-w-3xl text-center font-light text-gray-700 m-auto xs:my-8 md:my-16 lg:my-20" data-scroll-index="0">
+  <h2 class="xs:text-xl md:text-2xl lg:text-4xl">
+  {{ matrixBlock.heading2 }}
+  </h2>
+  <p class="xs:text-base md:text-xl lg:text-2xl py-8"> 
+  {{ matrixBlock.copy }}
+  </p>
+</div>

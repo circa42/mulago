@@ -1,0 +1,29 @@
+
+{# ===== mulagofoundation.org :: mulago.org/index ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+
+
+   
+{# <!-- Main content --> #}
+  {% for matrixBlock in entry.panelsHome %}
+    {% switch matrixBlock.type %}
+
+      {% case "panel1" %}
+        {% include "partials/_homepanel.twig" %}
+  
+      {% case "panel2" %}
+        {% include "partials/_homepanel.twig" %}
+      
+      {% case "panel3" %}
+        {% include "partials/_homepanel.twig" %}
+
+      {% case "panel4" %}
+        {% include "partials/_homepanel.twig" %}
+ 
+
+    {% endswitch %}
+  {% endfor %}
+{% endblock %}

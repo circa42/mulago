@@ -1,0 +1,70 @@
+
+{# ===== mulagofoundation.org :: how-we-design/index ===== #}
+
+{% extends "_layout" %}
+
+{% set title = entry.title %}
+
+{% block content %}
+
+  {% cache %}
+    
+       
+    <!-- Main content -->
+    <div class="main-content">
+
+    {% for matrixBlock in entry.panels %}
+      {% if matrixBlock.type == 'panelContent' %}
+
+        <div class="fund-panel-1 mobile-top-panel-1 m-ochre clearfix" data-scroll-index="{{ matrixBlock.scrollTo }}">
+          <div class="container clearfix">
+            <h1 class="funding">{{ matrixBlock.heading1 }}</h1>
+          {% for image in matrixBlock.image %}
+            <img class="funding" src="{{ image.getUrl('h600x310') }}" alt="{{ image.title }}">
+          {% endfor %}
+          </div>
+        </div>
+
+        <div class="container design">
+            <div class="row row-home">
+                <div class="col-md-10 col-md-offset-1">
+
+                  {{ matrixBlock.copy }}
+               
+                </div>
+            </div>
+        </div>
+
+      {% endif %}
+    {% endfor %}
+    
+    {% switch craft.request.getSegment(1) %}
+      {% case "conservation-fellows-program" %}
+        {% set categories = craft.categories.group('conservationFellowsPast').limit(1).find() %}
+      {% default %}
+        {% set categories = craft.categories.group('fellowsPast').limit(1).find() %}
+    {% endswitch %}
+    
+    {% for cat in categories %}
+      {% switch craft.request.getSegment(1) %}
+        {% case "conservation-fellows-program" %}
+          {% set currentButtonUrl = url('conservation-fellows/current') %}
+          {% set currentButtonLabel = 'VIEW CURRENT FELLOWS' %}
+          {% set pastButtonUrl = url('conservation-fellows-past/' ~ cat.slug ) %}
+          {% set pastButtonLabel = 'VIEW PAST FELLOWS' %}
+
+        {% default %}
+          {% set currentButtonUrl = url('fellows/current') %}
+          {% set currentButtonLabel = 'VIEW CURRENT FELLOWS' %}
+          {% set pastButtonUrl = url('fellows-past/' ~ cat.slug ) %}
+          {% set pastButtonLabel = 'VIEW PAST FELLOWS' %}
+      {% endswitch %}
+      
+      <div class="btn-past">
+        <a href="{{ currentButtonUrl }}" class="past-fellows m-mdgray"><h4>{{ currentButtonLabel }}</h4></a>
+        <a href="{{ pastButtonUrl }}" class="past-fellows m-mdgray"><h4>{{ pastButtonLabel }}</h4></a>
+      </div>
+    {% endfor %} 
+
+  {% endcache %}       
+{% endblock %}

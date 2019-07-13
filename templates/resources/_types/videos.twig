@@ -1,0 +1,27 @@
+{% extends "_layout" %}
+
+    {# Videos #}
+
+{% block content %}
+
+{% set resourcesQ = craft.entries.section('resources') %}
+{% set videos = resourcesQ.all() %}
+
+{# videos #}
+  <div class="bg-gray-200 p-12">
+
+    <div class="">
+      <div class="flex flex-wrap m-8">
+        
+          {% for entry in videos %}
+            {% if entry.type == 'videos' %}
+              <a href="{{ entry.url }}">
+                {% include "resources/partials/_video-block.twig" %}
+              </a>
+            {% endif %}  
+          {% endfor %}
+      </div>
+
+    </div> 
+  </div> 
+{% endblock %}

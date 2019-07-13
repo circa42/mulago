@@ -1,0 +1,79 @@
+{# ===== mulagofoundation.org :: fellows/index ===== #}
+{% extends "_layout" %}
+ {% set title = ('Fellows') %}
+ {% block content %}
+
+{% set url = craft.app.request.segments|last %}
+{% if url == 'fellows' %}
+	{% redirect '/' %} 
+{% endif %}
+  
+<!-- Main content -->
+<div class="">
+
+	<div class="" data-scroll-index="0">
+		<div class="w-100 bg-gray-400 pt-24 px-12">
+			<h1 class="uppercase tracking-tighter text-white leading-none text-shadow font-light xs:text-4xl md:text-6xl lg:text-10xl">
+				{{ category }}
+			</h1>
+		</div>
+	</div>
+
+
+<!-- strapline -->
+    <div class="p-16">
+      	<h3 class="xs:text-base md:text-xl lg:text-3xl leading-relaxed italic text-gray-700 mb-8"> 
+      		{{ category.fellowsStrapline }}</em>
+        </h3>
+         <button class="rounded bg-blue-600 hover:bg-blue-300 xs:py-2 xs:px-4 lg:py-4 lg:px-8">
+         	{% set entries = craft.entries()
+			    .programLink(':notempty:')
+			    .relatedTo(category)
+			    .all() %}
+         	{% set relatedEntries = category.programLink %}
+	            {% for rel in relatedEntries %}
+	            	
+	            <a href="{{ rel.url }}" class="text-white hover:text-blue-200">
+        	    	ABOUT THE PROGRAM
+    	        </a>
+            	{% endfor %} 
+          </button>
+    </div>
+
+<div class="bg-gray-200"> <!--container -->
+
+
+		{% for tag in craft.tags | reverse %}
+		  {% set entries = craft.entries({
+		        relatedTo: [
+		          'and',
+		          { targetElement: category },
+		          { targetElement: tag },
+		          ],
+		          limit: (null),
+		      }) 
+		    %}
+
+
+		  {% if entries is not empty %}
+		    <div class="bg-blue-700 mb-4 text-center py-4">
+		      <h3 class="text-white text-base uppercase tracking-wider">
+		      	{{ tag.slug }} {{ category.title }}
+		      </h3>
+		    </div>             
+		  {% endif %}
+		  <div class="flex flex-wrap justify-center px-16" id="entries">
+		    {% for entry in craft.entries({
+		      relatedTo: {
+		        targetElement: ['and', category, tag],
+		      }}
+		        ) %}
+		    {% include 'fellows/_entryblock.twig' %} 
+		    {% endfor %} 
+		  </div>
+		{% endfor %}
+
+</div><!-- end container -->
+ 
+
+{% endblock %}

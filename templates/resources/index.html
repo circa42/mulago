@@ -1,0 +1,127 @@
+
+{# ===== mulagofoundation.org :: resources/index ===== #}
+
+{% extends "_layout" %}
+  {% set title = ('Resources') %}
+{% block content %}
+
+
+{% set resourcesQ = craft.entries.section('resources') %}
+{% set entries = resourcesQ.all() %}
+
+{% set articles = resourcesQ.type('articles').limit(3).all() %}
+{% set videos = resourcesQ.type('videos').limit(3).all() %}
+{% set tools = resourcesQ.type('tools').limit(3).all() %}
+
+
+<div class="bg-gray-200">
+
+{# articles #}
+  
+  <div class="text-center bg-blue-600 py-4 mb-4">
+    <div class="text-white uppercase tracking-wider">
+        <a href="/resources/articles/">
+          <h2 class="text-xl">
+            Articles 
+          </h2>
+        </a>
+    </div>
+  </div>
+
+<div class="flex justify-center">
+
+  <div class="flex flex-wrap m-8">
+    {% for entry in articles %}
+      {% include "resources/partials/_article-block.twig" %}
+    {% endfor %}
+  </div>
+
+</div>
+
+<div class="flex justify-center">
+  <div class="p-8">
+    <a href="/resources/articles/">
+      <button class="text-white bg-blue-800 px-4 py-2">
+        See more »
+      </button>
+    </a>
+  </div>  
+</div>
+
+{# -------------- #}
+
+
+{# videos #}
+  <div class="text-center bg-blue-600 py-4 mb-4">
+    <div class="text-white uppercase tracking-wider">
+        <a href="/resources/videos/">
+          <h2 class="text-xl">
+            Videos 
+          </h2>
+        </a>
+    </div>
+  </div>
+
+  <div class="flex flex-wrap m-8">
+    {% for entry in videos %}
+      {% include "resources/partials/_video-block.twig" %}
+    {% endfor %}
+  </div>
+
+<div class="flex justify-center">
+  <div class="p-8">
+    <a href="/resources/videos/">
+      <button class="text-white bg-blue-800 px-4 py-2">
+        See more »
+      </button>
+    </a>
+  </div>  
+</div>
+
+
+{# -------------- #}
+
+
+{# Tools #}
+
+  
+  <div class="text-center bg-blue-600 py-4 mb-4">
+    <div class="text-white uppercase tracking-wider">
+        <a href="/resources/tools/">
+          <h2 class="text-xl">
+            Tools 
+          </h2>
+        </a>
+    </div>
+  </div>
+
+<div class="flex justify-center">
+
+  <div class="flex flex-wrap m-8">
+    {% for entry in tools %}
+      {% include "resources/partials/_tool-block.twig" %}
+    {% endfor %}
+  </div>
+
+</div>
+
+<div class="flex justify-center">
+  <div class="p-8">
+    <a href="/resources/tools/">
+      <button class="text-white bg-blue-800 px-4 py-2">
+        See more »
+      </button>
+    </a>
+  </div>  
+</div>
+
+{# -------------- #}
+      
+
+</div>
+
+
+
+{% endblock %} 
+
+

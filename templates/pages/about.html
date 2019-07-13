@@ -1,0 +1,98 @@
+
+{# ===== mulagofoundation.org :: about ===== #}
+
+{% extends "_layout" %}
+  {% set title = entry.title %}
+{% block content %}
+{% cache %}  
+
+   
+<!-- Main content -->
+
+{% for matrixBlock in entry.panels %}
+  {% if matrixBlock.type == 'panelHeader' %}
+  
+
+
+      
+{# featured image + title #}         
+      <div class="flex flex-col z-40">
+
+            <div class="relative m-auto">     
+             {% for image in matrixBlock.image %}
+              <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
+            {% endfor %}
+            <div class="absolute bottom-0 left-0">
+              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl ml-8">
+              {{ matrixBlock.heading1 }}
+            </h1>
+          </div>
+        </div>
+      </div>
+
+
+
+{% elseif matrixBlock.type == 'copyContent' %}  
+
+    <div class="max-w-6xl xs:mb-4 lg:mb-6 lg:mb-12 p-4 py-12 m-auto">
+        <h3 class="text-gray-600 xs:text-2xl lg:text-3xl uppercase border-b border-gray-400">
+          {{ matrixBlock.header3 }}
+        </h3>
+        <div class="text-gray-800 leading-relaxed text-lg mt-2">
+          {{ matrixBlock.copy |nl2br|replace
+
+            ({
+              '<ul>': '<ul class=“list-disc”>',
+              '<p>': '<p class=“mb-10”>',
+              '<a href': '<a class="text-gray-800 hover:text-blue-600 text-bold underline" href',
+              '<h3>': '<h3 class="text-4xl mt-4">',
+              '<ol>': '<ol class="list-decimal my-4 mx-12">',
+              '<ul>': '<ul class="list-disc my-4 mx-12">',
+              '<img': '<img class="inline-block"'
+            })|raw }}
+        </div>
+    </div>
+
+  {% endif %}
+{% endfor %}
+
+
+
+{# team #}
+<div class="bg-gray-100">
+{% set teamQuery = craft.entries().section('team') %}       
+
+{% set entries = teamQuery.all() %}
+  <div class="flex flex-wrap justify-center items-start p-16" id="entries">
+
+  {% for entry in entries %}
+  
+
+      <button data-fancybox data-src="#{{ entry.id }}" href="javascript:;" class=""> 
+        <div class="bg-white shadow hover:border-gray-400 max-w-xs border p-4 m-4">
+            {% set assetQuery = entry.bioPhoto %}
+            {% set images = assetQuery.all() %}
+              {% for image in images %}
+               <img src="{{ image.geturl('sq300x300') }}" alt="">
+              {% endfor %}
+              <h3 class="uppercase text-xl text-center text-gray-700 py-4">
+                {{ entry.title }}
+              </h3>
+              
+              <div class="border-b border-gray-400">
+              </div> 
+              <h3 class="uppercase text-sm text-center text-gray-700 py-4">
+                {{ entry.position }} 
+              </h3>
+
+        </div>
+          {% include "partials/_teambiopop.twig" %} 
+      </button> 
+  {% endfor %}
+  </div>
+   
+</div>  
+
+
+{% endcache %}       
+{% endblock %}

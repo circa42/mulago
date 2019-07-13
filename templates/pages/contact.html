@@ -1,0 +1,90 @@
+{% extends "_layout" %}
+
+{% block content %}
+    <div class="flex flex-col bg-gray-400 py-16 px-12 mb-12">
+
+        <div class="relative">
+           <h1 class="text-gray-700 leading-none text-uppercase font-normal xs:text-4xl md:text-6xl md:text-8xl ml-8">
+            {{ entry.title }}
+          </h1>        
+        </div>
+    </div>
+<div class="flex-wrap flex m-12">
+	<div class="xs:w-full md:w-1/3 border-t border-gray-400 py-8 px-2 my-8">
+		<div class="my-4">
+			{% if entry.links |length %}
+				<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
+					//
+				</h5>
+				{% for row in entry.links %}
+					<div class="xs:text-center md:text-left">
+						<a href="{{ row.linkUrl }}" class="text-blue-600 hover:text-blue-400">{{ row.linkTitle }}</a>
+					</div>
+				{% endfor %}
+			{% endif %}
+			{% if entry.download |length %}
+				<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
+					//
+				</h5>
+			{% endif %}
+		</div>
+
+
+			<div class="xs:w-full md:w-1/3 xs:text-center md:text-left xs:mb-8 md:mb-4">
+		      <p class="text-gray-800 text-sm">
+		        {{ address.copy |nl2br }}
+		      </p>
+		      {% if entry.contacts | length %} 
+	            {% for row in entry.contacts %}       
+	                <hr>
+	                  <h3 class="text-gray-800 text-sm uppercase mt-4">{{ row.contactFor }}</h3>
+	                <a class="text-gray-800 hover:text-blue-800" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
+	                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+	                </a>
+	            {% endfor %}
+	          {% endif %}
+		    </div>
+	</div>
+	
+	<div class="xs:w-full md:w-2/3 border-t border-gray-400 p-8 my-8">
+		<div>
+			{% macro errorList(errors) %}
+			    {% if errors %}
+			        <ul class="errors">
+			            {% for error in errors %}
+			                <li class="uppercase text-red text-sm">{{ error }}</li>
+			            {% endfor %}
+			        </ul>
+			    {% endif %}
+			{% endmacro %}
+
+			{% from _self import errorList %}
+
+			<form method="post" action="" accept-charset="UTF-8">
+			    {{ csrfInput() }}
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" type="hidden" name="action" value="contact-form/send">
+			    {{ redirectInput('contact/thanks') }}
+
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="from-name">Your Name</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="from-name" type="text" name="fromName" value="{{ message.fromName ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('fromName')) }}
+
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="from-email">Your Email</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="from-email" type="email" name="fromEmail" value="{{ message.fromEmail ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('fromEmail')) }}
+
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="subject">Subject</label></h3>
+			    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" id="subject" type="text" name="subject" value="{{ message.subject ?? '' }}">
+			    {{ message is defined and message ? errorList(message.getErrors('subject')) }}
+
+			    <h3><label class="block text-gray-800 text-sm font-bold text-center mb-2" for="message">Message</label></h3>
+			    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
+			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
+				<div class="flex justify-center mt-8">
+			    	<input class="rounded-full bg-blue-800 hover:bg-blue-600 text-white h-16 w-16 flex items-center justify-center mb-8" type="submit" value="Send">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

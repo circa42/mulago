@@ -1,0 +1,40 @@
+<div class="uppercase text-gray-800 pt-2">
+  <div class="">
+  
+{% set segOne = craft.request.getSegment(1) %}
+{% set segTwo = craft.request.getSegment(2) %}
+{% set segThree = craft.request.getSegment(3) %}
+{% set segFour = craft.request.getSegment(4) %}
+{% set path = craft.request.path %}
+{% set segments = craft.request.getSegment(1) %}
+
+
+
+
+<a href="{{ siteUrl }}">Home</a>  
+
+
+
+
+
+
+
+{% if segOne %}
+   / <a href="{{ siteUrl }}{{ segOne }}" class="hover:text-gray-600">{{ segOne }}</a>  
+{% endif %}
+
+{% if segTwo %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}" class="hover:text-gray-600">{{ segTwo }}</a>  
+{% endif %}
+
+{% if segThree %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}/{{ segThree }}" class="hover:text-gray-600">{{ segThree }}</a>  
+{% endif %}
+
+{% if segFour %}
+   / <a href="{{ siteUrl }}{{ segOne }}/{{ segTwo }}/{{ segThree }}/{{ segFour }}" class="hover:text-gray-600">{{ segFour }}</a> 
+{% endif %}
+
+
+  </div>
+</div>

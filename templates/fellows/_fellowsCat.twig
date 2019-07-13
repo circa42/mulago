@@ -1,0 +1,35 @@
+
+<div class="main-content">
+  {# {% set categories = craft.categories.group('fellowsCat') %} #}
+
+    <div class="ideas-panel-1 m-ltgray" data-scroll-index="0">
+      <div class="container">
+       <div class="row">
+        <h1 class="text-uppercase">Fellows Programs</h1>
+        </div>
+      </div>
+    </div>
+
+      <div class="container-p clearfix">
+
+
+     <ul>
+      {% nav category in craft.categories
+        .group('fellowsCat')
+        %}
+        <li>
+          <a href="{{ category.url }}">{{ category.title }}</a>
+          {% ifchildren %}
+            <ul>
+              {% children %}
+            </ul>
+          {% endifchildren %}
+        </li>
+      {% endnav %}
+    </ul> 
+
+    </div>
+
+<div>
+
+</div>
