@@ -1,10 +1,10 @@
 {
   "require": {
     "carlcs/craft-redactorcustomstyles": "3.0.2",
-    "craftcms/cms": "3.1.31",
+    "craftcms/cms": "3.1.34",
     "craftcms/contact-form": "2.2.5",
     "craftcms/redactor": "2.3.3.2",
-    "nystudio107/craft-retour": "3.1.16",
+    "nystudio107/craft-retour": "3.1.17",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
