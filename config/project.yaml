@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1562985235
+dateModified: 1562985509
 email:
   fromEmail: sara@mulagofoundation.org
   fromName: Mulago
@@ -2656,7 +2656,6 @@ sections:
     handle: fellows
     type: structure
     enableVersioning: true
-    propagateEntries: true
     structure:
       uid: ae2dfa1d-ca48-47c6-85a3-cb14fb95187c
       maxLevels: null
@@ -2696,12 +2695,12 @@ sections:
         hasUrls: true
         uriFormat: 'fellows/{slug}'
         template: fellows/_entry
+    propagationMethod: all
   28873d12-690f-4a4e-a676-c8ea66286a7d:
     name: Resources
     handle: resources
     type: channel
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       460d7d30-ae2b-4533-b1b6-fa4e2c78c144:
         name: Articles
@@ -2833,12 +2832,12 @@ sections:
         hasUrls: true
         uriFormat: 'resources/{slug}'
         template: resources/_entry
+    propagationMethod: all
   3175b7e6-0005-49e3-85ff-e44f4ed63cdc:
     name: About
     handle: about
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       7426db82-e84c-4216-b84e-9ed9f9da9f35:
         name: About
@@ -2863,12 +2862,12 @@ sections:
         hasUrls: true
         uriFormat: about
         template: pages/about
+    propagationMethod: all
   4213dddc-f66c-4708-a201-2294469d0a0e:
     name: Contact
     handle: contact
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       9aed7cb5-9d60-448d-b0a5-b3c8209b1709:
         name: Contact
@@ -2893,12 +2892,12 @@ sections:
         hasUrls: true
         uriFormat: contact
         template: pages/contact
+    propagationMethod: all
   4d4fc959-99a6-401d-9c82-0e54478e02a4:
     name: Portfolio
     handle: portfolio
     type: structure
     enableVersioning: true
-    propagateEntries: true
     structure:
       uid: a60d1e2c-2e54-43de-ae6c-dc278d6bb052
       maxLevels: null
@@ -2932,24 +2931,24 @@ sections:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: portfolio/_entry
+    propagationMethod: all
   652df0af-6fee-4667-9724-2846027f8558:
     name: 'Fellows Index'
     handle: fellowsIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         enabledByDefault: true
         hasUrls: true
         uriFormat: '{category}'
         template: fellows/index
+    propagationMethod: all
   69bde69a-4057-48d2-a6ae-3d9a2b242f46:
     name: Programs
     handle: programs
     type: structure
     enableVersioning: true
-    propagateEntries: true
     structure:
       uid: 140e3dc5-7bd6-4c74-a2e2-cde01042fc3e
       maxLevels: null
@@ -2977,12 +2976,12 @@ sections:
         hasUrls: true
         uriFormat: 'fellows/programs/{slug}'
         template: fellows/programs/_entry
+    propagationMethod: all
   80219d20-800c-473b-8fdb-74dc15c517ef:
     name: 'How we fund'
     handle: howWeFund
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       f00c7645-1bec-4f67-925b-3e533891cef7:
         name: 'How we fund'
@@ -3007,12 +3006,12 @@ sections:
         hasUrls: true
         uriFormat: how-we-fund
         template: pages/how-we-fund
+    propagationMethod: all
   b6c5f243-860d-43ed-81bb-d1b4f6af6d19:
     name: Homepage
     handle: homepage
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       4de3b015-8a01-4576-be9e-20e6b03fe27e:
         name: Homepage
@@ -3037,12 +3036,12 @@ sections:
         hasUrls: true
         uriFormat: __home__
         template: index
+    propagationMethod: all
   c21b7a17-aef5-4947-8d1e-a7dc831644fb:
     name: Team
     handle: team
     type: structure
     enableVersioning: true
-    propagateEntries: true
     structure:
       uid: dae53502-4cb0-44c5-8783-b8e11d25f52e
       maxLevels: null
@@ -3079,12 +3078,12 @@ sections:
         hasUrls: true
         uriFormat: 'team/{slug}'
         template: ''
+    propagationMethod: all
   df674102-48ae-412d-9cad-20d9d98cc1e7:
     name: 'Who we fund'
     handle: portfolioIndex
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       ae067e03-f07d-4e11-b007-e2f646d83b1c:
         name: 'Who we fund'
@@ -3115,12 +3114,12 @@ sections:
         hasUrls: true
         uriFormat: portfolio
         template: portfolio/index
+    propagationMethod: all
   ea9515d0-1629-4005-b1b1-370aa1e63f9f:
     name: Success
     handle: success
     type: single
     enableVersioning: true
-    propagateEntries: true
     entryTypes:
       a9d1a06e-c0d3-4ae5-88a6-b3c48693f3ab:
         name: Success
@@ -3145,6 +3144,7 @@ sections:
         hasUrls: true
         uriFormat: success
         template: pages/success
+    propagationMethod: all
 siteGroups:
   05fba193-3b51-48c5-9a91-95ac237f45a6:
     name: 'Mulago (en-US)'
@@ -3163,7 +3163,7 @@ system:
   live: true
   name: Mulago
   timeZone: America/Los_Angeles
-  schemaVersion: 3.1.28
+  schemaVersion: 3.2.14
 tagGroups:
   90921257-5b3f-48d2-bbbd-584ad6ee126f:
     name: 'Fellows Year Tag'
