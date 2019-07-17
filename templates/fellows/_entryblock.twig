@@ -2,23 +2,23 @@
     {% if matrixBlock.type == 'entryContent' %}
 
       <a href="{{ entry.url }}" class=""> 
-         <div class="bg-white max-w-xxs p-4 m-4">
-              {% for image in matrixBlock.fellowImage %} 
-                 <img src="{{ image.getUrl('sq300x300') }} " alt="" class="image-portfolio">
-               {% endfor %} 
-              <h3 class="uppercase text-lg text-center text-gray-700 py-4">
+                 
+        <div class="bg-white shadow hover:border-gray-400 max-w-xs border p-4 m-4">
+            {% set assetQuery = matrixBlock.fellowImage.all() %}
+              {% for image in assetQuery %} 
+               <img src="{{ image.geturl('sq300x300') }}" alt="">
+              {% endfor %}
+              <h3 class="uppercase font-light text-lg text-center text-gray-700 py-4">
                 {{ entry.title }}
               </h3>
               
               <div class="border-b border-gray-400">
               </div> 
-              <h3 class="uppercase text-sm text-center text-gray-700 py-4">
+              <h3 class="min-h-4xs uppercase font-light text-sm text-center text-gray-700 px-8 py-6">
                 {{ matrixBlock.organization }} 
               </h3>
-          </div>
-          <div>&nbsp;</div>
-
+        </div>
       </a> 
 
-    {% endif %}<!--matrixBlock.type-->
-  {% endfor %} <!--matrixBlock in entry.fellowsEntry-->
+    {% endif %}
+  {% endfor %} 

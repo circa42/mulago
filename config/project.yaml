@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1562985509
+dateModified: 1563399408
 email:
   fromEmail: sara@mulagofoundation.org
   fromName: Mulago
@@ -98,23 +98,6 @@ fields:
           default: ''
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: string
-  049d378f-9282-4466-b171-834d8d5ec320:
-    name: Email
-    handle: email
-    instructions: 'Enter the whole email'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\PlainText
-    settings:
-      placeholder: ''
-      code: '1'
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
-    fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
-    contentColumnType: text
   06d11d10-77d1-4a9c-bc8a-99dbf4c988ee:
     name: 'Resource photo'
     handle: resourcePhoto
@@ -201,15 +184,16 @@ fields:
     handle: fellowsEntry
     instructions: 'Enter content for fellow page'
     searchable: true
-    translationMethod: none
+    translationMethod: site
     translationKeyFormat: null
     type: craft\fields\Matrix
     settings:
+      minBlocks: ''
       maxBlocks: '2'
-      localizeBlocks: false
       contentTable: '{{%matrixcontent_fellowsentry}}'
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
+      propagationMethod: all
     contentColumnType: string
+    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
   27bd607e-4729-4bd6-b03e-2a4f628cc442:
     name: 'Portfolio entry'
     handle: portfolioEntry
@@ -225,7 +209,7 @@ fields:
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string
   299f057e-1178-421a-bf4b-1d48fcddddc1:
-    name: 'Panels home'
+    name: 'DEP -Panels home'
     handle: panelsHome
     instructions: 'Content for the home page panels'
     searchable: true
@@ -236,9 +220,9 @@ fields:
       minBlocks: ''
       maxBlocks: '4'
       contentTable: '{{%matrixcontent_panelshome}}'
-      localizeBlocks: false
-    fieldGroup: e4052256-5b99-4635-82a6-d0e2e9c63268
+      propagationMethod: all
     contentColumnType: string
+    fieldGroup: e4052256-5b99-4635-82a6-d0e2e9c63268
   2a0c74d2-347a-4bc4-ace5-842bba8b3536:
     name: 'dep Panels about'
     handle: panelsAbout
@@ -286,6 +270,21 @@ fields:
       columnType: text
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
     contentColumnType: text
+  328be070-1e67-442b-b078-1271e4d72357:
+    name: 'Home Panels'
+    handle: homePanels
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Matrix
+    settings:
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_homepanels}}'
+      propagationMethod: all
+    contentColumnType: string
+    fieldGroup: e4052256-5b99-4635-82a6-d0e2e9c63268
   34bd3063-e691-4faf-90cc-bb2113cc9e40:
     name: 'Sub Nav Table'
     handle: subNavTable
@@ -426,6 +425,19 @@ fields:
       contentTable: '{{%matrixcontent_sectionheadings}}'
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string
+  649f3d1e-f113-4455-ba99-154a10299e9e:
+    name: LinkedIn
+    handle: linkedin
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
   694f0c51-6197-4110-83f9-4b431c15d025:
     name: Links
     handle: links
@@ -644,6 +656,19 @@ fields:
       columnType: text
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
     contentColumnType: text
+  e5f171d9-9385-48f9-a8cd-f99f5fee257b:
+    name: Twitter
+    handle: twitter
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
   ec3e69be-68b5-4b50-b16b-bd882d89b558:
     name: 'Content Builder'
     handle: contentBuilder
@@ -714,9 +739,9 @@ fields:
       minBlocks: ''
       maxBlocks: ''
       contentTable: '{{%matrixcontent_panels}}'
-      localizeBlocks: false
-    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
+      propagationMethod: all
     contentColumnType: string
+    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
   ff266bb2-8e19-4049-b6c8-bf8cee73a646:
     name: 'Social Table'
     handle: socialTable
@@ -917,15 +942,15 @@ imageTransforms:
     quality: 82
     interlace: none
   98c73d71-502a-4564-b286-244a275117cb:
-    name: 'lg 1600x600'
-    handle: lg1600x600
-    mode: crop
-    position: center-center
-    width: 1600
-    height: 600
     format: null
-    quality: 82
+    handle: lg1600x600
+    height: 600
     interlace: none
+    mode: crop
+    name: 'lg 1600x600'
+    position: center-center
+    quality: 82
+    width: 1600
   9b86ea06-c2af-4cba-968f-2fe26dc25a59:
     name: 'lg 1400x310'
     handle: lg1400x310
@@ -1325,23 +1350,10 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: string
   1b679347-98a6-4d6a-b86b-dd4d676337a0:
+    field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
     name: 'Copy content'
     handle: copyContent
     sortOrder: 2
-    field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
-    fieldLayouts:
-      cdfed98a-e84b-4878-b811-0482f13b9d42:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              7180ccd3-6a5d-49d2-a3dd-27895c0d252c:
-                required: false
-                sortOrder: 1
-              eeed6b53-8f33-43ac-943e-175645533ae5:
-                required: false
-                sortOrder: 2
     fields:
       7180ccd3-6a5d-49d2-a3dd-27895c0d252c:
         name: 'Header 3'
@@ -1358,8 +1370,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       eeed6b53-8f33-43ac-943e-175645533ae5:
         name: Copy
         handle: copy
@@ -1379,13 +1391,202 @@ matrixBlockTypes:
           columnType: text
           availableVolumes: '*'
           availableTransforms: '*'
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      cdfed98a-e84b-4878-b811-0482f13b9d42:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              7180ccd3-6a5d-49d2-a3dd-27895c0d252c:
+                required: false
+                sortOrder: 1
+              eeed6b53-8f33-43ac-943e-175645533ae5:
+                required: false
+                sortOrder: 2
   1d2539cd-ba12-4456-8484-d4e5c07a419a:
+    field: 22a97c98-08c7-4c47-a68d-7721e732e5f3
     name: 'Entry content'
     handle: entryContent
     sortOrder: 1
-    field: 22a97c98-08c7-4c47-a68d-7721e732e5f3
+    fields:
+      265f085a-6524-4171-8666-225c7cc0a420:
+        name: 'Video Link'
+        handle: videoLink
+        instructions: 'Add the full URL of a YouTube, vimeo, or other video here. '
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      4a341661-edc1-45b8-bc5b-241eb3b248d3:
+        name: 'Feature image'
+        handle: featureImage
+        instructions: 'Image: 1400px by 610px'
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:cad63f12-e4d7-471e-b51f-519b8c925635'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+            - 'volume:cad63f12-e4d7-471e-b51f-519b8c925635'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      54e1a21e-4ca4-4d3f-8d37-5d3daee969a8:
+        name: Logo
+        handle: logo
+        instructions: 'Logo: 260px by 100px'
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:7769657c-b2ba-4eb0-9082-7e63550b808f'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:7769657c-b2ba-4eb0-9082-7e63550b808f'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      9c41357c-7ddb-4693-b21e-61c2ac7547f6:
+        name: Organization
+        handle: organization
+        instructions: 'Name of organization'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      aa99d7ee-513b-4b0f-98b2-c971a71b6e31:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: ''
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: ''
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      c56ebf66-0969-473f-bb5a-4b110aa71066:
+        name: 'Fellow image'
+        handle: fellowImage
+        instructions: 'Image: 300 px by 300px'
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '1'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      cc691bf4-521f-4dee-b17a-e08d65a713ab:
+        name: 'Archive copy'
+        handle: archiveCopy
+        instructions: 'Brief copy for archive page'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: ''
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: ''
+          columnType: text
+          availableVolumes: '*'
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      d5358562-edb3-4992-8065-a58f5f628790:
+        name: 'Web link'
+        handle: webLink
+        instructions: 'Enter the web link without http://'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
     fieldLayouts:
       ea566a88-bb37-49da-8b2a-a5ce5f866ddf:
         tabs:
@@ -1412,166 +1613,11 @@ matrixBlockTypes:
                 required: true
                 sortOrder: 2
               cc691bf4-521f-4dee-b17a-e08d65a713ab:
-                required: true
+                required: false
                 sortOrder: 7
               d5358562-edb3-4992-8065-a58f5f628790:
                 required: false
                 sortOrder: 5
-    fields:
-      265f085a-6524-4171-8666-225c7cc0a420:
-        name: 'Video Link'
-        handle: videoLink
-        instructions: 'Add the full URL of a YouTube, vimeo, or other video here. '
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: text
-      4a341661-edc1-45b8-bc5b-241eb3b248d3:
-        name: 'Feature image'
-        handle: featureImage
-        instructions: 'Image: 1400px by 610px'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Assets
-        settings:
-          useSingleFolder: ''
-          sources:
-            - 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-            - 'folder:47645710-3c51-4928-8df6-b91795f1af2f'
-          defaultUploadLocationSource: 'folder:47645710-3c51-4928-8df6-b91795f1af2f'
-          defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-          singleUploadLocationSubpath: ''
-          restrictFiles: ''
-          limit: '1'
-          viewMode: list
-          selectionLabel: ''
-          localizeRelations: false
-        fieldGroup: null
-        contentColumnType: string
-      54e1a21e-4ca4-4d3f-8d37-5d3daee969a8:
-        name: Logo
-        handle: logo
-        instructions: 'Logo: 260px by 100px'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Assets
-        settings:
-          useSingleFolder: ''
-          sources:
-            - 'folder:95006708-988b-4d5d-b2a6-60825428e687'
-          defaultUploadLocationSource: 'folder:95006708-988b-4d5d-b2a6-60825428e687'
-          defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-          singleUploadLocationSubpath: ''
-          restrictFiles: ''
-          limit: '1'
-          viewMode: list
-          selectionLabel: ''
-          localizeRelations: false
-        fieldGroup: null
-        contentColumnType: string
-      9c41357c-7ddb-4693-b21e-61c2ac7547f6:
-        name: Organization
-        handle: organization
-        instructions: 'Name of organization'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: text
-      aa99d7ee-513b-4b0f-98b2-c971a71b6e31:
-        name: Copy
-        handle: copy
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\redactor\Field
-        settings:
-          availableTransforms: '*'
-          cleanupHtml: '1'
-          purifyHtml: ''
-          purifierConfig: ''
-          columnType: text
-          availableVolumes: '*'
-          redactorConfig: ''
-        fieldGroup: null
-        contentColumnType: text
-      c56ebf66-0969-473f-bb5a-4b110aa71066:
-        name: 'Fellow image'
-        handle: fellowImage
-        instructions: 'Image: 300 px by 300px'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Assets
-        settings:
-          useSingleFolder: ''
-          sources:
-            - 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-          defaultUploadLocationSource: 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-          defaultUploadLocationSubpath: ''
-          singleUploadLocationSource: 'folder:4fae4a1a-5161-4fad-aa54-49f62a6c5dea'
-          singleUploadLocationSubpath: ''
-          restrictFiles: ''
-          limit: '1'
-          viewMode: list
-          selectionLabel: ''
-          localizeRelations: false
-        fieldGroup: null
-        contentColumnType: string
-      cc691bf4-521f-4dee-b17a-e08d65a713ab:
-        name: 'Archive copy'
-        handle: archiveCopy
-        instructions: 'Brief copy for archive page'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\redactor\Field
-        settings:
-          availableTransforms: '*'
-          cleanupHtml: '1'
-          purifyHtml: ''
-          purifierConfig: ''
-          columnType: text
-          availableVolumes: '*'
-          redactorConfig: ''
-        fieldGroup: null
-        contentColumnType: text
-      d5358562-edb3-4992-8065-a58f5f628790:
-        name: 'Web link'
-        handle: webLink
-        instructions: 'Enter the web link without http://'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: text
   4b27dfce-9fe0-4ba1-a67f-4a81cdc16137:
     name: 'panel team'
     handle: panel3
@@ -1634,11 +1680,166 @@ matrixBlockTypes:
           localizeRelations: false
         fieldGroup: null
         contentColumnType: string
+  4b6af50d-6518-4117-9f5d-b6d83d72ec80:
+    field: 328be070-1e67-442b-b078-1271e4d72357
+    name: panel
+    handle: panel
+    sortOrder: 1
+    fields:
+      1adffa5f-716c-4a54-8c63-ddb4997d7dcf:
+        name: Copy
+        handle: copy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      283b23f7-7ec7-4949-b074-031ae21d821a:
+        name: heading
+        handle: heading
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      583aea77-a3dc-4f2c-a446-e6ff5576812d:
+        name: 'Page link'
+        handle: pageLink
+        instructions: ''
+        searchable: false
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Entries
+        settings:
+          sources: '*'
+          source: null
+          targetSiteId: null
+          viewMode: null
+          limit: ''
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      68418072-656a-4742-92a9-6070b4d52cb9:
+        name: Image
+        handle: image
+        instructions: 'Select two for Fellows panel. Best size: 1600px x 710px. '
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '2'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      7616b1bb-4858-41a0-acfd-c805ef91fb05:
+        name: 'Sub head'
+        handle: subHead
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      e26d334d-9ec3-46d0-bede-52f35aebe98c:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              1adffa5f-716c-4a54-8c63-ddb4997d7dcf:
+                required: false
+                sortOrder: 3
+              283b23f7-7ec7-4949-b074-031ae21d821a:
+                required: true
+                sortOrder: 1
+              583aea77-a3dc-4f2c-a446-e6ff5576812d:
+                required: false
+                sortOrder: 5
+              68418072-656a-4742-92a9-6070b4d52cb9:
+                required: false
+                sortOrder: 4
+              7616b1bb-4858-41a0-acfd-c805ef91fb05:
+                required: false
+                sortOrder: 2
   533fe3dd-e54e-4c0a-a382-f9dea251ca96:
+    field: 22a97c98-08c7-4c47-a68d-7721e732e5f3
     name: Status
     handle: fellowStatus
     sortOrder: 2
-    field: 22a97c98-08c7-4c47-a68d-7721e732e5f3
+    fields:
+      95b9b7d4-a768-4e3f-8569-5c040809e608:
+        name: 'Fellows Activity'
+        handle: fellowsActivity
+        instructions: 'On for current fellows, off for past fellows'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Lightswitch
+        settings:
+          default: '1'
+        contentColumnType: boolean
+        fieldGroup: null
+      b3ef7a22-39f0-4386-bf44-235a9522cac5:
+        name: 'Fellows Year'
+        handle: fellowsYear
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
     fieldLayouts:
       b3c237b5-0008-4490-9ebd-c49b6955d142:
         tabs:
@@ -1652,59 +1853,11 @@ matrixBlockTypes:
               b3ef7a22-39f0-4386-bf44-235a9522cac5:
                 required: false
                 sortOrder: 1
-    fields:
-      95b9b7d4-a768-4e3f-8569-5c040809e608:
-        name: 'Fellows Activity'
-        handle: fellowsActivity
-        instructions: 'On for current fellows, off for past fellows'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Lightswitch
-        settings:
-          default: '1'
-        fieldGroup: null
-        contentColumnType: boolean
-      b3ef7a22-39f0-4386-bf44-235a9522cac5:
-        name: 'Fellows Year'
-        handle: fellowsYear
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        fieldGroup: null
-        contentColumnType: text
   5da69a7a-95df-4631-86ad-51dd76cb9253:
+    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
     name: 'panel 1'
     handle: panel1
     sortOrder: 1
-    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
-    fieldLayouts:
-      531761ab-88c8-4d93-8421-b7dea15abc09:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              49aa29d1-658b-4c86-aa05-d726ebe827d7:
-                required: true
-                sortOrder: 4
-              92e516b9-1d70-4c89-89a1-f32585b6447a:
-                required: true
-                sortOrder: 3
-              cc7fba3d-8129-45e4-9222-c1c39b1b5930:
-                required: true
-                sortOrder: 1
-              d0563d01-d640-4970-b8f6-5b72953beb7f:
-                required: true
-                sortOrder: 2
     fields:
       49aa29d1-658b-4c86-aa05-d726ebe827d7:
         name: image
@@ -1730,8 +1883,9 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
       92e516b9-1d70-4c89-89a1-f32585b6447a:
         name: copy
         handle: copy
@@ -1747,8 +1901,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       cc7fba3d-8129-45e4-9222-c1c39b1b5930:
         name: 'heading 1'
         handle: heading1
@@ -1764,8 +1918,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       d0563d01-d640-4970-b8f6-5b72953beb7f:
         name: 'heading 2'
         handle: heading2
@@ -1781,8 +1935,27 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      531761ab-88c8-4d93-8421-b7dea15abc09:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              49aa29d1-658b-4c86-aa05-d726ebe827d7:
+                required: true
+                sortOrder: 4
+              92e516b9-1d70-4c89-89a1-f32585b6447a:
+                required: true
+                sortOrder: 3
+              cc7fba3d-8129-45e4-9222-c1c39b1b5930:
+                required: true
+                sortOrder: 1
+              d0563d01-d640-4970-b8f6-5b72953beb7f:
+                required: true
+                sortOrder: 2
   85dee464-f663-4262-a8c3-3cf0e36fbf39:
     name: 'Entry content'
     handle: entryContent
@@ -1924,29 +2097,10 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: text
   88a98b9d-a6b7-463a-9c48-2cc420121752:
+    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
     name: 'panel 3'
     handle: panel3
     sortOrder: 3
-    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
-    fieldLayouts:
-      1e1c3405-fb11-4b19-a8b7-bc4b312dbeb6:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              32943997-1abe-4c2d-98c4-739889cc82cd:
-                required: true
-                sortOrder: 2
-              8b4a9e56-6ec9-448c-85bc-e637c9f27e0e:
-                required: false
-                sortOrder: 4
-              b54bd20f-7412-4830-aca7-2823f671e5b0:
-                required: true
-                sortOrder: 3
-              c2911000-eb70-4ebd-b4a2-a38581c04ee5:
-                required: true
-                sortOrder: 1
     fields:
       32943997-1abe-4c2d-98c4-739889cc82cd:
         name: 'heading 2'
@@ -1963,8 +2117,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       8b4a9e56-6ec9-448c-85bc-e637c9f27e0e:
         name: 'Page Link'
         handle: pageLink
@@ -1980,8 +2134,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       b54bd20f-7412-4830-aca7-2823f671e5b0:
         name: image
         handle: image
@@ -2006,8 +2160,9 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
       c2911000-eb70-4ebd-b4a2-a38581c04ee5:
         name: 'heading 1'
         handle: heading1
@@ -2023,32 +2178,32 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
-  8ddb05d3-c24a-4e96-8b8d-ed8f83c788a9:
-    name: 'panel 2'
-    handle: panel2
-    sortOrder: 2
-    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
+        fieldGroup: null
     fieldLayouts:
-      856d4f54-4fed-4281-909c-e06a6f04e9b7:
+      1e1c3405-fb11-4b19-a8b7-bc4b312dbeb6:
         tabs:
           -
             name: Content
             sortOrder: 1
             fields:
-              45c9e449-44fd-41d7-8b4b-d3934b9c752d:
-                required: false
-                sortOrder: 4
-              5c5d2ffe-b07c-44ec-a7c7-bce07f8d6dca:
-                required: true
-                sortOrder: 3
-              85b86dec-1056-40cb-9eae-043031b5c6b7:
-                required: true
-                sortOrder: 1
-              dbbd6c1b-a98f-4b23-9e8f-b7e7fc9ec09f:
+              32943997-1abe-4c2d-98c4-739889cc82cd:
                 required: true
                 sortOrder: 2
+              8b4a9e56-6ec9-448c-85bc-e637c9f27e0e:
+                required: false
+                sortOrder: 4
+              b54bd20f-7412-4830-aca7-2823f671e5b0:
+                required: true
+                sortOrder: 3
+              c2911000-eb70-4ebd-b4a2-a38581c04ee5:
+                required: true
+                sortOrder: 1
+  8ddb05d3-c24a-4e96-8b8d-ed8f83c788a9:
+    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
+    name: 'panel 2'
+    handle: panel2
+    sortOrder: 2
     fields:
       45c9e449-44fd-41d7-8b4b-d3934b9c752d:
         name: 'Page Link'
@@ -2065,8 +2220,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       5c5d2ffe-b07c-44ec-a7c7-bce07f8d6dca:
         name: image
         handle: image
@@ -2091,8 +2246,9 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
       85b86dec-1056-40cb-9eae-043031b5c6b7:
         name: 'Heading 1'
         handle: heading1
@@ -2108,8 +2264,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       dbbd6c1b-a98f-4b23-9e8f-b7e7fc9ec09f:
         name: 'heading 2'
         handle: heading2
@@ -2125,8 +2281,27 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      856d4f54-4fed-4281-909c-e06a6f04e9b7:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              45c9e449-44fd-41d7-8b4b-d3934b9c752d:
+                required: false
+                sortOrder: 4
+              5c5d2ffe-b07c-44ec-a7c7-bce07f8d6dca:
+                required: true
+                sortOrder: 3
+              85b86dec-1056-40cb-9eae-043031b5c6b7:
+                required: true
+                sortOrder: 1
+              dbbd6c1b-a98f-4b23-9e8f-b7e7fc9ec09f:
+                required: true
+                sortOrder: 2
   adaee229-fd8d-425a-88d3-27e2f24e6742:
     name: 'Image Block'
     handle: imageBlock
@@ -2258,29 +2433,10 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: text
   b2017cc1-6922-4fb6-9c08-9629f95b3d16:
+    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
     name: 'panel 4'
     handle: panel4
     sortOrder: 4
-    field: 299f057e-1178-421a-bf4b-1d48fcddddc1
-    fieldLayouts:
-      6dca91f1-c364-4ca1-aa76-2dc20aeeb8c8:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              4bde02de-f298-4c15-aad1-8b5e5fbdbcdb:
-                required: true
-                sortOrder: 3
-              71fa6b1b-e44e-4691-b34d-eb13f5043ab7:
-                required: false
-                sortOrder: 4
-              95ee1397-5792-455d-8624-6bbacd269edd:
-                required: true
-                sortOrder: 1
-              ff777d70-eccf-4722-a80b-4d61a67c66b7:
-                required: true
-                sortOrder: 2
     fields:
       4bde02de-f298-4c15-aad1-8b5e5fbdbcdb:
         name: image
@@ -2306,8 +2462,9 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
       71fa6b1b-e44e-4691-b34d-eb13f5043ab7:
         name: 'Page Link'
         handle: pageLink
@@ -2323,8 +2480,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       95ee1397-5792-455d-8624-6bbacd269edd:
         name: 'heading 1'
         handle: heading1
@@ -2340,8 +2497,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       ff777d70-eccf-4722-a80b-4d61a67c66b7:
         name: 'heading 2'
         handle: heading2
@@ -2357,8 +2514,27 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      6dca91f1-c364-4ca1-aa76-2dc20aeeb8c8:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              4bde02de-f298-4c15-aad1-8b5e5fbdbcdb:
+                required: true
+                sortOrder: 3
+              71fa6b1b-e44e-4691-b34d-eb13f5043ab7:
+                required: false
+                sortOrder: 4
+              95ee1397-5792-455d-8624-6bbacd269edd:
+                required: true
+                sortOrder: 1
+              ff777d70-eccf-4722-a80b-4d61a67c66b7:
+                required: true
+                sortOrder: 2
   dd6d8d9b-a6d2-48ec-b341-f97f15189cdc:
     name: 'Copy Block'
     handle: copyBlock
@@ -2397,26 +2573,10 @@ matrixBlockTypes:
         fieldGroup: null
         contentColumnType: text
   e85bd069-0b96-4e9c-9b47-832cfc716674:
+    field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
     name: 'Panel Header'
     handle: panelHeader
     sortOrder: 1
-    field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
-    fieldLayouts:
-      140a6b94-5aaa-4a87-9cc3-2a00e8b9074f:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              17b3c04e-9272-4aff-b951-14d15e825a3e:
-                required: false
-                sortOrder: 3
-              22da2b0b-f1bf-4594-8512-89aa70d1a095:
-                required: true
-                sortOrder: 2
-              bdacf746-be18-4f6e-abe3-e3ce61392f8b:
-                required: true
-                sortOrder: 1
     fields:
       17b3c04e-9272-4aff-b951-14d15e825a3e:
         name: heading2
@@ -2433,8 +2593,8 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       22da2b0b-f1bf-4594-8512-89aa70d1a095:
         name: image
         handle: image
@@ -2459,8 +2619,26 @@ matrixBlockTypes:
           limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
+      715bc7db-4c41-4b2b-9b09-69e76b122335:
+        name: Intro
+        handle: intro
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
       bdacf746-be18-4f6e-abe3-e3ce61392f8b:
         name: 'heading 1'
         handle: heading1
@@ -2476,8 +2654,123 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      140a6b94-5aaa-4a87-9cc3-2a00e8b9074f:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              17b3c04e-9272-4aff-b951-14d15e825a3e:
+                required: false
+                sortOrder: 3
+              22da2b0b-f1bf-4594-8512-89aa70d1a095:
+                required: true
+                sortOrder: 2
+              715bc7db-4c41-4b2b-9b09-69e76b122335:
+                required: false
+                sortOrder: 4
+              bdacf746-be18-4f6e-abe3-e3ce61392f8b:
+                required: true
+                sortOrder: 1
+  efe9a953-7ead-44f1-87b3-f7213426bb20:
+    field: 328be070-1e67-442b-b078-1271e4d72357
+    name: 'Fellows Panel'
+    handle: fellowsPanel
+    sortOrder: 2
+    fields:
+      0105335b-8e18-4bb7-b6f1-52f08ec3b5e2:
+        name: Images
+        handle: images
+        instructions: ''
+        searchable: true
+        translationMethod: site
+        translationKeyFormat: null
+        type: craft\fields\Assets
+        settings:
+          useSingleFolder: ''
+          defaultUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          defaultUploadLocationSubpath: ''
+          singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+          singleUploadLocationSubpath: ''
+          restrictFiles: ''
+          allowedKinds: null
+          sources:
+            - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+          source: null
+          targetSiteId: null
+          viewMode: list
+          limit: '2'
+          selectionLabel: ''
+          localizeRelations: false
+          validateRelatedElements: ''
+        contentColumnType: string
+        fieldGroup: null
+      4d5b8743-4de8-4105-9770-839518305182:
+        name: 'Sub Head'
+        handle: subHead
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: '1'
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      6a245ac5-f2c6-4068-8181-3e7aa5740664:
+        name: 'Heading & Links'
+        handle: headingsLinks
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\Table
+        settings:
+          addRowLabel: 'Add a row'
+          maxRows: ''
+          minRows: ''
+          columns:
+            col1:
+              heading: Heading
+              handle: heading
+              width: ''
+              type: singleline
+            col2:
+              heading: URL
+              handle: url
+              width: ''
+              type: singleline
+          defaults:
+            -
+              col1: ''
+              col2: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      becaba03-7e8f-4158-b545-0d54e0f9b007:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0105335b-8e18-4bb7-b6f1-52f08ec3b5e2:
+                required: false
+                sortOrder: 3
+              4d5b8743-4de8-4105-9770-839518305182:
+                required: false
+                sortOrder: 2
+              6a245ac5-f2c6-4068-8181-3e7aa5740664:
+                required: true
+                sortOrder: 1
   f0992213-fda5-4167-b051-1477ea635728:
     name: 'Video Block'
     handle: videoBlock
@@ -3018,7 +3311,7 @@ sections:
         handle: homepage
         hasTitleField: true
         titleLabel: Title
-        titleFormat: null
+        titleFormat: ''
         sortOrder: 0
         fieldLayouts:
           b6afe154-41b1-4cf0-aa39-4b53fbffaa08:
@@ -3027,7 +3320,7 @@ sections:
                 name: 'Home page content'
                 sortOrder: 1
                 fields:
-                  299f057e-1178-421a-bf4b-1d48fcddddc1:
+                  328be070-1e67-442b-b078-1271e4d72357:
                     required: false
                     sortOrder: 1
     siteSettings:
@@ -3060,12 +3353,15 @@ sections:
                 name: Team
                 sortOrder: 1
                 fields:
-                  049d378f-9282-4466-b171-834d8d5ec320:
+                  649f3d1e-f113-4455-ba99-154a10299e9e:
                     required: false
                     sortOrder: 4
                   9e640bdb-c61d-433a-8ec6-06030154c846:
                     required: false
                     sortOrder: 2
+                  e5f171d9-9385-48f9-a8cd-f99f5fee257b:
+                    required: false
+                    sortOrder: 5
                   efa8e0b9-f5db-431a-8ca0-69dd11fc6c4a:
                     required: false
                     sortOrder: 3

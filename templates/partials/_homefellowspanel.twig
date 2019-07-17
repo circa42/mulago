@@ -1,0 +1,62 @@
+<div class="flex flex-wrap">
+
+	{% for image in block.images %}
+	{% if loop.first %}    
+		<div class="xs:w-full md:w-1/2">
+		  <div class="bg-cover bg-auto bg-center" 
+		  style="background-image: url( {{ image.getUrl('lg1600x600') }}">
+		    <div class="xs:px-6 xs:py-12 md:px-12 md:py-24 xs:px-24 lg:py-32">
+		      
+		        {% for row in block.headingsLinks %}
+		        {% if loop.first %}
+		          <a class="" href="{{ row.url }}">
+		            <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl">
+		              {{ row.heading |nl2br }} 
+		            </h2>
+		          </a>
+		        {% endif %}
+		        {% endfor %}
+		    </div>
+		 </div> 
+		</div>
+	
+	{% elseif loop.last %}
+		<div class="xs:w-full md:w-1/2">
+		  <div class="bg-cover bg-auto bg-center" 
+		  style="background-image: url( {{ image.getUrl('lg1600x600') }}">
+		    <div class="xs:px-6 xs:py-12 md:px-12 md:py-24 xs:px-24 lg:py-32">
+		      
+		        {% for row in block.headingsLinks %}
+		        {% if loop.last %}
+		          <a class="" href="{{ row.url }}">
+		            <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl">
+		              {{ row.heading |nl2br }} 
+		            </h2>
+		          </a>
+		        {% endif %}
+		        {% endfor %}
+		    </div>
+		 </div> 
+		</div>
+	{% endif %}	
+
+
+	{% endfor %}
+	
+
+</div>
+
+
+
+
+
+
+<div class="max-w-3xl text-center font-light text-gray-700 m-auto xs:my-4 md:my-8 lg:my-12" data-scroll-index="0">
+  <h2 class="xs:text-xl md:text-2xl lg:text-4xl">
+  {{ block.subHead }}
+  </h2>
+  <p class="xs:text-base md:text-xl lg:text-2xl pt-8"> 
+  {{ block.copy }}
+  </p>
+</div> 
+
