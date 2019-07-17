@@ -6,8 +6,27 @@
 {% block content %}
 
 
+
+{# <!-- Main content :: cleaning up and adding fellows secondary image support #}
+  {% for block in entry.homePanels %}
+    
+  {% switch block.type %}
+  
+    {% case "panel" %}
+      {% include "partials/_homepanel.twig" %} 
+
+    {% case "fellowsPanel" %}
+      {% include "partials/_homefellowspanel.twig" %}   
+  
+    
+  
+  {% endswitch %}
+  {% endfor %}
+
+
+
    
-{# <!-- Main content --> #}
+{# <!-- Main content --> original
   {% for matrixBlock in entry.panelsHome %}
     {% switch matrixBlock.type %}
 
@@ -25,5 +44,5 @@
  
 
     {% endswitch %}
-  {% endfor %}
+  {% endfor %}#}
 {% endblock %}
