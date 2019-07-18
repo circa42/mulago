@@ -2,23 +2,29 @@
 {# ===== localhost :: 404 template ===== #}
 
 {% extends "_layout" %}
-{% set title = "404" %}
+{% set title = "Thanks" %}
 
 {% block content %}
-	
+  
    
 <!-- Main content -->
-<div class="main-content">
+<div class="">
+  
+  {% set imageQuery = entry.image.all() %}
+  {% for image in imageQuery %}
+    
+    <div class="bg-cover">
+      <img src="{{ image.getUrl('view2100x610') }}" alt="">
+    </div>  
+    
+  {% endfor %}
 
-	<div class="not-found-panel-1 m-ltgray" data-scroll-index="0">
-      <div class="container">
-       <div class="row">
-        <h1 class="text-uppercase">404</h1>
-        </div>
-      </div>
-    </div>
+  <div class="p-12">
+    <h1 class="text-4xl text-center text-gray-800 text-uppercase">{{ entry.headerMessage }}</h1>
+  </div>
 
-	<h1 class="text-center not-found">OOPS!</h1>
-	<h2 class="text-center not-found">Page not found</h2>
+  <h2 class="text-center mb-20">{{ entry.messageCopy}}</h2>
+
+</div>
 
 {% endblock %}

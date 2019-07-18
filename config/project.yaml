@@ -58,15 +58,25 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1563399746
+dateModified: 1563410213
 email:
-  fromEmail: sara@mulagofoundation.org
+  fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
   template: ''
-  transportType: craft\mail\transportadapters\Sendmail
+  transportType: craft\mail\transportadapters\Smtp
+  transportSettings:
+    host: smtp.postmarkapp.com
+    port: '587'
+    useAuthentication: '1'
+    username: a259b78e-09cf-4b15-a414-bd9e7f401c8d
+    password: a259b78e-09cf-4b15-a414-bd9e7f401c8d
+    encryptionMethod: ''
+    timeout: '10'
 fieldGroups:
   106f1368-0508-4aa4-a3ba-1e47959693e1:
     name: Team
+  52869743-1945-4552-8b8e-53556f8cd992:
+    name: 'Contact & 404'
   7bc5c830-e9d4-4a9d-8833-8b6bb27473aa:
     name: Pages
   8b29cd5d-7b85-4562-870f-05140994e4e2:
@@ -82,22 +92,6 @@ fieldGroups:
   e4052256-5b99-4635-82a6-d0e2e9c63268:
     name: Home
 fields:
-  00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
-    name: 'Feature link'
-    handle: featureLink
-    instructions: 'Select "Yes" to link to feature page'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Checkboxes
-    settings:
-      options:
-        -
-          label: 'Yes'
-          value: 'yes'
-          default: ''
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
-    contentColumnType: string
   06d11d10-77d1-4a9c-bc8a-99dbf4c988ee:
     name: 'Resource photo'
     handle: resourcePhoto
@@ -153,18 +147,6 @@ fields:
       columnType: string
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string
-  190ef3d7-0132-41d5-993f-2aaa73dbcf2c:
-    name: 'Fellow Status'
-    handle: fellowStatus
-    instructions: 'On if active, off if inactive (e.g. a Past Fellow)'
-    searchable: true
-    translationMethod: none
-    translationKeyFormat: null
-    type: craft\fields\Lightswitch
-    settings:
-      default: ''
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
-    contentColumnType: boolean
   1a109d8e-6ab2-43a1-8385-6e3c801cfc4e:
     name: 'Fellows Year Tag'
     handle: fellowsYearTag
@@ -498,6 +480,34 @@ fields:
       branchLimit: '4'
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
     contentColumnType: string
+  81393e18-8af5-4110-b37e-bcabaea884ca:
+    name: Image
+    handle: image
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+      singleUploadLocationSubpath: ''
+      restrictFiles: '1'
+      allowedKinds:
+        - image
+      sources:
+        - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 52869743-1945-4552-8b8e-53556f8cd992
   832d8e0c-4294-48e4-8c96-50c963ebc475:
     name: 'Fellows Category Strapline'
     handle: fellowsStrapline
@@ -515,6 +525,23 @@ fields:
       columnType: text
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: text
+  9772c9bc-a585-48e3-8d00-a347c4e690b7:
+    name: 'Message copy'
+    handle: messageCopy
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '2'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 52869743-1945-4552-8b8e-53556f8cd992
   9e640bdb-c61d-433a-8ec6-06030154c846:
     name: Position
     handle: position
@@ -532,6 +559,23 @@ fields:
       columnType: text
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     contentColumnType: text
+  a09fd95d-7287-49be-9037-87edfd52cf67:
+    name: 'Header Message'
+    handle: headerMessage
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 52869743-1945-4552-8b8e-53556f8cd992
   a1e2da08-7e4d-436e-9626-fdc2a621a9c8:
     name: Download
     handle: download
@@ -1549,27 +1593,6 @@ matrixBlockTypes:
           validateRelatedElements: ''
         contentColumnType: string
         fieldGroup: null
-      cc691bf4-521f-4dee-b17a-e08d65a713ab:
-        name: 'Archive copy'
-        handle: archiveCopy
-        instructions: 'Brief copy for archive page'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\redactor\Field
-        settings:
-          redactorConfig: ''
-          purifierConfig: ''
-          cleanupHtml: true
-          removeInlineStyles: '1'
-          removeEmptyTags: '1'
-          removeNbsp: '1'
-          purifyHtml: ''
-          columnType: text
-          availableVolumes: '*'
-          availableTransforms: '*'
-        contentColumnType: text
-        fieldGroup: null
       d5358562-edb3-4992-8065-a58f5f628790:
         name: 'Web link'
         handle: webLink
@@ -1596,7 +1619,7 @@ matrixBlockTypes:
             fields:
               265f085a-6524-4171-8666-225c7cc0a420:
                 required: false
-                sortOrder: 8
+                sortOrder: 7
               4a341661-edc1-45b8-bc5b-241eb3b248d3:
                 required: false
                 sortOrder: 3
@@ -1612,9 +1635,6 @@ matrixBlockTypes:
               c56ebf66-0969-473f-bb5a-4b110aa71066:
                 required: true
                 sortOrder: 2
-              cc691bf4-521f-4dee-b17a-e08d65a713ab:
-                required: false
-                sortOrder: 7
               d5358562-edb3-4992-8065-a58f5f628790:
                 required: false
                 sortOrder: 5
@@ -1805,54 +1825,6 @@ matrixBlockTypes:
               7616b1bb-4858-41a0-acfd-c805ef91fb05:
                 required: false
                 sortOrder: 2
-  533fe3dd-e54e-4c0a-a382-f9dea251ca96:
-    field: 22a97c98-08c7-4c47-a68d-7721e732e5f3
-    name: Status
-    handle: fellowStatus
-    sortOrder: 2
-    fields:
-      95b9b7d4-a768-4e3f-8569-5c040809e608:
-        name: 'Fellows Activity'
-        handle: fellowsActivity
-        instructions: 'On for current fellows, off for past fellows'
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\Lightswitch
-        settings:
-          default: '1'
-        contentColumnType: boolean
-        fieldGroup: null
-      b3ef7a22-39f0-4386-bf44-235a9522cac5:
-        name: 'Fellows Year'
-        handle: fellowsYear
-        instructions: ''
-        searchable: true
-        translationMethod: none
-        translationKeyFormat: null
-        type: craft\fields\PlainText
-        settings:
-          placeholder: ''
-          code: ''
-          multiline: ''
-          initialRows: '4'
-          charLimit: ''
-          columnType: text
-        contentColumnType: text
-        fieldGroup: null
-    fieldLayouts:
-      b3c237b5-0008-4490-9ebd-c49b6955d142:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              95b9b7d4-a768-4e3f-8569-5c040809e608:
-                required: false
-                sortOrder: 2
-              b3ef7a22-39f0-4386-bf44-235a9522cac5:
-                required: false
-                sortOrder: 1
   5da69a7a-95df-4631-86ad-51dd76cb9253:
     field: 299f057e-1178-421a-bf4b-1d48fcddddc1
     name: 'panel 1'
@@ -2832,11 +2804,11 @@ plugins:
     schemaVersion: 1.0.0
   contact-form:
     settings:
-      toEmail: lesterng@me.com
-      prependSender: 'On behalf of'
-      prependSubject: 'New message from Mulago'
+      toEmail: info@mulagofoundation.org
+      prependSender: 'A message from '
+      prependSubject: 'New message from MulagoFoundation.org'
       allowAttachments: ''
-      honeypotField: ''
+      successFlashMessage: 'Your message has been sent.'
     licenseKey: null
     enabled: '1'
     schemaVersion: 1.0.0
@@ -2957,8 +2929,8 @@ sections:
         name: 'Fellows Entry'
         handle: fellowsEntry
         hasTitleField: true
-        titleLabel: Fellows
-        titleFormat: null
+        titleLabel: Fellow
+        titleFormat: ''
         sortOrder: 1
         fieldLayouts:
           30747f88-d7f6-4930-a548-0aa07eb73de5:
@@ -2967,18 +2939,16 @@ sections:
                 name: 'Fellows'' Information'
                 sortOrder: 1
                 fields:
-                  00bdcff2-7e20-4ced-8bca-768ddaaa9bea:
-                    required: false
-                    sortOrder: 5
-                  190ef3d7-0132-41d5-993f-2aaa73dbcf2c:
-                    required: false
-                    sortOrder: 2
-                  1a109d8e-6ab2-43a1-8385-6e3c801cfc4e:
-                    required: false
-                    sortOrder: 3
                   22a97c98-08c7-4c47-a68d-7721e732e5f3:
                     required: false
-                    sortOrder: 4
+                    sortOrder: 1
+              -
+                name: Meta
+                sortOrder: 2
+                fields:
+                  1a109d8e-6ab2-43a1-8385-6e3c801cfc4e:
+                    required: false
+                    sortOrder: 2
                   6b153b1f-b054-4fd3-b6d9-3c1a4292b77e:
                     required: false
                     sortOrder: 1
@@ -3161,6 +3131,13 @@ sections:
     handle: contact
     type: single
     enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: contact
+        template: contact/index
     entryTypes:
       9aed7cb5-9d60-448d-b0a5-b3c8209b1709:
         name: Contact
@@ -3179,13 +3156,6 @@ sections:
                   ac7e1b7d-6030-462c-9b11-9d7f76286bf9:
                     required: false
                     sortOrder: 1
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: contact
-        template: pages/contact
-    propagationMethod: all
   4d4fc959-99a6-401d-9c82-0e54478e02a4:
     name: Portfolio
     handle: portfolio
@@ -3330,6 +3300,78 @@ sections:
         uriFormat: __home__
         template: index
     propagationMethod: all
+  befe3edd-701f-4792-ae4f-5cd45bcb0561:
+    name: '404'
+    handle: error404
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: '404'
+        template: '404'
+    entryTypes:
+      6d5289be-1e6a-4162-beaa-1a71d5013a4f:
+        name: '404'
+        handle: error404
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          9e2426ed-01bb-4c2a-acd2-f6f959de3446:
+            tabs:
+              -
+                name: 'Contact & 404'
+                sortOrder: 1
+                fields:
+                  81393e18-8af5-4110-b37e-bcabaea884ca:
+                    required: false
+                    sortOrder: 1
+                  9772c9bc-a585-48e3-8d00-a347c4e690b7:
+                    required: false
+                    sortOrder: 3
+                  a09fd95d-7287-49be-9037-87edfd52cf67:
+                    required: false
+                    sortOrder: 2
+  c07838d7-6351-4688-8852-bb13778056f9:
+    name: 'Contact Thanks'
+    handle: contactThanks
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: contact/thanks
+        template: contact/thanks
+    entryTypes:
+      777cd79f-903f-481f-8f69-3e03dc8d59e3:
+        name: 'Contact Thanks'
+        handle: contactThanks
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          b754a643-12c3-4a55-add5-683a63d490ca:
+            tabs:
+              -
+                name: Contact
+                sortOrder: 1
+                fields:
+                  81393e18-8af5-4110-b37e-bcabaea884ca:
+                    required: false
+                    sortOrder: 1
+                  9772c9bc-a585-48e3-8d00-a347c4e690b7:
+                    required: false
+                    sortOrder: 3
+                  a09fd95d-7287-49be-9037-87edfd52cf67:
+                    required: false
+                    sortOrder: 2
   c21b7a17-aef5-4947-8d1e-a7dc831644fb:
     name: Team
     handle: team

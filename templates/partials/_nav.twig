@@ -21,12 +21,12 @@
       </button>
     </div>
     
-
+{# mobile button #}
     <div :class="open ? 'block': 'hidden'" class="bg-white w-full flex-grow md:flex md:items-center md:w-auto">
         <div class="md:flex md:flex-grow justify-end">
           
 
-{# 
+{# a bunch of crap that may or may not be helpful
           {% for row in navigation.navTable %}
             <div id="dropdown">
               <div class="text-center pl-2 xs:border-0 my-4">                    
@@ -62,6 +62,7 @@
 
 
  
+ {# loop through the menu items and if the 'fellows' link is present, use _dropnav.twig #}
 
           {% for row in navigation.navTable %}
               <div class="text-center pl-2 xs:border-0 my-4">                    

@@ -38,8 +38,8 @@
 	            {% for row in entry.contacts %}       
 	                <hr>
 	                  <h3 class="text-gray-800 text-sm uppercase mt-4">{{ row.contactFor }}</h3>
-	                <a class="text-gray-800 hover:text-blue-800" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
-	                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+	                <a class="text-blue-800 hover:text-red" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
+	                   <p>{{ row.contactEmailName }}@mulagofoundation.org</p>
 	                </a>
 	            {% endfor %}
 	          {% endif %}
