@@ -18,14 +18,23 @@
 				</h5>
 				{% for row in entry.links %}
 					<div class="xs:text-center md:text-left">
-						<a href="{{ row.linkUrl }}" class="text-blue-600 hover:text-blue-400">{{ row.linkTitle }}</a>
+						<a href="{{ row.linkUrl }}" class="text-blue-600 hover:text-red">{{ row.linkTitle }}</a>
 					</div>
 				{% endfor %}
 			{% endif %}
 			{% if entry.download |length %}
-				<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
-					Downloads
-				</h5>
+			{% set assets = entry.download.all() %}
+				<div class="my-2">
+					<h5 class="xs:text-center md:text-left text-gray-800 text-sm uppercase">
+						Downloads
+					</h5>
+					{% for rel in assets %}
+						<a href="{{ rel.url }}" class="hover:text-red text-xs" target="_blank">
+							<i class="far fa-file-pdf"></i> {{ rel.title }} 
+						</a>
+					{% endfor %}
+				</div>
+				
 			{% endif %}
 		</div>
 
@@ -34,7 +43,7 @@
 		</h5>
 
 		<div class="border-b border-gray-400 mx-auto py-4">
-		  {% include "includes/_share" %}     
+		  {% include "partials/_share" %}     
 		</div>
 	</div>
 	
@@ -49,7 +58,9 @@
 		</div>
 		<div>
 			<h2 class="xs:text-center md:text-left text-gray-600 text-4xl my-8">
-				{{ entry.excerpt |raw }}
+				{{ entry.excerpt  |replace ({
+					'<a href': '<a class="text-gray-700 hover:text-red" href',
+				})|raw}}
 			</h2>
 		</div>
 		<div>

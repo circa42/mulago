@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1563410213
+dateModified: 1563576111
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -171,7 +171,7 @@ fields:
     type: craft\fields\Matrix
     settings:
       minBlocks: ''
-      maxBlocks: '2'
+      maxBlocks: '1'
       contentTable: '{{%matrixcontent_fellowsentry}}'
       propagationMethod: all
     contentColumnType: string
@@ -559,6 +559,26 @@ fields:
       columnType: text
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     contentColumnType: text
+  a0197376-9ff8-41ce-9bd5-16d56ddc7e39:
+    name: 'Related Portfolio'
+    handle: relatedPortfolio
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:4d4fc959-99a6-401d-9c82-0e54478e02a4'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
   a09fd95d-7287-49be-9037-87edfd52cf67:
     name: 'Header Message'
     handle: headerMessage
@@ -2942,6 +2962,12 @@ sections:
                   22a97c98-08c7-4c47-a68d-7721e732e5f3:
                     required: false
                     sortOrder: 1
+                  a0197376-9ff8-41ce-9bd5-16d56ddc7e39:
+                    required: false
+                    sortOrder: 3
+                  c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
+                    required: false
+                    sortOrder: 2
               -
                 name: Meta
                 sortOrder: 2
@@ -2997,10 +3023,10 @@ sections:
                     sortOrder: 3
                   694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
-                    sortOrder: 1
+                    sortOrder: 2
                   72fa867e-641d-436e-8a6e-25bfd62ed607:
                     required: true
-                    sortOrder: 2
+                    sortOrder: 1
       4adc8414-1040-44db-b090-9b7deee184aa:
         name: Videos
         handle: videos
@@ -3024,41 +3050,13 @@ sections:
                   ec3e69be-68b5-4b50-b16b-bd882d89b558:
                     required: false
                     sortOrder: 2
-      a61c4e3a-e872-4db6-8228-a507b3e4fbf0:
-        name: _dep-Resources
-        handle: depresources
-        hasTitleField: true
-        titleLabel: Title
-        titleFormat: ''
-        sortOrder: 0
-        fieldLayouts:
-          ace6efc4-e4c8-4cef-b96c-8342587a99e3:
-            tabs:
               -
-                name: Content
-                sortOrder: 1
+                name: Links
+                sortOrder: 2
                 fields:
-                  06d11d10-77d1-4a9c-bc8a-99dbf4c988ee:
-                    required: false
-                    sortOrder: 7
-                  0d4e4999-7db2-43ef-9593-07044ff53b50:
-                    required: true
-                    sortOrder: 3
-                  5b6542c7-d0cf-4ed5-9395-9274c46ab7ee:
-                    required: true
-                    sortOrder: 1
                   694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
-                    sortOrder: 4
-                  72fa867e-641d-436e-8a6e-25bfd62ed607:
-                    required: true
-                    sortOrder: 2
-                  a1e2da08-7e4d-436e-9626-fdc2a621a9c8:
-                    required: false
-                    sortOrder: 5
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
-                    required: false
-                    sortOrder: 6
+                    sortOrder: 1
       fb9a8035-a348-4fd4-bee0-b88742b13688:
         name: Tools
         handle: tools
@@ -3084,6 +3082,9 @@ sections:
                 sortOrder: 2
                 fields:
                   06d11d10-77d1-4a9c-bc8a-99dbf4c988ee:
+                    required: false
+                    sortOrder: 3
+                  694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
                     sortOrder: 2
                   a1e2da08-7e4d-436e-9626-fdc2a621a9c8:

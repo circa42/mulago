@@ -32,13 +32,13 @@
 
             {% if relatedPortfolio | length %} 
               {% for entry in relatedPortfolio %}
-               <a href="{{ entry.url }}">
+               <a href="{{ entry.url }}" class="no-underline text-blue-800 hover:text-red font-semibold text-lg" >
                   <h4 class="py-4">Mulago Portfolio</h4>
                  </a>
               {% endfor %}
             {% endif %}
 
-               <a class="no-underline text-blue-600 hover:text-blue-400 font-semibold text-lg" href="http://{{ matrixBlock.webLink }}" target="_blank" >
+               <a class="no-underline text-blue-800 hover:text-red font-semibold text-lg" href="http://{{ matrixBlock.webLink }}" target="_blank" >
                  <h4 class="py-4">View Website 
                   <span class="text-sm font-thin pl-2">
                     <i class="fas fa-external-link-alt"></i>
@@ -55,7 +55,7 @@
                <hr class="">
                <h5 class="text-sm uppercase mt-8">Share</h5>
                   <div class="border-b border-gray-400 py-4">
-                      {% include "includes/_share" %}
+                      {% include "partials/_share" %}
                   </div>
           </div>
            

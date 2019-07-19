@@ -1,4 +1,4 @@
-<a href="{{ entry.url }}" class="hover:border-gray-800">
+<a href="{{ entry.url }}" class="hover:border-red">
   <div class="max-w-sm bg-white p-4 m-4">
     {% set assets = entry.resourcePhoto %}
       {% if entry.resourcePhoto | length %}
@@ -8,15 +8,15 @@
           </div>
         {% endfor %}
       {% endif %}
-    <h3 class="uppercase text-gray-800 hover:text-gray-600">
+    <h3 class="uppercase text-gray-800 hover:text-red">
       {{ entry.title }} 
     </h3>
     <small class="">{{ entry.postDate | date("M d, Y") }}</small>
     <article class="text-gray-600 pt-4">
-      {{ entry.excerpt }}
+      {{ entry.excerpt |raw}}
     </article>
     <div class="text-right pt-4 text-sm">
-        <a href="{{ entry.url }}" class="right uppercase text-blue-800 hover:text-blue-600">
+        <a href="{{ entry.url }}" class="right uppercase text-blue-800 hover:text-red">
           Read more » 
         </a>
     </div>

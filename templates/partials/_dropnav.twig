@@ -1,30 +1,31 @@
 <div id="drop" class="z-50 bg-white">
 
-  <button onclick="myFunction()" >
-      <a class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:border-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
-      {{ row.linkName }}
+  <button @click.stop.prevent="toggleDropdownFellows" class="xs:hidden md:block">
+      <a class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:text-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+      {{ row.linkName }} <i class="fas fa-caret-down"></i>
       </a>
   </button>
 
-  <div :class="open ? 'block': 'hidden'" class="absolute"> 
+  <div :class="dropdownFellowsClass" class="text-center md:absolute xs:block md:shadow-lg"> 
      
      {% for row in navigation.subNavTable %}
 
-       <a href="{{ row.subLinkUrl }}" class="text-xs uppercase no-underline block text-gray-darkest hover:text-blue-600 hover:bg-gray-100">
-          <div class="block bg-white border-gray-400 border-b-2 py-2 px-8">
+       <a href="{{ siteUrl }}{{ row.subLinkUrl }}" class="text-xs uppercase no-underline block text-gray-darkest border-transparent border-t-2 hover:text-red">
+          <div class="block
+                      bg-white
+                      border-gray-400
+                      border-b-2
+                      px-8
+                      md:py-2
+                      xs:border-0
+                      xs:py-2"
+          >
             {{ row.subLinkName }}
           </div>
         </a>
       {% endfor %}    
       
 
-      {# <a href="/fellows/henry-fellows" class="text-xs uppercase no-underline block text-gray-darkest hover:text-blue-600 hover:bg-gray-100">
-              <div class="block bg-white border-gray-400 py-2 px-8">
-                henry-static
-              </div>
-            </a> 
-       #}
   </div>
 
 </div>
-

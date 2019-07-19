@@ -1,11 +1,14 @@
-<div class="w-1/3">
+<div class="w-1/2">
   <a href="{{ entry.url }}" class="hover:border-gray-800">
     <div class="bg-white p-4 m-4">
-        <div class="flex justify-center mb-4 text-center">
-          <iframe class="" src="https://www.youtube.com/embed/{{ entry.videoEmbed | raw }}" frameborder="0" allowfullscreen>
-          </iframe>
+        <div class="flex justify-center mb-4 bg-gray-200 text-center">
+
+
+          <iframe width="660" height="315" src="https://www.youtube.com/embed/{{ entry.videoEmbed | raw }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
         </div>
-         <h3 class="uppercase text-gray-800 hover:text-gray-600">
+         <h3 class="uppercase text-gray-800 hover:text-red">
           {{ entry.title }}
         </h3>
         <small class="">{{ entry.postDate | date("M d, Y") }}</small>

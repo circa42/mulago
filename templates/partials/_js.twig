@@ -1,5 +1,5 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
 <script>window.jQuery || document.write('<script src="{{ siteUrl }}js/vendor/jquery-1.11.1.min.js"><\/script>')</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
@@ -31,23 +31,53 @@
  
 
  <script>
-  new Vue({
+new Vue({
     el: '#mobile',
     data: {
-      open: false,
+        view: {
+            menu: false,
+            dropdown: {
+                fellows: {
+                    button: true,
+                    elements: false,
+                }
+            }
+        }
+    },
+    computed: {
+        menuClass() {
+            return {
+                'block': this.view.menu,
+                'hidden': !this.view.menu,
+            }
+        },
+        dropdownFellowsClass() {
+            return {
+                'md:hidden': !this.view.dropdown.fellows.elements,
+            }
+        }
     },
     methods: {
-      toggle() {
-        this.open = !this.open
-      }
+        toggleMenu() {
+            this.view.menu = !this.view.menu;
+        },
+        toggleDropdownFellows() {
+            this.view.dropdown.fellows.elements = !this.view.dropdown.fellows.elements;
+        },
+        hideDropdown() {
+            Object.keys(this.view.dropdown).forEach(key => this.view.dropdown[key].elements = false);
+        },
+        getWindowWidth() {
+            const w = window,
+                  d = document,
+                  e = d.documentElement,
+                  g = d.getElementsByTagName('body')[0],
+                  x = w.innerWidth || e.clientWidth || g.clientWidth;
+            return x;  
+        }
+    },
+    mounted() {
+        document.addEventListener('click', this.hideDropdown, false);
     }
-  })
-</script>
-
-<script>
-$(document).ready(function(){
-  $('.resources').slick({
-    setting-name: setting-value
-  });
 });
-</script 
+</script>

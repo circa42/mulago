@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "093e2aefd7d2c34437b8ca71e004567f",
+    "content-hash": "e893797c5bf06734d4e99c9beaedcce2",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -1717,11 +1717,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.20",
+            "version": "3.1.22",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/041e24cd223fa9fdc8bb04bcb7e75fad63f17363",
-                "reference": "041e24cd223fa9fdc8bb04bcb7e75fad63f17363",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/b2559eef7f093c782c237ae2fc5b9b6d1170f4a6",
+                "reference": "b2559eef7f093c782c237ae2fc5b9b6d1170f4a6",
                 "shasum": ""
             },
             "require": {
@@ -1768,7 +1768,7 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2019-07-17T20:43:08+00:00"
+            "time": "2019-07-18T16:26:23+00:00"
         },
         {
             "name": "paragonie/random_compat",

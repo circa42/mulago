@@ -7,7 +7,7 @@
 {% set articles = resourcesQ.type('articles').relatedTo(category).all() %}
 
     {# Articles #}
-<div class="bg-gray-200 p-12">
+<div class="bg-gray-200">
 
       <div class="flex flex-wrap justify-between">
         {# subnav #}
@@ -18,7 +18,7 @@
           {% include 'resources/partials/_subnav.twig' %}
         </div>
 
-        <div class="flex justify-center flex-wrap m-8">
+        <div class="flex justify-center flex-wrap">
           
             {% for entry in articles %}
               {% if entry.type == 'articles' %}
