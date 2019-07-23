@@ -30,7 +30,7 @@
 					</h5>
 					{% for rel in assets %}
 						<a href="{{ rel.url }}" class="hover:text-red text-xs" target="_blank">
-							<i class="far fa-file-pdf"></i> {{ rel.title }} 
+							 {{ rel.title }}  <i class="far fa-file-pdf"></i> 
 						</a>
 					{% endfor %}
 				</div>
@@ -48,22 +48,27 @@
 	</div>
 	
 	<div class="xs:w-full md:w-2/3 border-t border-gray-400 p-8 my-8">
+
 		<div>
-			<h3 class="xs:text-center md:text-right">
-				{{ entry.ideasAuthor }}
-			</h3>
-			<h4 class="xs:text-center md:text-right">
-				{{ entry.postDate | date("M d, Y") }}
-			</h4>
-		</div>
-		<div>
-			<h2 class="xs:text-center md:text-left text-gray-600 text-4xl my-8">
+			<h2 class="xs:text-center md:text-left text-gray-600 text-4xl my-4">
 				{{ entry.excerpt  |replace ({
 					'<a href': '<a class="text-gray-700 hover:text-red" href',
 				})|raw}}
 			</h2>
 		</div>
 		<div>
+			<h3 class="text-gray-700 font-sm xs:text-center md:text-left my-4">
+				by {{ entry.ideasAuthor }}
+			</h3>
+			{# <h4 class="xs:text-center md:text-right">
+							{{ entry.postDate | date("M d, Y") }}
+						</h4> #}
+		</div>
+		<div>
+			{% if entry.videoEmbed |length %}
+				<iframe width="660" height="315" src="https://www.youtube.com/embed/{{ entry.videoEmbed | raw }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			{% endif %}
+
 			{% set blocks = entry.contentBuilder.all() %}
 			{% for block in blocks %}
 				{% if block.type == 'copyBlock' %}

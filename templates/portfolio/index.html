@@ -42,10 +42,7 @@
         </div>
       </div>
     </div>
-      {% if loop.first %}
-       <div class="h-4 mt-8">
-       </div>
-      {% endif %}
+
     {% set portfolioEntry = craft.entries.relatedTo(category) %}
     {% set entries = portfolioEntry.all() %}
 

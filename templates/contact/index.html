@@ -1,14 +1,45 @@
 {% extends "_layout" %}
 
 {% block content %}
-    <div class="flex flex-col bg-gray-400 py-16 px-12 mb-12">
 
-        <div class="relative">
-           <h1 class="text-gray-700 leading-none text-uppercase font-normal xs:text-4xl md:text-6xl md:text-8xl ml-8">
-            {{ entry.title }}
-          </h1>        
+{% for matrixBlock in entry.panels %}
+  {% if matrixBlock.type == 'panelHeader' %}
+  
+
+
+      
+{# featured image + title #}         
+      <div class="flex flex-col z-40">
+
+            <div class="relative m-auto">     
+              {% for image in matrixBlock.image %}
+                <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
+              {% endfor %}
+            <div class="absolute bottom-0 left-0">
+              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl ml-8">
+                {{ matrixBlock.heading1 }}
+              </h1>
+            </div>
+   
         </div>
-    </div>
+
+      </div>
+
+{% endif %}
+{% endfor %}
+
+
+
+
+
+   {#  <div class="flex flex-col bg-gray-400 py-16 px-12 mb-12">
+   
+           <div class="relative">
+              <h1 class="text-gray-700 leading-none text-uppercase font-normal xs:text-4xl md:text-6xl md:text-8xl ml-8">
+               {{ entry.title }}
+             </h1>        
+           </div>
+       </div> #}
 <div class="flex-wrap flex m-12">
 	<div class="xs:w-full md:w-1/3 border-t border-gray-400 py-8 px-2 my-8">
 		<div class="my-4">
@@ -30,16 +61,22 @@
 		</div>
 
 
-			<div class="xs:w-full md:w-1/3 xs:text-center md:text-left xs:mb-8 md:mb-4">
-		      <p class="text-gray-800 text-sm">
-		        {{ address.copy |nl2br }}
-		      </p>
+			<div class="xs:text-center md:text-left xs:mb-8 md:mb-4">
+			    <h3 class="font-semibold text-gray-700 text-sm mt-4">
+				    {{ address.ourOffice }}
+				</h3>
+			    <p class="text-gray-800 text-sm">
+			    	{{ address.copy |nl2br }}
+			    </p>
 		      {% if entry.contacts | length %} 
 	            {% for row in entry.contacts %}       
 	                <hr>
-	                  <h3 class="text-gray-800 text-sm uppercase mt-4">{{ row.contactFor }}</h3>
-	                <a class="text-blue-800 hover:text-red" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
-	                   <p>{{ row.contactEmailName }}@mulagofoundation.org</p>
+						<h3 class="font-semibold text-gray-700 text-sm mt-4">
+							{{ row.contactFor }}
+						</h3>
+	                	<a class="text-sm text-blue-800 hover:text-red" href="mailto:{{ row.contactEmail }}@mulagofoundation.org">
+	                   <p>
+	                   	{{ row.contactEmail }}</p>
 	                </a>
 	            {% endfor %}
 	          {% endif %}

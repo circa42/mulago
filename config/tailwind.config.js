@@ -138,7 +138,7 @@ module.exports = {
     },
     fontFamily: {
 		sans: [
-		  'p22-underground',
+		  'aktiv-grotesk',
 		  'sans-serif',
 		  '"Apple Color Emoji"',
 		  '"Segoe UI Emoji"',

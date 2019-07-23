@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1563576111
+dateModified: 1563850805
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -525,6 +525,36 @@ fields:
       columnType: text
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: text
+  9671a45e-142f-4c1b-91fa-927bf8905645:
+    name: Newsletter
+    handle: newsletter
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Table
+    settings:
+      addRowLabel: 'Add a row'
+      maxRows: ''
+      minRows: ''
+      columns:
+        col1:
+          heading: CTA
+          handle: cta
+          width: ''
+          type: singleline
+        col2:
+          heading: URL
+          handle: url
+          width: ''
+          type: singleline
+      defaults:
+        -
+          col1: ''
+          col2: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
   9772c9bc-a585-48e3-8d00-a347c4e690b7:
     name: 'Message copy'
     handle: messageCopy
@@ -631,6 +661,9 @@ fields:
     translationKeyFormat: null
     type: craft\fields\Table
     settings:
+      addRowLabel: 'Add a row'
+      maxRows: ''
+      minRows: ''
       columns:
         col1:
           heading: 'Contact for'
@@ -638,16 +671,17 @@ fields:
           width: ''
           type: singleline
         col2:
-          heading: 'Contact email name'
-          handle: contactEmailName
+          heading: 'Contact email'
+          handle: contactEmail
           width: ''
           type: singleline
       defaults:
-        row1:
+        -
           col1: ''
           col2: ''
-    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
+      columnType: text
     contentColumnType: text
+    fieldGroup: 7bc5c830-e9d4-4a9d-8833-8b6bb27473aa
   b1873b59-518b-4e37-ab52-2a521503856e:
     name: 'Portfolio Category'
     handle: portfolioCategory
@@ -703,6 +737,23 @@ fields:
       columnType: text
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: text
+  d2f2bc0d-3068-480a-b2fe-63959b2f8bca:
+    name: 'Our office'
+    handle: ourOffice
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: ''
+      initialRows: '4'
+      charLimit: ''
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
   e12e7419-4af5-4e94-a350-c41f439e81b9:
     name: Copy
     handle: copy
@@ -869,9 +920,12 @@ globalSets:
             name: Content
             sortOrder: 1
             fields:
-              e12e7419-4af5-4e94-a350-c41f439e81b9:
+              d2f2bc0d-3068-480a-b2fe-63959b2f8bca:
                 required: false
                 sortOrder: 1
+              e12e7419-4af5-4e94-a350-c41f439e81b9:
+                required: false
+                sortOrder: 2
   8424f06f-5ac1-4433-a5b1-e4ff6ebe5bcc:
     name: Social
     handle: social
@@ -882,6 +936,9 @@ globalSets:
             name: 'Mulago Social'
             sortOrder: 1
             fields:
+              9671a45e-142f-4c1b-91fa-927bf8905645:
+                required: false
+                sortOrder: 2
               ff266bb2-8e19-4049-b6c8-bf8cee73a646:
                 required: false
                 sortOrder: 1
@@ -3144,7 +3201,7 @@ sections:
         name: Contact
         handle: contact
         hasTitleField: false
-        titleLabel: null
+        titleLabel: ''
         titleFormat: '{section.name|raw}'
         sortOrder: 0
         fieldLayouts:
@@ -3155,6 +3212,9 @@ sections:
                 sortOrder: 1
                 fields:
                   ac7e1b7d-6030-462c-9b11-9d7f76286bf9:
+                    required: false
+                    sortOrder: 2
+                  fed72544-841b-4f2a-9df3-f7d4c69dcac3:
                     required: false
                     sortOrder: 1
   4d4fc959-99a6-401d-9c82-0e54478e02a4:

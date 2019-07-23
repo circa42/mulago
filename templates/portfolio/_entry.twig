@@ -16,10 +16,11 @@
   
     {% include "partials/_featuredimage.twig" %}
 
-    <div class="m-auto py-8 xs:mx-8 md:mx-16 lg:mx-32">
+    <div class="m-auto p-8">
 
-      <div class="flex flex-wrap max-w-6xl m-auto">
+      <div class="flex xs:flex-wrap-reverse lg:flex-wrap max-w-6xl m-auto">
         
+        {# sidebar #}
         <div class="xs:full md:w-64 pl-8">
           <div class="border-t border-b border-gray-400 py-4">
             {% for image in matrixBlock.logo %}
@@ -38,31 +39,31 @@
               <h5 class="text-sm uppercase mt-8">
                Share
               </h5>
-                  <div class="border-b border-gray-400 py-4">
-                      {% include "partials/_share" %}     
-                  </div>
-         </div>
+              <div class="border-b border-gray-400 py-4">
+                  {% include "partials/_share" %}     
+              </div>
+        </div>
          
+    {# Body  #}
+        <div class="lg:w-3/4 pl-8">
+            <p><strong>Our total investment:</strong> 
+             {{ matrixBlock.investment }}</p>
 
-          <div class="lg:w-3/4 pl-8">
-              <p><strong>Our total investment:</strong> 
-               {{ matrixBlock.investment }}</p>
-
-              {% if entry.relatedFellow | length %}
-                {% for fellow in entry.relatedFellow %}
-                  <div class="border-b border-gray-400 mb-8">
-                    <a class="" href="{{ fellow.url }}">
-                      <strong class="">Fellow:</strong>
-                        {{ fellow.title }} 
-                      </a>
-                  </div>
-                {% endfor %}
-              {% endif %}
-            <div class="text-lg"> <hr>
-              {{ matrixBlock.copy }}
-            </div>
-
+            {% if entry.relatedFellow | length %}
+              {% for fellow in entry.relatedFellow %}
+                <div class="border-b border-gray-400 mb-8">
+                  <a class="" href="{{ fellow.url }}">
+                    <strong class="">Fellow:</strong>
+                      {{ fellow.title }} 
+                    </a>
+                </div>
+              {% endfor %}
+            {% endif %}
+          <div class="text-lg"> <hr>
+            {{ matrixBlock.copy }}
           </div>
+
+        </div>
 
       </div>
   {% endif %}
