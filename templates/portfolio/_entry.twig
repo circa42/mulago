@@ -52,8 +52,9 @@
             {% if entry.relatedFellow | length %}
               {% for fellow in entry.relatedFellow %}
                 <div class="border-b border-gray-400 mb-8">
-                  <a class="" href="{{ fellow.url }}">
-                    <strong class="">Fellow:</strong>
+                  <strong class="">Fellow:</strong>
+                  <a class="no-underline text-blue-600 hover:text-red font-normal" href="{{ fellow.url }}">
+                    
                       {{ fellow.title }} 
                     </a>
                 </div>

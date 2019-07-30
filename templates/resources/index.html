@@ -18,15 +18,17 @@
 
 {# articles #}
   
-   <div class="text-center bg-blue-700 py-4 mb-4">
-    <div class="text-white uppercase tracking-wider">
-        <a href="/resources/articles/">
-          <h2 class="text-xl">
-            Articles 
-          </h2>
-        </a>
+  <a href="/resources/articles/">
+    <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
+      <div class="text-white uppercase tracking-wider">
+          
+            <h2 class="text-xl">
+              Articles 
+            </h2>
+          
+      </div>
     </div>
-  </div> 
+  </a> 
 
 <div class="p-12">
   <div class="flex justify-center articles">
@@ -37,39 +39,21 @@
     {% endfor %}
   </div>
 </div>
-{# 
 
-<div class="flex justify-center">
-
-  <div class="resources flex flex-wrap m-8">
-    {% for entry in articles %}
-      <div class="slider">
-        {% include "resources/partials/_article-block.twig" %}
-      </div>
-    {% endfor %}
-  </div>
-
-</div> 
-
-<div class="flex justify-center p-8">
-    <a href="/resources/articles/" class="rounded text-white bg-blue-700 hover:bg-red px-4 py-2">
-        See more »
-    </a>
-</div>
-#}
 {# -------------- #}
 
 
 {# videos #}
-  <div class="text-center bg-blue-700 py-4 mb-4">
-    <div class="text-white uppercase tracking-wider">
-        <a href="/resources/videos/">
-          <h2 class="text-xl">
-            Videos 
-          </h2>
-        </a>
+<a href="/resources/videos/">
+  <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
+    <div class="text-white uppercase tracking-wider"> 
+      <h2 class="text-xl">
+        Videos 
+      </h2>
     </div>
   </div>
+</a>
+
 
 <div class="p-12">
   <div class="videos flex justify-center">
@@ -91,16 +75,16 @@
 
 {# Tools #}
 
-  
-  <div class="text-center bg-blue-700 py-4 mb-4">
+<a href="/resources/tools/">  
+  <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
     <div class="text-white uppercase tracking-wider">
-        <a href="/resources/tools/">
-          <h2 class="text-xl">
-            Tools 
-          </h2>
-        </a>
+        <h2 class="text-xl">
+          Tools 
+        </h2>
     </div>
   </div>
+</a>
+
 <div class="p-12">
   <div class="flex flex-wrap tools justify-center">
     {% for entry in tools %}

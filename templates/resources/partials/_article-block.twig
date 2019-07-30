@@ -1,7 +1,7 @@
 
 
 <a href="{{ entry.url }}" class="hover:border-red">
-  <div class="bg-white p-4 m-4">
+  <div class="max-w-sm min-w-sm bg-white p-4 m-4">
     {% set assets = entry.resourcePhoto %}
       {% if entry.resourcePhoto | length %}
         {% for asset in assets %}

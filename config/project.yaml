@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1563850805
+dateModified: 1564519382
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -121,16 +121,21 @@ fields:
     searchable: true
     translationMethod: none
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\redactor\Field
     settings:
-      placeholder: ''
-      code: ''
-      multiline: '1'
-      initialRows: '4'
-      charLimit: ''
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
       columnType: text
-    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
+      availableVolumes: ''
+      availableTransforms:
+        - 4670c1a8-aaed-443f-a246-bddc1dd60307
     contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   0fa55090-53fc-4117-9b8a-31c7241267a5:
     name: 'Heading 1'
     handle: heading1
@@ -325,22 +330,20 @@ fields:
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string(7)
   5a9f6d18-cade-45df-a79e-1ff407f065cf:
-    name: 'Video Embed'
-    handle: videoEmbed
-    instructions: 'Only use video id: e.g. If URL is " https:// www.youtube.com/watch?v=EOmNc6rTseM " only use "EOmNc6rTseM"'
+    name: 'Video Matrix'
+    handle: videoMatrix
+    instructions: ''
     searchable: false
-    translationMethod: none
+    translationMethod: site
     translationKeyFormat: null
-    type: craft\fields\PlainText
+    type: craft\fields\Matrix
     settings:
-      placeholder: EOmNc6rTseM
-      code: '1'
-      multiline: ''
-      initialRows: '4'
-      charLimit: ''
-      columnType: text
+      minBlocks: ''
+      maxBlocks: ''
+      contentTable: '{{%matrixcontent_videomatrix}}'
+      propagationMethod: all
+    contentColumnType: string
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
-    contentColumnType: text
   5b6542c7-d0cf-4ed5-9395-9274c46ab7ee:
     name: Author
     handle: ideasAuthor
@@ -443,13 +446,9 @@ fields:
           handle: linkUrl
           width: ''
           type: singleline
-      defaults:
-        -
-          col1: ''
-          col2: ''
       columnType: text
-    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
     contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   6b153b1f-b054-4fd3-b6d9-3c1a4292b77e:
     name: 'Fellows Category'
     handle: fellowsCategory
@@ -2584,6 +2583,83 @@ matrixBlockTypes:
               ff777d70-eccf-4722-a80b-4d61a67c66b7:
                 required: true
                 sortOrder: 2
+  cc69cd3f-908e-49c1-b87b-11872eb64259:
+    field: 5a9f6d18-cade-45df-a79e-1ff407f065cf
+    name: 'Video Block'
+    handle: videoBlock
+    sortOrder: 1
+    fields:
+      1ad80d08-3d96-465a-891d-e0962863bad1:
+        name: 'Video Title'
+        handle: videoTitle
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+      2017e552-ae29-495c-8b4f-7d9a901c4243:
+        name: 'Video Copy'
+        handle: videoCopy
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\redactor\Field
+        settings:
+          redactorConfig: Standard.json
+          purifierConfig: ''
+          cleanupHtml: true
+          removeInlineStyles: '1'
+          removeEmptyTags: '1'
+          removeNbsp: '1'
+          purifyHtml: '1'
+          columnType: text
+          availableVolumes: ''
+          availableTransforms: '*'
+        contentColumnType: text
+        fieldGroup: null
+      a8a53d3b-e859-4b09-8215-24a7ff647aea:
+        name: 'Video ID'
+        handle: videoId
+        instructions: 'Only use video id: e.g. If URL is " https:// www.youtube.com/watch?v=EOmNc6rTseM " only use "EOmNc6rTseM"'
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: '1'
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      fb3fa3ea-831b-4bc3-9d70-31c05d54c614:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              1ad80d08-3d96-465a-891d-e0962863bad1:
+                required: false
+                sortOrder: 1
+              2017e552-ae29-495c-8b4f-7d9a901c4243:
+                required: false
+                sortOrder: 3
+              a8a53d3b-e859-4b09-8215-24a7ff647aea:
+                required: false
+                sortOrder: 2
   dd6d8d9b-a6d2-48ec-b341-f97f15189cdc:
     name: 'Copy Block'
     handle: copyBlock
@@ -3103,13 +3179,17 @@ sections:
                     sortOrder: 1
                   5a9f6d18-cade-45df-a79e-1ff407f065cf:
                     required: false
-                    sortOrder: 3
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
-                    required: false
                     sortOrder: 2
               -
-                name: Links
+                name: 'deprecated content'
                 sortOrder: 2
+                fields:
+                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                    required: false
+                    sortOrder: 1
+              -
+                name: Links
+                sortOrder: 3
                 fields:
                   694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
