@@ -2,7 +2,7 @@
 
 <a href="{{ entry.url }}" class="hover:border-red">
   <div class="max-w-sm min-w-sm bg-white p-4 m-4">
-    {% set assets = entry.resourcePhoto %}
+    {% set assets = entry.resourcePhoto.all() %}
       {% if entry.resourcePhoto | length %}
         {% for asset in assets %}
           <div class="shadow mb-4">
@@ -13,7 +13,7 @@
     <h3 class="uppercase text-gray-800 hover:text-red">
       {{ entry.title }} 
     </h3>
-    {# <small class="">{{ entry.postDate | date("M d, Y") }}</small> #}
+     <small class="">{{ entry.postDate | date("M d, Y") }}</small>
     <article class="text-xs text-gray-600 pt-4">
       {{ entry.excerpt |raw}}
     </article>
@@ -30,35 +30,3 @@
 
 
 
-
-
-
-{# original
-
-<a href="{{ entry.url }}" class="hover:border-red">
-  <div class="max-w-sm bg-white p-4 m-4">
-    {% set assets = entry.resourcePhoto %}
-      {% if entry.resourcePhoto | length %}
-        {% for asset in assets %}
-          <div class="shadow mb-4">
-              <img src="{{ asset.url('resources270x180') }}" alt="{{ asset.title }}">
-          </div>
-        {% endfor %}
-      {% endif %}
-    <h3 class="uppercase text-gray-800 hover:text-red">
-      {{ entry.title }} 
-    </h3>
-    {# <small class="">{{ entry.postDate | date("M d, Y") }}</small> # }
-    <article class="text-xs text-gray-600 pt-4">
-      {{ entry.excerpt |raw}}
-    </article>
-    <div class="text-right pt-4 text-xs">
-        <a href="{{ entry.url }}" class="right uppercase text-blue-800 hover:text-red">
-          Read more » 
-        </a>
-    </div>
-    
-  </div>
-</a>
-
- #}

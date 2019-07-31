@@ -5,6 +5,11 @@ categoryGroups:
     structure:
       uid: 1348700e-73c2-41a3-b707-b0632522651e
       maxLevels: 1
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        hasUrls: true
+        uriFormat: 'fellows/{slug}'
+        template: fellows/index
     fieldLayouts:
       7fc8c15f-bdbb-4434-a933-45e177481559:
         tabs:
@@ -12,17 +17,12 @@ categoryGroups:
             name: Fellows
             sortOrder: 1
             fields:
+              39f43525-a682-4194-960d-4d4d5e3e8d9b:
+                required: false
+                sortOrder: 2
               832d8e0c-4294-48e4-8c96-50c963ebc475:
                 required: false
                 sortOrder: 1
-              c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
-                required: false
-                sortOrder: 2
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        hasUrls: true
-        uriFormat: 'fellows/{slug}'
-        template: fellows/index
   7b28e521-a946-4f65-8d21-f665c77f0301:
     name: 'Resources Category'
     handle: resourcesCat
@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564536913
+dateModified: 1564543863
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -302,6 +302,26 @@ fields:
       columnType: text
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
     contentColumnType: text
+  39f43525-a682-4194-960d-4d4d5e3e8d9b:
+    name: 'Program Link'
+    handle: programLink
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Entries
+    settings:
+      sources:
+        - 'section:69bde69a-4057-48d2-a6ae-3d9a2b242f46'
+      source: null
+      targetSiteId: null
+      viewMode: null
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: c9eb873f-d2a6-418a-a505-f4b904270fc6
   46950084-5904-4d50-8bd0-a39150c6489c:
     name: 'Related fellow'
     handle: relatedFellow
@@ -588,26 +608,6 @@ fields:
       columnType: text
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     contentColumnType: text
-  a0197376-9ff8-41ce-9bd5-16d56ddc7e39:
-    name: 'Related Portfolio'
-    handle: relatedPortfolio
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
-    settings:
-      sources:
-        - 'section:4d4fc959-99a6-401d-9c82-0e54478e02a4'
-      source: null
-      targetSiteId: null
-      viewMode: null
-      limit: '1'
-      selectionLabel: ''
-      localizeRelations: false
-      validateRelatedElements: ''
-    contentColumnType: string
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
   a09fd95d-7287-49be-9037-87edfd52cf67:
     name: 'Header Message'
     handle: headerMessage
@@ -699,25 +699,6 @@ fields:
       selectionLabel: ''
       localizeRelations: false
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
-    contentColumnType: string
-  c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
-    name: 'Program Link'
-    handle: programLink
-    instructions: ''
-    searchable: true
-    translationMethod: site
-    translationKeyFormat: null
-    type: craft\fields\Entries
-    settings:
-      sources:
-        - 'section:69bde69a-4057-48d2-a6ae-3d9a2b242f46'
-      source: null
-      targetSiteId: null
-      viewMode: null
-      limit: '1'
-      selectionLabel: ''
-      localizeRelations: false
-    fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: string
   ca18a062-4194-422a-a16f-4fa840664602:
     name: 'Category Strapline'
@@ -3002,6 +2983,7 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 3.0.7
+    licenseKey: X6KRX30LCENGEG1CJB1SMBV6
   redactor-custom-styles:
     edition: standard
     enabled: true
@@ -3095,12 +3077,6 @@ sections:
                   22a97c98-08c7-4c47-a68d-7721e732e5f3:
                     required: false
                     sortOrder: 1
-                  a0197376-9ff8-41ce-9bd5-16d56ddc7e39:
-                    required: false
-                    sortOrder: 3
-                  c4aeccc7-cbf7-4d56-b1f4-c82a21698dde:
-                    required: false
-                    sortOrder: 2
               -
                 name: Meta
                 sortOrder: 2

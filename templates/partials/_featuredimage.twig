@@ -1,10 +1,12 @@
-{% set image = matrixBlock.featureImage %}
+{% set image = matrixBlock.featureImage.all() %}
 
     <div class="flex flex-col bg-gray-200 z-40">
 
         <div class="relative m-auto">
-     
-              {% for image in matrixBlock.featureImage %}
+              
+              
+              {% set imageQ = matrixBlock.featureImage.all() %}
+              {% for image in imageQ %}
                 <img src="{{ image.getUrl('view2100x610') }}" alt="">
               {% endfor %}
             <div class="absolute bottom-0 left-0">

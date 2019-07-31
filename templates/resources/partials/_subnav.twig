@@ -1,4 +1,4 @@
-{% set categories = craft.categories.group('resourcesCat').find() %}
+{% set categories = craft.categories.group('resourcesCat').all() %}
 {% for category in categories %}
   
 {% set seg = craft.request.getSegment(2) %}

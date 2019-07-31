@@ -8,7 +8,8 @@
 
 
 {# <!-- Main content :: cleaning up and adding fellows secondary image support #}
-  {% for block in entry.homePanels %}
+  {% set blocks = entry.homePanels.all() %}
+  {% for block in blocks %}
     
   {% switch block.type %}
   

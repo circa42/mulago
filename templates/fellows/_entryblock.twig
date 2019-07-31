@@ -1,4 +1,5 @@
-  {% for matrixBlock in entry.fellowsEntry %}
+{% set blocks = entry.fellowsEntry.all() %}
+  {% for matrixBlock in blocks %}
     {% if matrixBlock.type == 'entryContent' %}
 
       <a href="{{ entry.url }}" class=""> 

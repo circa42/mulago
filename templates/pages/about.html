@@ -8,7 +8,8 @@
    
 <!-- Main content -->
 
-{% for matrixBlock in entry.panels %}
+{% set blocks = entry.panels.all() %}
+{% for matrixBlock in blocks %}
   {% if matrixBlock.type == 'panelHeader' %}
   
 
@@ -18,7 +19,8 @@
       <div class="flex flex-col z-40">
 
             <div class="relative m-auto">     
-              {% for image in matrixBlock.image %}
+              {% set images = matrixBlock.image.all() %}
+              {% for image in images %}
                 <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
               {% endfor %}
             <div class="absolute bottom-0 left-0">
