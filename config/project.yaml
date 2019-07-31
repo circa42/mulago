@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564545329
+dateModified: 1564545412
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -2988,6 +2988,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.8
+    licenseKey: 8MFUKTKASWN1NY2O1SA9RRVQ
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
