@@ -10,7 +10,8 @@
 
 <div class="text-gray-800 text-xl font-light leading-relaxed">
 
-{% for matrixBlock in entry.fellowsEntry %}
+{% set matrixQ = entry.fellowsEntry.all() %}
+{% for matrixBlock in matrixQ %}
   {% if matrixBlock.type == 'entryContent' %}
 
     {% include "partials/_featuredimage.twig" %}
@@ -23,14 +24,15 @@
            
           <div class="xs:full md:w-64 pl-8">
               <div class="border-t border-b border-gray-400 py-4">
-                {% for image in matrixBlock.fellowImage %}
+                {% set images = matrixBlock.fellowImage.all() %}
+                {% for image in images %}
                   <img src="{{ image.getUrl('sq300x300') }}" alt="" class="">
                 {% endfor %}
               </div>
-
-{% set relatedPortfolio = craft.entries.section('portfolio').relatedTo(entry).limit(1) %}
-
+            
+            {% set relatedPortfolio = craft.entries.section('portfolio').relatedTo(entry).limit(1).all() %}
             {% if relatedPortfolio | length %} 
+              
               {% for entry in relatedPortfolio %}
                <a href="{{ entry.url }}" class="no-underline text-blue-800 hover:text-red font-semibold text-lg" >
                   <h4 class="py-4">Mulago Portfolio</h4>
@@ -78,7 +80,7 @@
 {# pagination #}
     <div class="flex justify-end  border-t border-gray-400 py-4 mt-8">
     {% set category = craft.categories.relatedTo(entry) %}
-    {% set categories = category.total() %} 
+    {% set categories = category.count() %} 
       {{ category.title }}
     {% set entries = craft.entries.relatedTo(category) %}
     {% paginate entries as pageInfo, pageEntries %}
@@ -87,7 +89,7 @@
         <div class="flex items-center">
           <div class="text-xs uppercase mr-2">
              
-            
+              {% set entries = craft.entries.relatedTo(category).all() %}
               {% for entry in entries %}
                 {% if entry == title  %}
                   <h5 class="text-xs uppercase pt-2 mr-2">

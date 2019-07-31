@@ -9,7 +9,8 @@
    
 <!-- Main content -->
 
-{% for matrixBlock in entry.panels %}
+{% set blocks = entry.panels.all() %}
+{% for matrixBlock in blocks %}
   {% if matrixBlock.type == 'panelHeader' %}
   
 

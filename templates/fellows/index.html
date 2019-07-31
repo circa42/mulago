@@ -29,7 +29,7 @@
 			    .programLink(':notempty:')
 			    .relatedTo(category)
 			    .all() %}
-         	{% set relatedEntries = category.programLink %}
+         	{% set relatedEntries = category.programLink.all() %}
 	            {% for rel in relatedEntries %}
 
          
@@ -67,11 +67,12 @@
 		    </div>             
 		  {% endif %}
 		  <div class="flex flex-wrap justify-center px-16" id="entries">
-		    {% for entry in craft.entries({
+		    {% set entries = craft.entries({
 		      relatedTo: {
 		        targetElement: ['and', category, tag],
 		      }}
-		        ) %}
+		        ).all() %}
+		    {% for entry in entries %}
 		    {% include 'fellows/_entryblock.twig' %} 
 		    {% endfor %} 
 		  </div>
