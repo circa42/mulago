@@ -16,6 +16,13 @@
 <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
+{# Slick slider #}
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="{{ siteUrl }}assets/js/slick.min.js"></script>
+
+
+
 
  {% if devMode %}
     <script src="{{ siteUrl }}assets/js/vue.js"></script>
@@ -31,48 +38,53 @@
  
 
  <script>
-  new Vue({
+new Vue({
     el: '#mobile',
     data: {
-      open: false,
+        view: {
+            menu: false,
+            dropdown: {
+                fellows: {
+                    button: true,
+                    elements: false,
+                }
+            }
+        }
+    },
+    computed: {
+        menuClass() {
+            return {
+                'block': this.view.menu,
+                'hidden': !this.view.menu,
+            }
+        },
+        dropdownFellowsClass() {
+            return {
+                'md:hidden': !this.view.dropdown.fellows.elements,
+            }
+        }
     },
     methods: {
-      toggle() {
-        this.open = !this.open
-      }
+        toggleMenu() {
+            this.view.menu = !this.view.menu;
+        },
+        toggleDropdownFellows() {
+            this.view.dropdown.fellows.elements = !this.view.dropdown.fellows.elements;
+        },
+        hideDropdown() {
+            Object.keys(this.view.dropdown).forEach(key => this.view.dropdown[key].elements = false);
+        },
+        getWindowWidth() {
+            const w = window,
+                  d = document,
+                  e = d.documentElement,
+                  g = d.getElementsByTagName('body')[0],
+                  x = w.innerWidth || e.clientWidth || g.clientWidth;
+            return x;  
+        }
+    },
+    mounted() {
+        document.addEventListener('click', this.hideDropdown, false);
     }
-  })
+});
 </script>
-{# <script> 
-  new Vue({
-    el: '#drop',
-    data: {
-      open: false,
-    },
-    methods: {
-      toggle() {
-        this.open = !this.open
-      }
-    }
-  })
-</script>  #}
-{# 
-<script>
-  new Vue({
-    el: '#mobile',
-    data: {
-      openMobile: false,
-      openDrop: false,
-    },
-    methods: {
-      toggleMobile() {
-        this.openMobile = !this.openMobile
-      },
-      toggleDrop() {
-        this.openDrop = !this.openDrop
-      },
-    }
-  })
-</script>
- #}
- 

@@ -9,8 +9,8 @@
 		      
 		        {% for row in block.headingsLinks %}
 		        {% if loop.first %}
-		          <a class="" href="{{ row.url }}">
-		            <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl">
+		          <a class="text-gray-200 leading-none text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl hover:text-red" href="{{ row.url }}">
+		            <h2 class="opacity-75">
 		              {{ row.heading |nl2br }} 
 		            </h2>
 		          </a>
@@ -28,8 +28,8 @@
 		      
 		        {% for row in block.headingsLinks %}
 		        {% if loop.last %}
-		          <a class="" href="{{ row.url }}">
-		            <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl">
+		          <a class="text-gray-200 leading-none text-shadow font-normal xs:text-3xl md:text-5xl lg:text-6xl hover:text-red" href="{{ row.url }}">
+		            <h2 class="opacity-75">
 		              {{ row.heading |nl2br }} 
 		            </h2>
 		          </a>

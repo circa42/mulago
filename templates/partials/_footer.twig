@@ -4,11 +4,14 @@
 
 {# office #}
     <div class="xs:w-full md:w-1/3 xs:text-center md:text-left xs:mb-8 md:mb-4">
-      <p class="text-gray-600 text-sm">
-        <span class="font-semibold">
-        Our office is located at:</span><br>
-        {{ address.copy |nl2br }}
-      </p>
+      {# email #}
+        {% for row in social.newsletter %}
+          
+        
+        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-type="iframe" data-src="{{ row.url }}" href="javascript:;">
+          {{ row.cta }} 
+        </a>
+        {% endfor %}
     </div>
 
 {# tagline & arrow #}	
@@ -20,8 +23,8 @@
         
       <div class="flex justify-center m-12">
         <a href="#" class="" data-scroll-nav="0">
-          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-2 border-white button">
-            <i class="text-white hover:text-gray-300 text-4xl fas fa-angle-up"></i>
+          <div class="rounded-full h-16 w-16 flex items-center justify-center bg-gray-600 hover:bg-red border-2 border-white button">
+            <i class="text-white text-4xl fas fa-angle-up"></i>
           </div>
         </a>
       </div>
@@ -33,30 +36,36 @@
       
       {% if social.socialTable |length %}
         {% for row in social.socialTable %}
-          <div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2">
+          <div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-red border-white border-2">
             <a href="{{ row.socialUrl }}" 
               target="_blank">
-              <i class="text-white hover:text-gray-300 text-2xl pt-2 {{ row.socialIcon }}"></i>  
+              <i class="text-white text-2xl pt-2 {{ row.socialIcon }}"></i>  
             </a>
           </div>
         {% endfor %}
       {% endif %}
-  {# email #}
-      <div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2">
-            <a data-fancybox data-type="iframe" data-src="http://eepurl.com/dtD4BX" href="javascript:;">
-              <i class="text-white hover:text-gray-300 text-2xl pt-2 far fa-at"></i>  
-            </a>
-          </div>
+  
     </div>
 
   </div>
 
- 
-  <div>
-    <h4 class="xs:text-center md:text-right text-sm text-gray-600">
-      &copy; {{ now |date('Y') }} {{ copyright.text }}
-    </h4>
-  </div>
+
+  <div class="flex justify-between content-end">
+      <div class="flex-1 ">
+        <p class="text-gray-600 text-sm">
+          <span class="font-semibold">
+          {{ address.ourOffice }}</span><br>
+          {{ address.copy |nl2br }}
+        </p>
+      </div>
+      <div class="flex-1 self-end">
+      <h4 class="xs:text-center md:text-right text-sm text-gray-600">
+        &copy; {{ now |date('Y') }} {{ copyright.text }}
+      </h4>
+      </div>
+</div>
+
+
 </footer>     
   <div class="bg-blue-700 h-4"></div>
 

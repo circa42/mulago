@@ -9,74 +9,65 @@
 {% set resourcesQ = craft.entries.section('resources') %}
 {% set entries = resourcesQ.all() %}
 
-{% set articles = resourcesQ.type('articles').limit(3).all() %}
-{% set videos = resourcesQ.type('videos').limit(3).all() %}
-{% set tools = resourcesQ.type('tools').limit(3).all() %}
+{% set articles = resourcesQ.type('articles').all() %}
+{% set videos = resourcesQ.type('videos').all() %}
+{% set tools = resourcesQ.type('tools').all() %}
 
 
-<div class="bg-gray-200">
+<div class="bg-gray-100">
 
 {# articles #}
   
-  <div class="text-center bg-blue-600 py-4 mb-4">
-    <div class="text-white uppercase tracking-wider">
-        <a href="/resources/articles/">
-          <h2 class="text-xl">
-            Articles 
-          </h2>
-        </a>
+  <a href="/resources/articles/">
+    <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
+      <div class="text-white uppercase tracking-wider">
+          
+            <h2 class="text-xl">
+              Articles 
+            </h2>
+          
+      </div>
     </div>
-  </div>
+  </a> 
 
-<div class="flex justify-center">
-
-  <div class="flex flex-wrap m-8">
+<div class="p-12">
+  <div class="flex justify-center articles">
     {% for entry in articles %}
-      {% include "resources/partials/_article-block.twig" %}
+      <div class="m-4">
+        {% include "resources/partials/_article-block.twig" %} 
+      </div>
     {% endfor %}
   </div>
-
-</div>
-
-<div class="flex justify-center">
-  <div class="p-8">
-    <a href="/resources/articles/">
-      <button class="text-white bg-blue-800 px-4 py-2">
-        See more »
-      </button>
-    </a>
-  </div>  
 </div>
 
 {# -------------- #}
 
 
 {# videos #}
-  <div class="text-center bg-blue-600 py-4 mb-4">
-    <div class="text-white uppercase tracking-wider">
-        <a href="/resources/videos/">
-          <h2 class="text-xl">
-            Videos 
-          </h2>
-        </a>
+<a href="/resources/videos/">
+  <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
+    <div class="text-white uppercase tracking-wider"> 
+      <h2 class="text-xl">
+        Videos 
+      </h2>
     </div>
   </div>
+</a>
 
-  <div class="flex flex-wrap m-8">
+
+<div class="p-12">
+  <div class="videos flex justify-center">
     {% for entry in videos %}
       {% include "resources/partials/_video-block.twig" %}
     {% endfor %}
   </div>
-
-<div class="flex justify-center">
-  <div class="p-8">
-    <a href="/resources/videos/">
-      <button class="text-white bg-blue-800 px-4 py-2">
-        See more »
-      </button>
-    </a>
-  </div>  
 </div>
+{# 
+<div class="flex justify-center p-8">
+    <a href="/resources/videos/" class="rounded text-white bg-blue-700 hover:bg-red px-4 py-2">
+        See more »
+    </a>
+</div> #}
 
 
 {# -------------- #}
@@ -84,43 +75,168 @@
 
 {# Tools #}
 
-  
-  <div class="text-center bg-blue-600 py-4 mb-4">
+<a href="/resources/tools/">  
+  <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
     <div class="text-white uppercase tracking-wider">
-        <a href="/resources/tools/">
-          <h2 class="text-xl">
-            Tools 
-          </h2>
-        </a>
+        <h2 class="text-xl">
+          Tools 
+        </h2>
     </div>
   </div>
+</a>
 
-<div class="flex justify-center">
-
-  <div class="flex flex-wrap m-8">
+<div class="p-12">
+  <div class="flex flex-wrap tools justify-center">
     {% for entry in tools %}
-      {% include "resources/partials/_tool-block.twig" %}
+      <div class="m-4">
+        {% include "resources/partials/_tool-block.twig" %} 
+      </div>
     {% endfor %}
   </div>
-
 </div>
 
-<div class="flex justify-center">
-  <div class="p-8">
-    <a href="/resources/tools/">
-      <button class="text-white bg-blue-800 px-4 py-2">
+{# <div class="flex justify-center p-8">
+    <a href="/resources/tools/" class="rounded text-white bg-blue-700 hover:bg-red px-4 py-2">
         See more »
-      </button>
     </a>
-  </div>  
-</div>
+</div> #}
 
 {# -------------- #}
       
 
 </div>
 
+{% js %}
+      $(document).ready(function(){
+      $('.articles').slick({
+        arrows: false,
+        cssEase: 'linear',
+        zIndex: 0,
+        responsive: [
+        {
+          breakpoint: 7525,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 1525,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        }
+  ]
+      });
+    });
+{% endjs %}
 
+{% js %}
+      $(document).ready(function(){
+      $('.videos').slick({
+        arrows: false,
+        cssEase: 'linear',
+        zIndex: 0,
+        responsive: [
+        {
+          breakpoint: 7525,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 1525,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          }
+        }
+  ]
+      });
+    });
+{% endjs %}
+
+{% js %}
+      $(document).ready(function(){
+      $('.tools').slick({
+        arrows: false,
+        cssEase: 'linear',
+        zIndex: 0,
+        responsive: [
+        {
+          breakpoint: 7525,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 1525,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 2,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+          }
+        }
+  ]
+      });
+    });
+{% endjs %}
 
 {% endblock %} 
 

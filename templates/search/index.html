@@ -6,7 +6,7 @@
 <div class="flex justify-center pt-12">
 
 {% set placeholder = "Search" %}
-	{% include "partials/searchbox" %}
+	{% include "partials/_searchbox" %}
 </div>
 
 
@@ -21,11 +21,11 @@
 			{% for entry in entries %}
 			
 			<ul class="list-none">
-				<li class="pb-2"><a href="{{ entry.url }}" class=" text-base text-gray-600">{{ entry.title }}</a></li>
+				<li class="pb-2"><a href="{{ entry.url }}" class="text-base hover:text-red text-gray-600">{{ entry.title }}</a></li>
 			</ul>	
 			{% endfor %}
 			<div class="mt-8">
-				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:bg-blue-800 text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
+				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:text-red text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
 					See all
 				</a>
 			</div>
@@ -43,11 +43,11 @@
 			{% for entry in entries %}
 			
 			<ul class="list-none">
-				<li class="pb-2"><a href="{{ entry.url }}" class=" text-base text-gray-600">{{ entry.title }}</a></li>
+				<li class="pb-2"><a href="{{ entry.url }}" class="hover:text-red text-base text-gray-600">{{ entry.title }}</a></li>
 			</ul>	
 			{% endfor %}
 			<div class="mt-8">
-				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:bg-blue-800 text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
+				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:text-red text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
 					See all
 				</a>
 			</div>		
@@ -65,11 +65,11 @@
 			{% for entry in entries %}
 			
 			<ul class="list-none">
-				<li class="pb-2"><a href="{{ entry.url }}" class=" text-base text-gray-600">{{ entry.title }}</a></li>
+				<li class="pb-2"><a href="{{ entry.url }}" class="text-base hover:text-red text-gray-600">{{ entry.title }}</a></li>
 			</ul>	
 			{% endfor %}
 			<div class="mt-8">
-				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:bg-blue-800 text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
+				<a href="{{ siteUrl }}portfolio" class="bg-blue-500 hover:text-red text-white font-bold border border-blue-500 rounded-lg py-2 px-4 ">
 					See all
 				</a>
 			</div>		</div>

@@ -6,8 +6,8 @@
       {% set rel = block.pageLink.first() %}
       {% if rel|length %}
         {% for rel in block.pageLink %}
-          <a class="" href="{{ rel.url }}">
-            <h2 class="text-gray-200 leading-none opacity-75 text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl">
+          <a class="hover:text-red text-gray-200 leading-none text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl" href="{{ rel.url }}">
+            <h2 class="opacity-75">
               {{ block.heading |nl2br }} 
             </h2>
           </a>

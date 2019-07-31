@@ -28,8 +28,8 @@
             {% for row in entry.contacts %}       
                 <hr>
                   <h3 class="contact">{{ row.contactFor }}</h3>
-                <a class="contact" href="mailto:{{ row.contactEmailName }}@mulagofoundation.org">
-                   <p class="a-m-blue contact">{{ row.contactEmailName }}@mulagofoundation.org</p>
+                <a class="contact" href="mailto:{{ row.contactEmail }}@mulagofoundation.org">
+                   <p class="a-m-blue contact">{{ row.contactEmail }}@mulagofoundation.org</p>
                 </a>
             {% endfor %}
           {% endif %}
