@@ -100,7 +100,12 @@
 				width: 100%;
 				height: 100%;
 			}
-		{% endcss %}	
+		{% endcss %}
+			<h3 class="xs:text-center md:text-left text-gray-600 xs:text-base md:text-xl my-4">
+				{{ entry.resourceDescription  |replace ({
+					'<a href': '<a class="text-gray-800 font-bold hover:text-red" href',
+				})|raw}}
+			</h3>	
 			{% set blocks = entry.videoMatrix.all() %}
 			{% for block in blocks %}
 				{% if block.type == 'videoBlock' %}

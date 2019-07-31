@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564545412
+dateModified: 1564606242
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -484,6 +484,27 @@ fields:
       branchLimit: ''
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: string
+  6ffde87d-d027-4781-903a-0a39914fa700:
+    name: 'Resource Description'
+    handle: resourceDescription
+    instructions: 'On-entry-page description '
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   72fa867e-641d-436e-8a6e-25bfd62ed607:
     name: Category
     handle: category
@@ -3160,17 +3181,13 @@ sections:
                     sortOrder: 1
                   5a9f6d18-cade-45df-a79e-1ff407f065cf:
                     required: false
+                    sortOrder: 3
+                  6ffde87d-d027-4781-903a-0a39914fa700:
+                    required: false
                     sortOrder: 2
               -
-                name: 'deprecated content'
-                sortOrder: 2
-                fields:
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
-                    required: false
-                    sortOrder: 1
-              -
                 name: Links
-                sortOrder: 3
+                sortOrder: 2
                 fields:
                   694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
