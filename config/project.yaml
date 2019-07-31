@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564519382
+dateModified: 1564536913
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3642,7 +3642,7 @@ system:
   live: true
   name: Mulago
   timeZone: America/Los_Angeles
-  schemaVersion: 3.2.15
+  schemaVersion: 3.2.16
 tagGroups:
   90921257-5b3f-48d2-bbbd-584ad6ee126f:
     name: 'Fellows Year Tag'
