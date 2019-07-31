@@ -2,7 +2,8 @@
 
 {% block content %}
 
-{% for matrixBlock in entry.panels %}
+{% set blocks = entry.panels.all() %}
+{% for matrixBlock in blocks %}
   {% if matrixBlock.type == 'panelHeader' %}
   
 
@@ -11,8 +12,9 @@
 {# featured image + title #}         
       <div class="flex flex-col z-40">
 
-            <div class="relative m-auto">     
-              {% for image in matrixBlock.image %}
+            <div class="relative m-auto">
+            {% set images = matrixBlock.image.all() %}     
+              {% for image in images %}
                 <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
               {% endfor %}
             <div class="absolute bottom-0 left-0">
@@ -118,7 +120,7 @@
 			    <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
 			    {{ message is defined and message ? errorList(message.getErrors('message')) }}
 				<div class="flex justify-center mt-8">
-			    	<input class="rounded-full bg-blue-800 hover:text-red text-white h-16 w-16 flex items-center justify-center mb-8" type="submit" value="Send">
+			    	<input class="rounded-full bg-blue-800 hover:bg-red text-white h-16 w-16 flex items-center justify-center mb-8" type="submit" value="Send">
 				</div>
 			</form>
 		</div>

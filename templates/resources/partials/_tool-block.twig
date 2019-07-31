@@ -1,6 +1,6 @@
 <a href="{{ entry.url }}" class="hover:border-red">
   <div class="max-w-sm bg-white p-4 m-4">
-    {% set assets = entry.resourcePhoto %}
+    {% set assets = entry.resourcePhoto.all() %}
       {% if entry.resourcePhoto | length %}
         {% for asset in assets %}
           <div class="shadow mb-4">

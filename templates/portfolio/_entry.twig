@@ -11,7 +11,8 @@
 <!-- Main content -->
 <div class="text-gray-800 text-xl font-light leading-relaxed">
 
-{% for matrixBlock in entry.portfolioEntry %}
+{% set matrixQ = entry.portfolioEntry.all() %}
+{% for matrixBlock in matrixQ %}
   {% if matrixBlock.type == 'entryContent' %}
   
     {% include "partials/_featuredimage.twig" %}
@@ -23,7 +24,8 @@
         {# sidebar #}
         <div class="xs:full md:w-64 pl-8">
           <div class="border-t border-b border-gray-400 py-4">
-            {% for image in matrixBlock.logo %}
+            {% set images = matrixBlock.logo.all() %}
+            {% for image in images %}
                <img src="{{ image.getUrl('logos260x100') }}" alt="" class="">
             {% endfor %}
           </div>   
@@ -50,7 +52,8 @@
              {{ matrixBlock.investment }}</p>
 
             {% if entry.relatedFellow | length %}
-              {% for fellow in entry.relatedFellow %}
+              {% set fellowQ = entry.relatedFellow.all() %}
+              {% for fellow in fellowQ %}
                 <div class="border-b border-gray-400 mb-8">
                   <strong class="">Fellow:</strong>
                   <a class="no-underline text-blue-600 hover:text-red font-normal" href="{{ fellow.url }}">
@@ -92,7 +95,7 @@
     
     {# next entry in category #}
     {% set category = craft.categories.relatedTo(entry) %}
-    {% set categories = category.total() %} 
+    {% set categories = category.count() %} 
       {{ category.title }}
     {% set entries = craft.entries.relatedTo(category) %}
     {% paginate entries as pageInfo, pageEntries %}
@@ -101,7 +104,6 @@
         <div class="flex items-center">
           <div class="text-xs uppercase mr-2">
              
-            
               {% for entry in entries %}
                 {% if entry == title  %}
                   <h5 class="text-xs uppercase pt-2 mr-2">
@@ -118,7 +120,7 @@
                 
 
                 {# And make sure to only output the links if the element exists #}
-                {% set allPosts = craft.entries.section('portfolio').type('fellowsEntry') %}
+                {% set allPosts = craft.entries.section('portfolio').type('fellowsEntry').all() %}
                  {% for post in allPosts %}
                    {% if entry.title == post %}
                      <h5 class="text-xs uppercase pt-2 mr-2">No. {{ loop.index }} of {{ loop.length }}</h5>

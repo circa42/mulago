@@ -1,11 +1,13 @@
-{% for image in block.image %}      
+{% set images = block.image.all() %}
+{% for image in images %}      
 
   <div class="bg-cover bg-auto bg-center" 
   style="background-image: url( {{ image.getUrl('lg1600x600') }}">
     <div class="xs:p-8 md:p-16 lg:p-32">
-      {% set rel = block.pageLink.first() %}
+      {% set rel = block.pageLink.one() %}
       {% if rel|length %}
-        {% for rel in block.pageLink %}
+        {% set blocks = block.pageLink.all() %}
+        {% for rel in blocks %}
           <a class="hover:text-red text-gray-200 leading-none text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl" href="{{ rel.url }}">
             <h2 class="opacity-75">
               {{ block.heading |nl2br }} 
