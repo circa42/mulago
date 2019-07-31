@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564543863
+dateModified: 1564545329
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -303,8 +303,8 @@ fields:
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
     contentColumnType: text
   39f43525-a682-4194-960d-4d4d5e3e8d9b:
-    name: 'Program Link'
-    handle: programLink
+    name: 'Program Entry'
+    handle: programEntry
     instructions: ''
     searchable: true
     translationMethod: site

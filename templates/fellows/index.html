@@ -26,10 +26,10 @@
       		{{ category.fellowsStrapline }}</em>
         </h3>
         {% set entries = craft.entries()
-			    .programLink(':notempty:')
+			    .programEntry(':notempty:')
 			    .relatedTo(category)
 			    .all() %}
-         	{% set relatedEntries = category.programLink.all() %}
+         	{% set relatedEntries = category.programEntry.all() %}
 	            {% for rel in relatedEntries %}
 
          
