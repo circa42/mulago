@@ -49,13 +49,13 @@
 	
 	<div class="xs:w-full md:w-2/3 border-t border-gray-400 p-8 my-8">
 
-		<div>
-			<h2 class="xs:text-center md:text-left text-gray-600 xs:text-xl md:text-2xl lg:text-3xl my-4">
-				{{ entry.excerpt  |replace ({
-					'<a href': '<a class="text-gray-700 hover:text-red" href',
-				})|raw}}
-			</h2>
-		</div>
+	 	<div>
+				<h2 class="xs:text-center md:text-left text-gray-600 xs:text-xl md:text-2xl lg:text-3xl my-4">
+					{{ entry.excerpt  |replace ({
+						'<a href': '<a class="text-gray-700 hover:text-red" href',
+					})|raw}}
+				</h2>
+			</div> 
 		<div>
 			<h3 class="text-gray-700 font-sm xs:text-center md:text-left my-2">
 				by {{ entry.ideasAuthor }}
