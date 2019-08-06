@@ -4,7 +4,7 @@
 
       <a href="{{ entry.url }}" class=""> 
                  
-        <div class="bg-white shadow hover:border-gray-400 max-w-xs border p-4 m-4">
+        <div class="bg-white shadow hover:border-red max-w-xs border p-4 m-4">
             {% set assetQuery = matrixBlock.fellowImage.all() %}
               {% for image in assetQuery %} 
                <img src="{{ image.geturl('sq300x300') }}" alt="">
@@ -15,7 +15,7 @@
               
               <div class="border-b border-gray-400">
               </div> 
-              <h3 class="min-h-4xs uppercase font-normal text-base text-center text-gray-700 px-8 py-6">
+              <h3 class="min-h-5xs uppercase font-normal text-base text-center text-gray-700 px-8 py-6">
                 {{ matrixBlock.organization }} 
               </h3>
         </div>

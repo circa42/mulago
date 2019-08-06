@@ -1,5 +1,5 @@
 
-{#  Not sure if this actually does anything. #}
+{#  Shows articles by category from subnav #}
 
 
 {% extends "_layout" %}
@@ -10,10 +10,10 @@
 {% set articles = resourcesQ.all() %}
 {% set articles = resourcesQ.type('articles').relatedTo(category).all() %}
 
-    {# Articles #}
-<div class="bg-gray-200">
+    {# Articles #} 
+<div class="bg-gray-200 p-12">
 
-      <div class="flex flex-wrap justify-between">
+      <div class="w-full flex flex-wrap justify-between">
         {# subnav #}
         <div>
           {% include "resources/partials/_breadcrumb.twig" %}
@@ -22,7 +22,7 @@
           {% include 'resources/partials/_subnav.twig' %}
         </div>
 
-        <div class="flex justify-center flex-wrap">
+        <div class="w-full flex justify-center flex-wrap">
           
             {% for entry in articles %}
               {% if entry.type == 'articles' %}

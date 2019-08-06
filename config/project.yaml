@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564606242
+dateModified: 1565126366
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -612,6 +612,28 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 52869743-1945-4552-8b8e-53556f8cd992
+  9d28cf07-97ca-4ffc-979d-1ebdc9ce2720:
+    name: 'Body Copy'
+    handle: bodyCopy
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Standard.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes:
+        - d05c29c0-93bd-4b11-aff8-e819f5e72d55
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   9e640bdb-c61d-433a-8ec6-06030154c846:
     name: Position
     handle: position
@@ -3209,8 +3231,11 @@ sections:
                   0d4e4999-7db2-43ef-9593-07044ff53b50:
                     required: true
                     sortOrder: 1
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                  9d28cf07-97ca-4ffc-979d-1ebdc9ce2720:
                     required: true
+                    sortOrder: 3
+                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                    required: false
                     sortOrder: 2
               -
                 name: Media

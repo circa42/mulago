@@ -33,11 +33,9 @@
 
       </div>
       <div class="max-w-6xl flex m-auto">
-        <div class="pt-8 p-4">
           <h4 class="text-gray-800 font-light text-2xl">
             {{ matrixBlock.heading2 }}
           </h4>
-        </div>
       </div>
 
        
@@ -79,19 +77,19 @@
   
 
       <button data-fancybox data-src="#{{ entry.id }}" href="javascript:;" class=""> 
-        <div class="bg-white shadow hover:border-gray-400 max-w-xs border p-4 m-4">
+        <div class="bg-white shadow hover:border-red max-w-xs border p-4 m-4">
             {% set assetQuery = entry.bioPhoto %}
             {% set images = assetQuery.all() %}
               {% for image in images %}
                <img src="{{ image.geturl('sq300x300') }}" alt="">
               {% endfor %}
-              <h3 class="uppercase font-light text-lg text-center text-gray-700 py-4">
+              <h3 class="uppercase font-normal text-base text-center text-gray-700 py-4">
                 {{ entry.title }}
               </h3>
               
               <div class="border-b border-gray-400">
               </div> 
-              <h3 class="min-h-4xs uppercase font-light text-sm text-center text-gray-700 px-8 py-6">
+              <h3 class="min-h-4xs uppercase font-normal text-base text-center text-gray-700 px-8 py-6">
                 {{ entry.position }} 
               </h3>
         </div>

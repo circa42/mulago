@@ -30,7 +30,7 @@
     </div>
   </a> 
 
-<div class="p-12">
+<div class="pb-4 pt-2">
   <div class="flex justify-center articles">
     {% for entry in articles %}
       <div class="m-4">
@@ -55,19 +55,13 @@
 </a>
 
 
-<div class="p-12">
+<div class="pb-4 pt-2">
   <div class="videos flex justify-center">
     {% for entry in videos %}
       {% include "resources/partials/_video-block.twig" %}
     {% endfor %}
   </div>
 </div>
-{# 
-<div class="flex justify-center p-8">
-    <a href="/resources/videos/" class="rounded text-white bg-blue-700 hover:bg-red px-4 py-2">
-        See more »
-    </a>
-</div> #}
 
 
 {# -------------- #}
@@ -85,7 +79,7 @@
   </div>
 </a>
 
-<div class="p-12">
+<div class="pb-4 pt-2">
   <div class="flex flex-wrap tools justify-center">
     {% for entry in tools %}
       <div class="m-4">
@@ -95,11 +89,6 @@
   </div>
 </div>
 
-{# <div class="flex justify-center p-8">
-    <a href="/resources/tools/" class="rounded text-white bg-blue-700 hover:bg-red px-4 py-2">
-        See more »
-    </a>
-</div> #}
 
 {# -------------- #}
       
@@ -114,16 +103,25 @@
         zIndex: 0,
         responsive: [
         {
-          breakpoint: 7525,
+          breakpoint: 3072,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 3,
+            slidesToShow: 5,
+            slidesToScroll: 5,
             infinite: true,
             dots: true,
           }
         },
         {
-          breakpoint: 1525,
+          breakpoint: 2048,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 1024,
           settings: {
             slidesToShow: 3,
             slidesToScroll: 3,
@@ -158,16 +156,16 @@
         zIndex: 0,
         responsive: [
         {
-          breakpoint: 7525,
+          breakpoint: 3072,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
+            slidesToShow: 3,
+            slidesToScroll: 3,
             infinite: true,
             dots: true,
           }
         },
         {
-          breakpoint: 1525,
+          breakpoint: 2048,
           settings: {
             slidesToShow: 2,
             slidesToScroll: 2,
@@ -175,6 +173,7 @@
             dots: true,
           }
         },
+
         {
           breakpoint: 800,
           settings: {
@@ -202,19 +201,28 @@
         zIndex: 0,
         responsive: [
         {
-          breakpoint: 7525,
+          breakpoint: 3072,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: 2,
+            slidesToShow: 5,
+            slidesToScroll: 5,
             infinite: true,
             dots: true,
           }
         },
         {
-          breakpoint: 1525,
+          breakpoint: 2048,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 4,
+            infinite: true,
+            dots: true,
+          }
+        },
+        {
+          breakpoint: 1024,
           settings: {
             slidesToShow: 3,
-            slidesToScroll: 2,
+            slidesToScroll: 3,
             infinite: true,
             dots: true,
           }

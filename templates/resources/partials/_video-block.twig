@@ -37,29 +37,3 @@
     </div>
   </a>
 </div>
-{# 
-
-
-
-{% if entry.type == 'videos' %}
-      
-      {% set blocks = entry.videoMatrix.all() %}
-      {% for block in blocks %}
-        {% if block.type == 'videoBlock' %}
-          
-          {% if block.videoId|length %}
-          <div class=my-12>
-            <iframe width="660" height="315" src="https://www.youtube.com/embed/{{ block.videoId }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          {% endif %}
-          {% if block.videoCopy |length %}
-          <div class="text-xl leading-loose text-gray-800 mt-8">
-            {{ block.videoCopy |replace({
-                '<ul>': '<ul class="list-disc py-4 pl-8">',
-                '<p>': '<p class="py-2">',  
-                  })|raw}}
-          </div>
-          {% endif %}
-        {% endif %}
-      {% endfor %} 
-    {% endif %}#}

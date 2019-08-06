@@ -1,4 +1,4 @@
-    {# Videos #}
+    {# Videos #
 
     <div class="row">
       <div class="col" style="padding-top: 10em;">
@@ -23,7 +23,7 @@
                      
                  {% case "ideasCopy" %}
 
-                    {# {{ matrixBlock.copy }} #}
+                    {# {{ matrixBlock.copy }} # }
 
                  {% case "ideasImage" %}
 
@@ -33,12 +33,12 @@
                   {% endfor %}
 
                  {% case "ideasVideo" %}
-                  {# <h3>{{ matrixBlock.videoTitle }}</h3> #}
+                  {# <h3>{{ matrixBlock.videoTitle }}</h3> # }
                  <div class="embed-responsive embed-responsive-16by9">
                    <iframe class="embed-responsive-item ideas" src="https://www.youtube.com/embed/{{ entry.videoEmbed | raw }}" frameborder="0" allowfullscreen></iframe>
 
                    {# old 190628
-                    <iframe class="embed-responsive-item ideas" src="{{ matrixBlock.video | raw }}" frameborder="0" allowfullscreen></iframe> #}
+                    <iframe class="embed-responsive-item ideas" src="{{ matrixBlock.video | raw }}" frameborder="0" allowfullscreen></iframe> # }
                  </div>
               
                 {% endswitch %}
@@ -52,3 +52,4 @@
         {% endif %}
         </div>
 
+#}
