@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1565126366
+dateModified: 1565127165
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3233,9 +3233,6 @@ sections:
                     sortOrder: 1
                   9d28cf07-97ca-4ffc-979d-1ebdc9ce2720:
                     required: true
-                    sortOrder: 3
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
-                    required: false
                     sortOrder: 2
               -
                 name: Media
