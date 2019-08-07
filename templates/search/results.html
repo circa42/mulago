@@ -36,7 +36,7 @@
 	            <ul>
 	            {% for entry in entriesInGroup %}
 	                <li class="pb-2">
-	                	<a href="{{ entry.url }}" class="hover:text-blue-600 text-base text-gray-600">
+	                	<a href="{{ entry.url }}" class="hover:text-red text-base text-gray-600">
 	                		{{ entry.title }}
 	                	</a>
 	                </li>
@@ -49,26 +49,7 @@
   	  <p class="text-center">Sorry, your search for “{{ query }}” didn’t return any results.</p>
 	{% endif %}
 </div>
-{# {% set searchQuery = craft.app.request.getParam('q') %}
-{% set entries = craft.entries()
-    .search(searchQuery)
-    .orderBy('score')
-    .all() %}
 
-<div class="flex-wrap flex">
-
-{% if entries|length %}
- 
-	<p>{{ entries|length }} results:</p>
-
-	    <ul>
-	        {% for entry in entries %}
-	            <li><a href="{{ entry.url }}">{{ entry.title }} » {{ entry.section }}</a></li>
-	        {% endfor %}
-	    </ul>
-{% else %}
-    <p>Your search for “{{ searchQuery }}” didn’t return any results.</p>
-{% endif %} #}
 
 </div>
 
