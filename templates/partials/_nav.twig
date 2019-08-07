@@ -41,18 +41,36 @@
               </div>
           {% endfor %}
 
-{# search #}
-          <div class="border-r border-gray-400 text-center pl-2 xs:border-0 my-4">
-            <a href="{{ siteUrl }}search" class="text-xs no-underline  md:mt-0 text-gray-900 hover:text-red text-center ml-2 my-4 pt-4">
-              <i class="fas fa-search"></i>
-            </a>
-          </div>
+{# search btn #}
+<div class="flex justify-center">
+  <button id="searchButton" onclick="getFocus()" type="button"><i class="fas fa-search text-xs text-gray-900 hover:text-red text-center pl-2 focus:outline-none mb-2"></i></button>
+</div>
+
 
       </div>
 
     </div>
   </nav>
+
+{# search box #}
+          <div id="searchBox" class="hidden h-16 bg-white border border-gray-500 px-4 py-2">
+            <form class="text-gray-500 text-4xl" action="{{ url('search/results') }}">
+                <input type="search" id="mySearch" name="q" placeholder="Search ..." class="w-full focus:outline-none h-12" autofocus width="100%">
+            </form>
+          </div>
 </div>
 {# bumper div to prevent content under the menu #}
 <div class="pb-24 bg-white"></div>
 
+
+
+
+
+{% js %}
+$(document).ready(function(){
+  $("#searchButton").click(function(){
+    $("#searchBox").fadeToggle(400);
+    $(this).find('i').toggleClass('fa-search fa-times-hexagon')
+  });
+});
+{% endjs %}

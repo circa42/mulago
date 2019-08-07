@@ -3252,11 +3252,11 @@ video {
 }
 
 .min-h-2xs {
-  min-height: 16rem;
+  min-height: 12rem;
 }
 
 .min-h-xs {
-  min-height: 20rem;
+  min-height: 16rem;
 }
 
 .min-h-sm {
@@ -7759,11 +7759,11 @@ video {
   }
 
   .xs\:min-h-2xs {
-    min-height: 16rem;
+    min-height: 12rem;
   }
 
   .xs\:min-h-xs {
-    min-height: 20rem;
+    min-height: 16rem;
   }
 
   .xs\:min-h-sm {
@@ -12265,11 +12265,11 @@ video {
   }
 
   .sm\:min-h-2xs {
-    min-height: 16rem;
+    min-height: 12rem;
   }
 
   .sm\:min-h-xs {
-    min-height: 20rem;
+    min-height: 16rem;
   }
 
   .sm\:min-h-sm {
@@ -16771,11 +16771,11 @@ video {
   }
 
   .md\:min-h-2xs {
-    min-height: 16rem;
+    min-height: 12rem;
   }
 
   .md\:min-h-xs {
-    min-height: 20rem;
+    min-height: 16rem;
   }
 
   .md\:min-h-sm {
@@ -21277,11 +21277,11 @@ video {
   }
 
   .lg\:min-h-2xs {
-    min-height: 16rem;
+    min-height: 12rem;
   }
 
   .lg\:min-h-xs {
-    min-height: 20rem;
+    min-height: 16rem;
   }
 
   .lg\:min-h-sm {
@@ -25783,11 +25783,11 @@ video {
   }
 
   .xl\:min-h-2xs {
-    min-height: 16rem;
+    min-height: 12rem;
   }
 
   .xl\:min-h-xs {
-    min-height: 20rem;
+    min-height: 16rem;
   }
 
   .xl\:min-h-sm {

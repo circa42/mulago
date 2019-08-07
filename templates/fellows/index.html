@@ -34,10 +34,12 @@
 	            {% for rel in relatedEntries %}
 
          
-		<div class="w-full">
-			<a href="{{ rel.url }}" class="text-center text-xl bg-blue-700 hover:bg-red uppercase text-white font-bold py-4 px-8 rounded"> 
-		    	Read more about the program
-	    	 </a> 
+		<div class="w-full flex justify-center">
+			<div>
+				<a href="{{ rel.url }}" class="text-center text-xl bg-blue-700 hover:bg-red uppercase text-white font-bold py-4 px-8 rounded"> 
+		    		Read more about the program
+	    	 	</a> 
+	    	 </div>
     	</div>
      
           {% endfor %}
