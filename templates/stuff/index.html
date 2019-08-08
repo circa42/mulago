@@ -1,24 +1,24 @@
 
-{# ===== mulagofoundation.org :: our-stuff/index ===== #}
+{# ===== mulagofoundation.org :: stuff/index ===== #}
 
 {% extends "_layout" %}
   {% set title = ('Our Stuff') %}
 {% block content %}
 
 
-{% set ourStuffQ = craft.entries.section('ourstuff') %}
-{% set entries = ourStuffQ.all() %}
+{% set stuffQ = craft.entries.section('stuff') %}
+{% set entries = stuffQ.all() %}
 
-{% set articles = ourStuffQ.type('articles').all() %}
-{% set videos = ourStuffQ.type('videos').all() %}
-{% set tools = ourStuffQ.type('tools').all() %}
+{% set articles = stuffQ.type('articles').all() %}
+{% set videos = stuffQ.type('videos').all() %}
+{% set tools = stuffQ.type('tools').all() %}
 
 
 <div class="bg-gray-100">
 
 {# articles #}
   
-  <a href="/our-stuff/articles/">
+  <a href="/stuff/articles/">
     <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
       <div class="text-white uppercase tracking-wider">
           
@@ -34,7 +34,7 @@
   <div class="flex justify-center articles">
     {% for entry in articles %}
       <div class="m-4">
-        {% include "our-stuff/partials/_article-block.twig" %} 
+        {% include "stuff/partials/_article-block.twig" %} 
       </div>
     {% endfor %}
   </div>
@@ -44,7 +44,7 @@
 
 
 {# videos #}
-<a href="/our-stuff/videos/">
+<a href="/stuff/videos/">
   <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
     <div class="text-white uppercase tracking-wider"> 
       <h2 class="text-xl">
@@ -58,7 +58,7 @@
 <div class="pb-4 pt-2">
   <div class="videos flex justify-center">
     {% for entry in videos %}
-      {% include "our-stuff/partials/_video-block.twig" %}
+      {% include "stuff/partials/_video-block.twig" %}
     {% endfor %}
   </div>
 </div>
@@ -69,7 +69,7 @@
 
 {# Tools #}
 
-<a href="/our-stuff/tools/">  
+<a href="/stuff/tools/">  
   <div class="text-center hover:bg-red bg-blue-700 py-4 mb-4">
     <div class="text-white uppercase tracking-wider">
         <h2 class="text-xl">
@@ -83,7 +83,7 @@
   <div class="flex flex-wrap tools justify-center">
     {% for entry in tools %}
       <div class="m-4">
-        {% include "our-stuff/partials/_tool-block.twig" %} 
+        {% include "stuff/partials/_tool-block.twig" %} 
       </div>
     {% endfor %}
   </div>

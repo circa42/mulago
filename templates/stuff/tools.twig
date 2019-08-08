@@ -3,19 +3,19 @@
 
 {% block content %}
     {# tools #}
-{% set ourStuffQ = craft.entries.section('ourstuff') %}
-{% set tools = ourStuffQ.all() %}
+{% set stuffQ = craft.entries.section('stuff') %}
+{% set tools = stuffQ.all() %}
 
     {# tools #}
 <div class="bg-gray-200 p-12">
 
   <div class="">
-    {% include "our-stuff/partials/_breadcrumb.twig" %}
+    {% include "stuff/partials/_breadcrumb.twig" %}
     <div class="flex flex-wrap m-8">
       
         {% for entry in tools %}
           {% if entry.type == 'tools' %}
-              {% include "our-stuff/partials/_tool-block.twig" %}
+              {% include "stuff/partials/_tool-block.twig" %}
           {% endif %}  
         {% endfor %}
     </div>

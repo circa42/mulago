@@ -112,7 +112,7 @@
                  <a class="" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
                {% endif %}
 
-               {% set allPosts = craft.entries.section('ourstuff').ids() %}
+               {% set allPosts = craft.entries.section('stuff').ids() %}
 
                {% for post in allPosts %}
                  {% if entry.id == post %}

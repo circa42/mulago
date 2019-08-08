@@ -6,9 +6,9 @@
 
 {% block content %}
     {# Articles #}
-{% set ourStuffQ = craft.entries.section('ourstuff') %}
-{% set articles = ourStuffQ.all() %}
-{% set articles = ourStuffQ.type('articles').relatedTo(category).all() %}
+{% set stuffQ = craft.entries.section('stuff') %}
+{% set articles = stuffQ.all() %}
+{% set articles = stuffQ.type('articles').relatedTo(category).all() %}
 
     {# Articles #} 
 <div class="bg-gray-200 p-12">
@@ -16,10 +16,10 @@
       <div class="w-full flex flex-wrap justify-between">
         {# subnav #}
         <div>
-          {% include "our-stuff/partials/_breadcrumb.twig" %}
+          {% include "stuff/partials/_breadcrumb.twig" %}
         </div>
         <div>
-          {% include 'our-stuff/partials/_subnav.twig' %}
+          {% include 'stuff/partials/_subnav.twig' %}
         </div>
 
         <div class="w-full flex justify-center flex-wrap">
@@ -27,7 +27,7 @@
             {% for entry in articles %}
               {% if entry.type == 'articles' %}
                 <a href="{{ entry.url }}">
-                  {% include "our-stuff/partials/_article-block.twig" %}
+                  {% include "stuff/partials/_article-block.twig" %}
                 </a>
               {% endif %}  
             {% endfor %}

@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1565225270
+dateModified: 1565227369
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3143,8 +3143,8 @@ sections:
         template: fellows/_entry
     propagationMethod: all
   28873d12-690f-4a4e-a676-c8ea66286a7d:
-    name: 'Our Stuff'
-    handle: ourstuff
+    name: Stuff
+    handle: stuff
     type: channel
     enableVersioning: true
     propagationMethod: all
@@ -3152,8 +3152,8 @@ sections:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         enabledByDefault: true
         hasUrls: true
-        uriFormat: 'our-stuff/{slug}'
-        template: our-stuff/_entry
+        uriFormat: 'stuff/{slug}'
+        template: stuff/_entry
     entryTypes:
       460d7d30-ae2b-4533-b1b6-fa4e2c78c144:
         name: Articles
