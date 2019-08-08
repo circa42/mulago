@@ -32,8 +32,8 @@ categoryGroups:
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         hasUrls: true
-        uriFormat: 'resources/{slug}'
-        template: resources/index-cat
+        uriFormat: 'stuff/{slug}'
+        template: stuff/index-cat
   852822b9-0a82-48ba-9ef9-f49b0ef2e181:
     name: 'Portfolio Category'
     handle: portfolioCat
@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1564543863
+dateModified: 1565227674
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -303,8 +303,8 @@ fields:
     fieldGroup: 8b29cd5d-7b85-4562-870f-05140994e4e2
     contentColumnType: text
   39f43525-a682-4194-960d-4d4d5e3e8d9b:
-    name: 'Program Link'
-    handle: programLink
+    name: 'Program Entry'
+    handle: programEntry
     instructions: ''
     searchable: true
     translationMethod: site
@@ -484,6 +484,27 @@ fields:
       branchLimit: ''
     fieldGroup: c82e1905-da26-422d-a98a-7074de0e2eff
     contentColumnType: string
+  6ffde87d-d027-4781-903a-0a39914fa700:
+    name: 'Resource Description'
+    handle: resourceDescription
+    instructions: 'On-entry-page description '
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: ''
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes: '*'
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   72fa867e-641d-436e-8a6e-25bfd62ed607:
     name: Category
     handle: category
@@ -591,6 +612,28 @@ fields:
       columnType: text
     contentColumnType: text
     fieldGroup: 52869743-1945-4552-8b8e-53556f8cd992
+  9d28cf07-97ca-4ffc-979d-1ebdc9ce2720:
+    name: 'Body Copy'
+    handle: bodyCopy
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\redactor\Field
+    settings:
+      redactorConfig: Standard.json
+      purifierConfig: ''
+      cleanupHtml: true
+      removeInlineStyles: '1'
+      removeEmptyTags: '1'
+      removeNbsp: '1'
+      purifyHtml: '1'
+      columnType: text
+      availableVolumes:
+        - d05c29c0-93bd-4b11-aff8-e819f5e72d55
+      availableTransforms: '*'
+    contentColumnType: text
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   9e640bdb-c61d-433a-8ec6-06030154c846:
     name: Position
     handle: position
@@ -2988,6 +3031,11 @@ plugins:
     edition: standard
     enabled: true
     schemaVersion: 1.0.0
+  seomatic:
+    edition: standard
+    enabled: true
+    schemaVersion: 3.0.8
+    licenseKey: 8MFUKTKASWN1NY2O1SA9RRVQ
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
@@ -3095,10 +3143,17 @@ sections:
         template: fellows/_entry
     propagationMethod: all
   28873d12-690f-4a4e-a676-c8ea66286a7d:
-    name: Resources
-    handle: resources
+    name: Stuff
+    handle: stuff
     type: channel
     enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'stuff/{slug}'
+        template: stuff/_entry
     entryTypes:
       460d7d30-ae2b-4533-b1b6-fa4e2c78c144:
         name: Articles
@@ -3155,17 +3210,13 @@ sections:
                     sortOrder: 1
                   5a9f6d18-cade-45df-a79e-1ff407f065cf:
                     required: false
+                    sortOrder: 3
+                  6ffde87d-d027-4781-903a-0a39914fa700:
+                    required: false
                     sortOrder: 2
               -
-                name: 'deprecated content'
-                sortOrder: 2
-                fields:
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
-                    required: false
-                    sortOrder: 1
-              -
                 name: Links
-                sortOrder: 3
+                sortOrder: 2
                 fields:
                   694f0c51-6197-4110-83f9-4b431c15d025:
                     required: false
@@ -3187,7 +3238,7 @@ sections:
                   0d4e4999-7db2-43ef-9593-07044ff53b50:
                     required: true
                     sortOrder: 1
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                  9d28cf07-97ca-4ffc-979d-1ebdc9ce2720:
                     required: true
                     sortOrder: 2
               -
@@ -3203,13 +3254,6 @@ sections:
                   a1e2da08-7e4d-436e-9626-fdc2a621a9c8:
                     required: false
                     sortOrder: 1
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: 'resources/{slug}'
-        template: resources/_entry
-    propagationMethod: all
   3175b7e6-0005-49e3-85ff-e44f4ed63cdc:
     name: About
     handle: about
