@@ -2,8 +2,8 @@
 
 {% block content %}
     {# Articles #}
-{% set resourcesQ = craft.entries.section('resources') %}
-{% set articles = resourcesQ.all() %}
+{% set ourStuffQ = craft.entries.section('ourstuff') %}
+{% set articles = ourStuffQ.all() %}
 
     {# Articles #}
 <div class="bg-gray-200 p-12">
@@ -11,19 +11,17 @@
       <div class="flex flex-wrap justify-between">
         {# subnav #}
         <div>
-          {% include "resources/partials/_breadcrumb.twig" %}
+          {% include "our-stuff/partials/_breadcrumb.twig" %}
         </div>
         <div>
-          {% include 'resources/partials/_subnav.twig' %}
+          {% include 'our-stuff/partials/_subnav.twig' %}
         </div>
 
         <div class="flex justify-center flex-wrap m-8">
           
             {% for entry in articles %}
               {% if entry.type == 'articles' %}
-                <a href="{{ entry.url }}">
-                  {% include "resources/partials/_article-block.twig" %}
-                </a>
+                  {% include "our-stuff/partials/_article-block.twig" %}
               {% endif %}  
             {% endfor %}
         </div>

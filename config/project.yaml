@@ -32,8 +32,8 @@ categoryGroups:
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         hasUrls: true
-        uriFormat: 'resources/{slug}'
-        template: resources/index-cat
+        uriFormat: 'our-stuff/{slug}'
+        template: our-stuff/index-cat
   852822b9-0a82-48ba-9ef9-f49b0ef2e181:
     name: 'Portfolio Category'
     handle: portfolioCat
@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1565127165
+dateModified: 1565225270
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3143,10 +3143,17 @@ sections:
         template: fellows/_entry
     propagationMethod: all
   28873d12-690f-4a4e-a676-c8ea66286a7d:
-    name: Resources
-    handle: resources
+    name: 'Our Stuff'
+    handle: ourstuff
     type: channel
     enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'our-stuff/{slug}'
+        template: our-stuff/_entry
     entryTypes:
       460d7d30-ae2b-4533-b1b6-fa4e2c78c144:
         name: Articles
@@ -3247,13 +3254,6 @@ sections:
                   a1e2da08-7e4d-436e-9626-fdc2a621a9c8:
                     required: false
                     sortOrder: 1
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: 'resources/{slug}'
-        template: resources/_entry
-    propagationMethod: all
   3175b7e6-0005-49e3-85ff-e44f4ed63cdc:
     name: About
     handle: about

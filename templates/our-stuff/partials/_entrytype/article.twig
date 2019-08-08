@@ -1,0 +1,13 @@
+{% set blocks = entry.contentBuilder.all() %}
+{% for block in blocks %}
+	{% if block.type == 'copyBlock' %}
+		<div class="text-xl leading-loose text-gray-800">
+			
+			{{ block.copy |replace({
+					'<ul>': '<ul class="list-disc py-4 pl-8">',
+					'<p>': '<p class="py-2">',	
+						})|raw }}
+		</div>
+	{% elseif block.type == 'imageBlock' %}
+	{% endif %}
+{% endfor %}

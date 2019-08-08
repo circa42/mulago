@@ -1,5 +1,5 @@
 
-{# ===== mulagofoundation.org :: resources/resources-view ===== #}
+{# ===== mulagofoundation.org :: our-stuff/resources-view ===== #}
 
 {% extends "_layout" %}
   {% set title = entry.title %}
@@ -94,11 +94,11 @@
 	     {% set category = entry.category.first() %}
         {% if category %}
 
-          <a class="" href="{{ url('resources') }}/{{ category.slug }}"><img class="" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a><h5 class="">Resources / {{ category.title }}</h5>
+          <a class="" href="{{ url('our-stuff') }}/{{ category.slug }}"><img class="" src="{{ siteUrl }}assets/arrow-back.png" alt="" /></a><h5 class="">Our Stuff / {{ category.title }}</h5>
         {% endif %}
 
              {% set params = {
-                   section: 'resrouces',
+                   section: 'our-stuff',
                } %}  
    
                {% set prevposts = entry.getPrev(params) %}
@@ -112,7 +112,7 @@
                  <a class="" href="{{ nextposts.url }}"><img class="arrow" src="{{ siteUrl }}assets/arrow-next.png" alt="" /></a>
                {% endif %}
 
-               {% set allPosts = craft.entries.section('resources').ids() %}
+               {% set allPosts = craft.entries.section('ourstuff').ids() %}
 
                {% for post in allPosts %}
                  {% if entry.id == post %}

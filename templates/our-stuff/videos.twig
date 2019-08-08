@@ -4,8 +4,8 @@
 
 {% block content %}
 
-{% set resourcesQ = craft.entries.section('resources') %}
-{% set videos = resourcesQ.all() %}
+{% set ourStuffQ = craft.entries.section('ourstuff') %}
+{% set videos = ourStuffQ.all() %}
 
 {# videos #}
   <div class="bg-gray-200 p-12">
@@ -15,9 +15,7 @@
         
           {% for entry in videos %}
             {% if entry.type == 'videos' %}
-              <a href="{{ entry.url }}">
-                {% include "resources/partials/_video-block.twig" %}
-              </a>
+              {% include "our-stuff/partials/_video-block.twig" %}
             {% endif %}  
           {% endfor %}
       </div>
