@@ -45,7 +45,7 @@ return [
         // Set this to `false` to prevent administrative changes from being made on staging
         'allowAdminChanges' => false,
         'devMode' => true,
-        'siteUrl'  => 'http://165.227.1.52/',
+        'siteUrl'  => 'http://167.71.122.185/',
     
     ],
 
