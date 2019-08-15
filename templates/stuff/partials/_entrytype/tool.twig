@@ -1,0 +1,7 @@
+<div class="text-xl leading-loose text-gray-800">
+						
+	{{ entry.bodyCopy |replace({
+			'<ul>': '<ul class="list-disc py-4 pl-8">',
+			'<p>': '<p class="py-2">',	
+				})|raw }}
+</div>

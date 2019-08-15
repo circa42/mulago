@@ -1,0 +1,41 @@
+{% css %}
+				.video-container {
+					position: relative;
+					padding-bottom: 56.25%;
+					padding-top: 30px; height: 0; overflow: hidden;
+				}
+
+				.video-container iframe,
+				.video-container object,
+				.video-container embed {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			{% endcss %}
+			<h3 class="xs:text-center md:text-left text-gray-600 xs:text-base md:text-xl my-4">
+				{{ entry.resourceDescription  |replace ({
+					'<a href': '<a class="text-gray-800 font-bold hover:text-red" href',
+				})|raw}}
+			</h3>	
+			{% set blocks = entry.videoMatrix.all() %}
+			{% for block in blocks %}
+				{% if block.type == 'videoBlock' %}
+					
+					{% if block.videoId|length %}
+					<div class="video-container my-12">
+						<iframe width="660" height="315" src="https://www.youtube.com/embed/{{ block.videoId }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					</div>
+					{% endif %}
+					{% if block.videoCopy |length %}
+					<div class="text-xl leading-loose text-gray-800 mt-8">
+						{{ block.videoCopy |replace({
+								'<ul>': '<ul class="list-disc py-4 pl-8">',
+								'<p>': '<p class="py-2">',	
+									})|raw}}
+					</div>
+					{% endif %}
+				{% endif %}
+			{% endfor %}

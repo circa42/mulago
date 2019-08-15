@@ -1,0 +1,41 @@
+
+{#  Shows articles by category from subnav #}
+
+
+{% extends "_layout" %}
+
+{% block content %}
+    {# Articles #}
+{% set stuffQ = craft.entries.section('stuff') %}
+{% set articles = stuffQ.all() %}
+{% set articles = stuffQ.type('articles').relatedTo(category).all() %}
+
+    {# Articles #} 
+<div class="bg-gray-200 p-12">
+
+      <div class="w-full flex flex-wrap justify-between">
+        {# subnav #}
+        <div>
+          {% include "stuff/partials/_breadcrumb.twig" %}
+        </div>
+        <div>
+          {% include 'stuff/partials/_subnav.twig' %}
+        </div>
+
+        <div class="w-full flex justify-center flex-wrap m-8">
+          
+            {% for entry in articles %}
+              {% if entry.type == 'articles' %}
+                <a href="{{ entry.url }}">
+                  {% include "stuff/partials/_article-block.twig" %}
+                </a>
+              {% endif %}  
+            {% endfor %}
+        </div>
+
+      </div> 
+    </div> 
+
+
+</div> 
+{% endblock %}
