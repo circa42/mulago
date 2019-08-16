@@ -8,11 +8,15 @@
         {% for row in social.newsletter %}
           
         
-        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-src="{{ row.url |raw }}" href="javascript:;">
+        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-src="#mc" href="javascript:;">
           {{ row.cta }} 
         </a>
+        <div id="mc" class="hidden">
+          {{ row.url |raw }}
+        </div>
         {% endfor %}
     </div>
+    
 
 {# tagline & arrow #}	
     <div class="xs:w-full md:w-1/3">
