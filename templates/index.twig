@@ -5,11 +5,7 @@
   {% set title = entry.title %}
 {% block content %}
 
-{% for user in craft.users %}
-{% if not user.isCurrent %}
-    {% redirect "construction" %}
-{% endif %}
-{% endfor %}
+
 {# <!-- Main content :: cleaning up and adding fellows secondary image support #}
   {% set blocks = entry.homePanels.all() %}
   {% for block in blocks %}
