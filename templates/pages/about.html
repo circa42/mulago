@@ -24,7 +24,7 @@
                 <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
               {% endfor %}
             <div class="absolute bottom-0 left-0">
-              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-6xl md:text-7xl lg:text-10xl ml-8">
+              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl py-4 ml-8">
                 {{ matrixBlock.heading1 }}
               </h1>
             </div>
@@ -32,12 +32,13 @@
         </div>
 
       </div>
-      <div class="max-w-6xl flex m-auto pt-8 px-4">
-          <h4 class="text-gray-800 font-light text-4xl">
-            {{ matrixBlock.heading2 }}
-          </h4>
-      </div>
-
+      {% if matrixBlock.heading2 | length %}
+        <div class="max-w-6xl flex m-auto pt-8 px-4">
+            <h4 class="text-gray-800 font-light xs:text-2xl lg:text-4xl">
+              {{ matrixBlock.heading2 }}
+            </h4>
+        </div>
+      {% endif %}
        
 
 {% elseif matrixBlock.type == 'copyContent' %}  
