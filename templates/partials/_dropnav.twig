@@ -1,7 +1,7 @@
 <div id="drop" class="z-50 bg-white">
 
   <button @click.stop.prevent="toggleDropdownFellows" class="xs:hidden md:block">
-      <a class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:text-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+      <a class="uppercase text-sm no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:text-red {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
       {{ row.linkName }} <i class="fas fa-caret-down"></i>
       </a>
   </button>
@@ -10,7 +10,7 @@
      
      {% for row in navigation.subNavTable %}
 
-       <a href="{{ siteUrl }}{{ row.subLinkUrl }}" class="text-xs uppercase no-underline block text-gray-darkest border-transparent border-t-2 hover:text-red">
+       <a href="{{ siteUrl }}{{ row.subLinkUrl }}" class="text-sm uppercase no-underline block text-gray-darkest border-transparent border-t-2 hover:text-red">
           <div class="block
                       bg-white
                       border-gray-400

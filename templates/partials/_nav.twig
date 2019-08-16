@@ -32,8 +32,8 @@
                        {% include "partials/_dropnav.twig" %} 
                      {% else %}   
                       <div>
-                        <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-xs no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:text-red 
-                      {% if segment == row.linkUrl %} border-red {% endif %} xs:text-center p-2">
+                        <a href="{{ siteUrl }}{{ row.linkUrl }}" class="uppercase text-sm no-underline mt-2 md:mt-0 text-gray-900 border-transparent border-t-2 hover:text-red 
+                      {% if segment == row.linkUrl %} border-red {% endif %} sm:text-center p-2">
                           {{ row.linkName }}
                         </a>
                       </div>
