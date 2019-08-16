@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1565289289
+dateModified: 1565988087
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -581,7 +581,7 @@ fields:
           heading: URL
           handle: url
           width: ''
-          type: singleline
+          type: multiline
       defaults:
         -
           col1: ''
