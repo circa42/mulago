@@ -8,7 +8,7 @@
         {% for row in social.newsletter %}
           
         
-        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-type="iframe" data-src="{{ row.url }}" href="javascript:;">
+        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-src="{{ row.url |raw }}" href="javascript:;">
           {{ row.cta }} 
         </a>
         {% endfor %}
