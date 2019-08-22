@@ -17,7 +17,7 @@
 			{% endcss %}
 			<h3 class="xs:text-center md:text-left text-gray-800 xs:text-base md:text-xl my-4">
 				{{ entry.resourceDescription  |replace ({
-					'<a href': '<a class="text-gray-600 font-bold hover:text-red" href',
+					'<a href': '<a class="text-gray-600 font-bold hover:text-red underline" href',
 				})|raw}}
 			</h3>	
 			{% set blocks = entry.videoMatrix.all() %}
