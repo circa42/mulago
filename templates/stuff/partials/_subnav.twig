@@ -1,7 +1,7 @@
 {% set categories = craft.categories.group('resourcesCat').all() %}
 {% for category in categories %}
   
-{% set seg = craft.request.getSegment(2) %}
+{% set seg = craft.app.request.getSegment(2) %}
 
 
   <div class="inline-block 
