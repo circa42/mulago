@@ -20,7 +20,8 @@
           <h1 class="xs:text-4xl md:text-6xl lg:text-8xl tracking-tight leading-tight font-light text-gray-700">{{ matrixBlock.heading1 }}</h1>
         </div>
         <div class="xs:w-full sm:w-2/3 ">
-         {% for image in matrixBlock.image %}
+          {% set images = matrixBlock.image.all() %}
+         {% for image in images %}
           <img class="" src="{{ image.getUrl('h600x410') }}" alt="{{ image.title }}">
         {% endfor %}
 

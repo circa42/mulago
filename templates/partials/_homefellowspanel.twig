@@ -1,6 +1,7 @@
 <div class="flex flex-wrap">
 
-	{% for image in block.images %}
+{% set images = block.images.all() %}
+	{% for image in images %}
 	{% if loop.first %}    
 		<div class="xs:w-full md:w-1/2">
 		  <div class="bg-cover bg-auto bg-center" 

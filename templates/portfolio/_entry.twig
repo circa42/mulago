@@ -116,16 +116,8 @@
           <div class="flex items-center justify-end">
 
                 {# Set parameters for prev/next elements list #}
-                {% set params = craft.entries.section('portfolio') %}
+                {% set params = craft.entries.section('portfolio').relatedTo(category) %}
                 
-
-                {# And make sure to only output the links if the element exists #}
-                {% set allPosts = craft.entries.section('portfolio').type('fellowsEntry').all() %}
-                 {% for post in allPosts %}
-                   {% if entry.title == post %}
-                     <h5 class="text-xs uppercase pt-2 mr-2">No. {{ loop.index }} of {{ loop.length }}</h5>
-                   {% endif %}
-                 {% endfor %}
                 {% include "partials/_pagination-arrows.twig" %}
 
 
