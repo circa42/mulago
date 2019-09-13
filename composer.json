@@ -1,11 +1,12 @@
 {
   "require": {
     "carlcs/craft-redactorcustomstyles": "3.0.2",
-    "craftcms/cms": "3.2.10",
+    "craftcms/cms": "3.3.3",
     "craftcms/contact-form": "2.2.5",
-    "craftcms/redactor": "2.3.3.2",
-    "nystudio107/craft-retour": "3.1.23",
-    "nystudio107/craft-seomatic": "3.2.21",
+    "craftcms/contact-form-honeypot": "1.0.2",
+    "craftcms/redactor": "2.4.0",
+    "nystudio107/craft-retour": "3.1.24",
+    "nystudio107/craft-seomatic": "3.2.24",
     "vlucas/phpdotenv": "^2.4.0"
   },
   "autoload": {
