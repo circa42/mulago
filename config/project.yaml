@@ -58,7 +58,7 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1565988087
+dateModified: 1568394750
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3030,6 +3030,12 @@ plugins:
     enabled: true
     schemaVersion: 3.0.8
     licenseKey: 8MFUKTKASWN1NY2O1SA9RRVQ
+  contact-form-honeypot:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      honeypotParam: mulagoHoney
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
@@ -3656,7 +3662,7 @@ system:
   live: true
   name: Mulago
   timeZone: America/Los_Angeles
-  schemaVersion: 3.2.16
+  schemaVersion: 3.3.3
 tagGroups:
   90921257-5b3f-48d2-bbbd-584ad6ee126f:
     name: 'Fellows Year Tag'
