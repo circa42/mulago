@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a488fe589398f2479ac4a9e2077cf39e",
+    "content-hash": "b041fff47ed1d012fbd8154097e1b1c3",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -337,11 +337,11 @@
         },
         {
             "name": "craftcms/cms",
-            "version": "3.3.6",
+            "version": "3.3.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/cms/zipball/8cf2d3e18005e6fb44bb25f7d5238babba60b470",
-                "reference": "8cf2d3e18005e6fb44bb25f7d5238babba60b470",
+                "url": "https://api.github.com/repos/craftcms/cms/zipball/aff9bc844316e3b028c88cbe1b199f3ae33be5eb",
+                "reference": "aff9bc844316e3b028c88cbe1b199f3ae33be5eb",
                 "shasum": ""
             },
             "require": {
@@ -369,7 +369,7 @@
                 "seld/cli-prompt": "^1.0.3",
                 "symfony/yaml": "^3.2|^4.0",
                 "true/punycode": "^2.1.0",
-                "twig/twig": "~2.11.0",
+                "twig/twig": "~2.12.0",
                 "voku/stringy": "~5.1.0",
                 "webonyx/graphql-php": "^0.12.0",
                 "yii2tech/ar-softdelete": "^1.0.2",
@@ -419,7 +419,7 @@
                 "docs": "https://docs.craftcms.com/v3/",
                 "rss": "https://github.com/craftcms/cms/releases.atom"
             },
-            "time": "2019-09-27T17:33:15+00:00"
+            "time": "2019-10-15T16:57:57+00:00"
         },
         {
             "name": "craftcms/contact-form",
@@ -1239,11 +1239,11 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.55",
+            "version": "1.0.56",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/33c91155537c6dc899eacdc54a13ac6303f156e6",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/90e3f83cb10ef6b058d70f95267030e7a6236518",
+                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518",
                 "shasum": ""
             },
             "require": {
@@ -1309,7 +1309,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-08-24T11:17:19+00:00"
+            "time": "2019-10-12T13:05:59+00:00"
         },
         {
             "name": "league/oauth2-client",
@@ -1408,11 +1408,11 @@
         },
         {
             "name": "nystudio107/craft-retour",
-            "version": "3.1.25",
+            "version": "3.1.26",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/3d31db63f93f2f1bb4be61d40404ab59d2c8c28c",
-                "reference": "3d31db63f93f2f1bb4be61d40404ab59d2c8c28c",
+                "url": "https://api.github.com/repos/nystudio107/craft-retour/zipball/9e8c740ca18cfeed1a494e192e1e944d4861aec2",
+                "reference": "9e8c740ca18cfeed1a494e192e1e944d4861aec2",
                 "shasum": ""
             },
             "require": {
@@ -1459,15 +1459,15 @@
                 "docs": "https://nystudio107.com/plugins/retour/documentation",
                 "issues": "https://nystudio107.com/plugins/retour/support"
             },
-            "time": "2019-09-27T13:11:08+00:00"
+            "time": "2019-10-07T11:14:44+00:00"
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.27",
+            "version": "3.2.28",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/5fb596b9ca877f527ecc2854b70f75f36b5a992b",
-                "reference": "5fb596b9ca877f527ecc2854b70f75f36b5a992b",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/084ffbe06b117d1f91ed06390055733638571797",
+                "reference": "084ffbe06b117d1f91ed06390055733638571797",
                 "shasum": ""
             },
             "require": {
@@ -1531,7 +1531,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2019-10-01T01:00:11+00:00"
+            "time": "2019-10-08T20:56:57+00:00"
         },
         {
             "name": "opis/closure",
@@ -2855,6 +2855,39 @@
             "time": "2017-07-23T12:43:26+00:00"
         },
         {
+            "name": "theiconic/name-parser",
+            "version": "v1.0.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theiconic/name-parser/zipball/d9988e227277142f4180267a8b3b6dbae8d1bf03",
+                "reference": "d9988e227277142f4180267a8b3b6dbae8d1bf03",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "TheIconic\\NameParser\\": [
+                        "src/",
+                        "tests/"
+                    ]
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "The Iconic",
+                    "email": "engineering@theiconic.com.au"
+                }
+            ],
+            "description": "PHP library for parsing a string containing a full name into its parts",
+            "time": "2018-04-13T04:35:44+00:00"
+        },
+        {
             "name": "true/punycode",
             "version": "v2.1.1",
             "dist": {
@@ -2897,11 +2930,11 @@
         },
         {
             "name": "twig/twig",
-            "version": "v2.11.3",
+            "version": "v2.12.0",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twigphp/Twig/zipball/699ed2342557c88789a15402de5eb834dedd6792",
-                "reference": "699ed2342557c88789a15402de5eb834dedd6792",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c7a85fd08348ca04b4d8f234f49583d9910906aa",
+                "reference": "c7a85fd08348ca04b4d8f234f49583d9910906aa",
                 "shasum": ""
             },
             "require": {
@@ -2912,7 +2945,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "2.11-dev"
+                    "dev-master": "2.12-dev"
                 }
             },
             "autoload": {
@@ -2934,14 +2967,14 @@
                     "role": "Lead Developer"
                 },
                 {
-                    "name": "Armin Ronacher",
-                    "email": "armin.ronacher@active-4.com",
-                    "role": "Project Founder"
-                },
-                {
                     "name": "Twig Team",
                     "homepage": "https://twig.symfony.com/contributors",
                     "role": "Contributors"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
                 }
             ],
             "description": "Twig, the flexible, fast, and secure template language for PHP",
@@ -2949,7 +2982,58 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2019-06-18T15:37:11+00:00"
+            "time": "2019-10-05T16:42:38+00:00"
+        },
+        {
+            "name": "verbb/comments",
+            "version": "1.1.10",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/verbb/comments/zipball/aa905808f21f1995ad4626829131ce30f12e6d39",
+                "reference": "aa905808f21f1995ad4626829131ce30f12e6d39",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.0",
+                "theiconic/name-parser": "^1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Comments",
+                "handle": "comments",
+                "changelogUrl": "https://raw.githubusercontent.com/verbb/comments/craft-3/CHANGELOG.md",
+                "class": "verbb\\comments\\Comments"
+            },
+            "autoload": {
+                "psr-4": {
+                    "verbb\\comments\\": "src/"
+                }
+            },
+            "license": [
+                "proprietary"
+            ],
+            "authors": [
+                {
+                    "name": "Verbb",
+                    "homepage": "https://verbb.io"
+                }
+            ],
+            "description": "A Craft CMS plugin for managing comments directly within the CMS.",
+            "keywords": [
+                "cms",
+                "comments",
+                "craft",
+                "craft-plugin",
+                "craftcms"
+            ],
+            "support": {
+                "email": "support@verbb.io",
+                "issues": "https://github.com/verbb/comments/issues?state=open",
+                "source": "https://github.com/verbb/comments",
+                "docs": "https://github.com/verbb/comments",
+                "rss": "https://github.com/verbb/comments/commits/v2.atom"
+            },
+            "time": "2019-09-18T00:03:47+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3047,11 +3131,11 @@
         },
         {
             "name": "voku/arrayy",
-            "version": "5.14.1",
+            "version": "5.14.2",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/Arrayy/zipball/2a76c1f5b40ef78d757a137fc7d992a80783d229",
-                "reference": "2a76c1f5b40ef78d757a137fc7d992a80783d229",
+                "url": "https://api.github.com/repos/voku/Arrayy/zipball/6fe80d46f515d8d96db244d36e6099ef6659c04a",
+                "reference": "6fe80d46f515d8d96db244d36e6099ef6659c04a",
                 "shasum": ""
             },
             "require": {
@@ -3090,7 +3174,7 @@
                 "utility",
                 "utils"
             ],
-            "time": "2019-09-16T21:25:09+00:00"
+            "time": "2019-10-06T17:56:40+00:00"
         },
         {
             "name": "voku/email-check",
@@ -3138,11 +3222,11 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "1.2.3",
+            "version": "1.3.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/d29f78e8ead9cfef6a09208c27716737c1ac56be",
-                "reference": "d29f78e8ead9cfef6a09208c27716737c1ac56be",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/d3553af811794c377ea2afff5494b343bcef5b76",
+                "reference": "d3553af811794c377ea2afff5494b343bcef5b76",
                 "shasum": ""
             },
             "require": {
@@ -3174,15 +3258,15 @@
                 "clean",
                 "php"
             ],
-            "time": "2019-09-10T13:53:07+00:00"
+            "time": "2019-10-14T09:49:39+00:00"
         },
         {
             "name": "voku/portable-utf8",
-            "version": "5.4.23",
+            "version": "5.4.25",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
-                "reference": "bbecc90364dc1c7e028e0c0a6bf7c8ebfc119234",
+                "url": "https://api.github.com/repos/voku/portable-utf8/zipball/aed1b955d5d43e4104d72dce4158db5de3cecce6",
+                "reference": "aed1b955d5d43e4104d72dce4158db5de3cecce6",
                 "shasum": ""
             },
             "require": {
@@ -3192,7 +3276,7 @@
                 "symfony/polyfill-intl-normalizer": "~1.0",
                 "symfony/polyfill-mbstring": "~1.0",
                 "symfony/polyfill-php72": "~1.0",
-                "voku/portable-ascii": "~1.2"
+                "voku/portable-ascii": "~1.3"
             },
             "suggest": {
                 "ext-ctype": "Use Ctype for e.g. hexadecimal digit detection",
@@ -3239,7 +3323,7 @@
                 "utf-8",
                 "utf8"
             ],
-            "time": "2019-09-27T07:24:07+00:00"
+            "time": "2019-10-14T06:46:29+00:00"
         },
         {
             "name": "voku/stop-words",

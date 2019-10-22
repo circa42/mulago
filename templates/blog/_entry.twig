@@ -1,0 +1,72 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="flex flex-col bg-blue-700 py-16 px-12 mb-12">
+
+    <div class="relative">
+       <h1 class="text-white leading-none text-uppercase font-semibold xs:text-2xl md:text-3xl md:text-6xl ml-8">
+        {{ entry.title }}
+      </h1>        
+    </div>
+</div>
+<div class="mx-20">
+	<h3 class="xs:text-center md:text-left ">
+		by {% include "blog/_authors" %}
+	</h3>
+	<h4 class="text-gray-700 font-sm xs:text-center md:text-left my-2">
+		{{ entry.postDate | date("M d, Y") }}
+	</h4> 
+</div>
+<div class="flex-wrap flex xs:flex-wrap md:flex-wrap mx-12 max-w-6xl">
+	
+	
+	<div class="xs:w-full md:w-3/4 border-t border-gray-400 p-8 my-8">
+{# removing excerpt on _entry
+	 		<div>
+				<h2 class="xs:text-center md:text-left text-gray-600 xs:text-md md:text-lg lg:text-xl my-4">
+					{{ entry.excerpt  |replace ({
+						'<a href': '<a class="text-gray-700 hover:text-red underline" href',
+					})|raw }}
+				</h2>
+			</div> 
+		 #}
+		<div>
+
+			{% include "blog/_content" %}
+			<div class="my-12">
+				{% include "blog/_comments" %}
+			</div>
+		</div>
+	</div>
+
+{# sidebar #}
+	<div class="xs:w-full md:w-1/4 border-t border-gray-400 py-8 px-2 my-8">
+		<h5 class="xs:text-center md:text-left text-sm uppercase">
+			Latest Posts
+		</h5>
+		{% include "blog/_posts" %}
+
+
+		<h5 class="xs:text-center md:text-left text-sm uppercase">
+			Categories
+		</h5>
+		<div class="mt-4 mb-10">
+			{% include "blog/_cat" %}
+			
+		</div>
+
+		<h5 class="xs:text-center md:text-left text-sm uppercase">
+			Share
+		</h5>
+
+		<div class="border-b border-gray-400 mx-auto py-4 pb-16">
+		  {% include "partials/_share" %}     
+		</div>
+	</div>
+
+
+</div>
+
+
+
+{% endblock %}

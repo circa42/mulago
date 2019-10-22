@@ -1,0 +1,14 @@
+{% set entryQ = craft.entries.section('blog').limit(5) %}
+{% set entries = entryQ.all() %}
+<div class="mb-8">
+	{% for entry in entries %}
+		<ul class="">
+			<li> 
+				<a href="{{ entry.url }}" class="text-gray-700 font-sm no-underline hover:underline hover:text-red my-2">
+					{{ entry.title }}
+				</a>
+			</li>
+		</ul>
+	{% endfor %}
+</div>
+

@@ -58,7 +58,51 @@ categoryGroups:
         hasUrls: true
         uriFormat: 'portfolio/{slug}'
         template: ''
-dateModified: 1568394750
+  b348c28b-eb08-4a2a-875a-26131d98c19f:
+    name: 'Blog Categories'
+    handle: blogCat
+    structure:
+      uid: 7da79782-da6e-4ca8-bc63-d84d877bae63
+      maxLevels: 2
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        hasUrls: true
+        uriFormat: 'blog/category/{slug}'
+        template: blog/_category
+  c5c2ea22-8186-4d1e-bf87-6d84c0fbad20:
+    name: 'Author Cat'
+    handle: authorCat
+    structure:
+      uid: 9bb708b7-575a-47c5-ad9b-ee5ce873dfdd
+      maxLevels: 2
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        hasUrls: true
+        uriFormat: 'blog/author/{slug}'
+        template: blog/author/index
+    fieldLayouts:
+      9dca6df4-5120-4406-90fb-3d50acf0a4cc:
+        tabs:
+          -
+            name: Team
+            sortOrder: 1
+            fields:
+              649f3d1e-f113-4455-ba99-154a10299e9e:
+                required: false
+                sortOrder: 4
+              9e640bdb-c61d-433a-8ec6-06030154c846:
+                required: false
+                sortOrder: 2
+              e5f171d9-9385-48f9-a8cd-f99f5fee257b:
+                required: false
+                sortOrder: 5
+              efa8e0b9-f5db-431a-8ca0-69dd11fc6c4a:
+                required: false
+                sortOrder: 3
+              f8993b26-4df2-402b-bcd2-02875ac64b2b:
+                required: false
+                sortOrder: 1
+dateModified: 1571430882
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -73,6 +117,8 @@ email:
     encryptionMethod: ''
     timeout: '10'
 fieldGroups:
+  04a894a7-4869-49f1-bf9d-7bcae62fa02e:
+    name: Blog
   106f1368-0508-4aa4-a3ba-1e47959693e1:
     name: Team
   52869743-1945-4552-8b8e-53556f8cd992:
@@ -82,7 +128,7 @@ fieldGroups:
   8b29cd5d-7b85-4562-870f-05140994e4e2:
     name: Default
   90595d6d-34f2-49a2-8129-d75fa7a5ed71:
-    name: Resources
+    name: Stuff
   aa596d10-b352-4633-bfa3-0b2b5d393640:
     name: Portfolio
   c82e1905-da26-422d-a98a-7074de0e2eff:
@@ -737,6 +783,38 @@ fields:
       localizeRelations: false
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string
+  c730ef6e-8cb3-415a-86b7-cd996ddb2eb7:
+    name: 'Main Image'
+    handle: mainImage
+    instructions: 'This only appears on the `/blog` index page and when it''s shared on social media.'
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Assets
+    settings:
+      useSingleFolder: ''
+      defaultUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+      defaultUploadLocationSubpath: ''
+      singleUploadLocationSource: 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+      singleUploadLocationSubpath: ''
+      restrictFiles: ''
+      allowedKinds: null
+      sources:
+        - 'volume:c5dffa97-c244-4d84-8068-50c6382fe4da'
+        - 'volume:d05c29c0-93bd-4b11-aff8-e819f5e72d55'
+        - 'volume:7769657c-b2ba-4eb0-9082-7e63550b808f'
+        - 'volume:cad63f12-e4d7-471e-b51f-519b8c925635'
+        - 'volume:414494f3-3fe1-455b-abe6-3c8a1699b216'
+        - 'volume:47c69fef-01ff-4c07-8b8f-ac09bf15df02'
+      source: null
+      targetSiteId: null
+      viewMode: list
+      limit: '1'
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
   ca18a062-4194-422a-a16f-4fa840664602:
     name: 'Category Strapline'
     handle: categoryStrapline
@@ -801,6 +879,28 @@ fields:
       maxLength: '255'
     contentColumnType: string(255)
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
+  ec268afe-58c6-41b8-9076-7b938914dd8e:
+    name: Authors
+    handle: authors
+    instructions: 'Select up to two authors. An ampersand will be placed between names automatically. '
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: '2'
+      sources: '*'
+      source: 'group:c5c2ea22-8186-4d1e-bf87-6d84c0fbad20'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
   ec3e69be-68b5-4b50-b16b-bd882d89b558:
     name: 'Content Builder'
     handle: contentBuilder
@@ -813,9 +913,9 @@ fields:
       minBlocks: ''
       maxBlocks: '24'
       contentTable: '{{%matrixcontent_contentbuilder}}'
-      localizeBlocks: false
-    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
+      propagationMethod: all
     contentColumnType: string
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
   efa8e0b9-f5db-431a-8ca0-69dd11fc6c4a:
     name: 'Bio Copy'
     handle: bioCopy
@@ -833,6 +933,28 @@ fields:
       columnType: text
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     contentColumnType: text
+  f396ce3b-5906-46a9-94cc-482561f8aed5:
+    name: 'Blog Category'
+    handle: blogCategory
+    instructions: ''
+    searchable: true
+    translationMethod: site
+    translationKeyFormat: null
+    type: craft\fields\Categories
+    settings:
+      allowLimit: false
+      allowMultipleSources: false
+      branchLimit: ''
+      sources: '*'
+      source: 'group:b348c28b-eb08-4a2a-875a-26131d98c19f'
+      targetSiteId: null
+      viewMode: null
+      limit: null
+      selectionLabel: ''
+      localizeRelations: false
+      validateRelatedElements: ''
+    contentColumnType: string
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
   f8993b26-4df2-402b-bcd2-02875ac64b2b:
     name: 'Bio photo'
     handle: bioPhoto
@@ -1139,6 +1261,16 @@ imageTransforms:
     format: null
     quality: 82
     interlace: none
+  f2931763-8a6d-4c91-981f-ba43324b2526:
+    format: null
+    handle: smallPortrait150x150
+    height: 150
+    interlace: none
+    mode: crop
+    name: 'Small Portrait 150x150'
+    position: center-center
+    quality: null
+    width: 150
   f3db3b66-1290-48bd-b2ff-c764215bd8d3:
     name: 'sq 300x300'
     handle: sq300x300
@@ -2369,20 +2501,10 @@ matrixBlockTypes:
                 required: true
                 sortOrder: 2
   adaee229-fd8d-425a-88d3-27e2f24e6742:
+    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
     name: 'Image Block'
     handle: imageBlock
     sortOrder: 2
-    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
-    fieldLayouts:
-      d1d17a3d-ae94-47c6-b4da-38a469d238f1:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              0a74c1c0-9c24-4ead-aee0-fa99be2105f7:
-                required: false
-                sortOrder: 1
     fields:
       0a74c1c0-9c24-4ead-aee0-fa99be2105f7:
         name: Image
@@ -2407,11 +2529,42 @@ matrixBlockTypes:
           source: null
           targetSiteId: null
           viewMode: list
-          limit: '10'
+          limit: '1'
           selectionLabel: ''
           localizeRelations: false
-        fieldGroup: null
+          validateRelatedElements: ''
         contentColumnType: string
+        fieldGroup: null
+      b6594b9a-8749-41c7-92f3-b4d463c04e19:
+        name: Caption
+        handle: caption
+        instructions: ''
+        searchable: true
+        translationMethod: none
+        translationKeyFormat: null
+        type: craft\fields\PlainText
+        settings:
+          placeholder: ''
+          code: ''
+          multiline: ''
+          initialRows: '4'
+          charLimit: ''
+          columnType: text
+        contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      d1d17a3d-ae94-47c6-b4da-38a469d238f1:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0a74c1c0-9c24-4ead-aee0-fa99be2105f7:
+                required: false
+                sortOrder: 1
+              b6594b9a-8749-41c7-92f3-b4d463c04e19:
+                required: false
+                sortOrder: 2
   b1cf2586-100c-4e4d-9b27-0ec068727807:
     name: 'panel 2'
     handle: panel2
@@ -2679,20 +2832,10 @@ matrixBlockTypes:
                 required: false
                 sortOrder: 2
   dd6d8d9b-a6d2-48ec-b341-f97f15189cdc:
+    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
     name: 'Copy Block'
     handle: copyBlock
     sortOrder: 1
-    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
-    fieldLayouts:
-      f0d1878b-6026-45ad-943c-628862c2c645:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              bb7bc27f-aeee-4014-9b3c-4c425e5f0a5f:
-                required: false
-                sortOrder: 1
     fields:
       bb7bc27f-aeee-4014-9b3c-4c425e5f0a5f:
         name: copy
@@ -2703,7 +2846,7 @@ matrixBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: Standard.json
+          redactorConfig: Blog.json
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: ''
@@ -2713,8 +2856,18 @@ matrixBlockTypes:
           columnType: text
           availableVolumes: '*'
           availableTransforms: '*'
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      f0d1878b-6026-45ad-943c-628862c2c645:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              bb7bc27f-aeee-4014-9b3c-4c425e5f0a5f:
+                required: false
+                sortOrder: 1
   e85bd069-0b96-4e9c-9b47-832cfc716674:
     field: fed72544-841b-4f2a-9df3-f7d4c69dcac3
     name: 'Panel Header'
@@ -2915,23 +3068,10 @@ matrixBlockTypes:
                 required: true
                 sortOrder: 1
   f0992213-fda5-4167-b051-1477ea635728:
+    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
     name: 'Video Block'
     handle: videoBlock
     sortOrder: 3
-    field: ec3e69be-68b5-4b50-b16b-bd882d89b558
-    fieldLayouts:
-      ded0503d-e097-4ea4-9956-f98153d3eb4f:
-        tabs:
-          -
-            name: Content
-            sortOrder: 1
-            fields:
-              0f5cad38-97b9-4d9b-81b9-50714cc9ad85:
-                required: false
-                sortOrder: 1
-              a1afbadd-7ebc-4b11-9d44-a3f6c852aac1:
-                required: false
-                sortOrder: 2
     fields:
       0f5cad38-97b9-4d9b-81b9-50714cc9ad85:
         name: 'Video title'
@@ -2948,25 +3088,38 @@ matrixBlockTypes:
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
       a1afbadd-7ebc-4b11-9d44-a3f6c852aac1:
-        name: Video
-        handle: video
-        instructions: 'Inset embed code WITHOUT iframe tag and dimemsions'
+        name: 'Video ID'
+        handle: videoId
+        instructions: 'Insert YouTube ID only. '
         searchable: true
         translationMethod: none
         translationKeyFormat: null
         type: craft\fields\PlainText
         settings:
-          placeholder: '//www.youtube.com/embed/sx1hiL2ZG6o?rel=0&amp;showinfo=0"'
+          placeholder: nosqKEVNNMY
           code: ''
           multiline: ''
           initialRows: '4'
           charLimit: ''
           columnType: text
-        fieldGroup: null
         contentColumnType: text
+        fieldGroup: null
+    fieldLayouts:
+      ded0503d-e097-4ea4-9956-f98153d3eb4f:
+        tabs:
+          -
+            name: Content
+            sortOrder: 1
+            fields:
+              0f5cad38-97b9-4d9b-81b9-50714cc9ad85:
+                required: false
+                sortOrder: 1
+              a1afbadd-7ebc-4b11-9d44-a3f6c852aac1:
+                required: true
+                sortOrder: 2
 plugins:
   compressor:
     settings: null
@@ -3036,6 +3189,43 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: mulagoHoney
+  comments:
+    settings:
+      structureId: 14
+      closed: null
+      indexSidebarLimit: 25
+      allowAnonymous: '1'
+      guestRequireEmailName: '1'
+      requireModeration: ''
+      autoCloseDays: ''
+      allowVoting: '1'
+      flaggedCommentLimit: '1'
+      allowFlagging: '1'
+      downvoteCommentLimit: '5'
+      showAvatar: '1'
+      placeholderAvatar: ''
+      showTimeAgo: '1'
+      outputDefaultCss: '1'
+      outputDefaultJs: '1'
+      templateFolderOverride: ''
+      enableSpamChecks: '1'
+      recaptchaEnabled: ''
+      recaptchaKey: ''
+      recaptchaSecret: ''
+      securityMaxLength: ''
+      securityFlooding: ''
+      securityModeration: ''
+      securityBlacklist: ''
+      securityBanned: ''
+      notificationAuthorEnabled: '1'
+      notificationReplyEnabled: '1'
+      permissions:
+        craft\elements\Asset: '*'
+        craft\elements\Category: '*'
+        craft\elements\Entry: '*'
+        craft\elements\User: '*'
+      users: null
+    enabled: true
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
@@ -3401,6 +3591,52 @@ sections:
         uriFormat: 'fellows/programs/{slug}'
         template: fellows/programs/_entry
     propagationMethod: all
+  742d0833-efba-4673-940e-a62f61229c25:
+    name: Blog
+    handle: blog
+    type: channel
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: 'blog/{slug}'
+        template: blog/_entry
+    entryTypes:
+      d5b9072c-e9a7-4cab-9ec7-8dbd144f5b89:
+        name: Blog
+        handle: blog
+        hasTitleField: true
+        titleLabel: Title
+        titleFormat: ''
+        sortOrder: 1
+        fieldLayouts:
+          cebb57f0-0278-401c-81c8-695169e8934c:
+            tabs:
+              -
+                name: Content
+                sortOrder: 1
+                fields:
+                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                    required: true
+                    sortOrder: 1
+              -
+                name: Meta
+                sortOrder: 2
+                fields:
+                  0d4e4999-7db2-43ef-9593-07044ff53b50:
+                    required: true
+                    sortOrder: 2
+                  c730ef6e-8cb3-415a-86b7-cd996ddb2eb7:
+                    required: true
+                    sortOrder: 4
+                  ec268afe-58c6-41b8-9076-7b938914dd8e:
+                    required: true
+                    sortOrder: 1
+                  f396ce3b-5906-46a9-94cc-482561f8aed5:
+                    required: true
+                    sortOrder: 3
   80219d20-800c-473b-8fdb-74dc15c517ef:
     name: 'How we fund'
     handle: howWeFund
@@ -3667,6 +3903,9 @@ tagGroups:
   90921257-5b3f-48d2-bbbd-584ad6ee126f:
     name: 'Fellows Year Tag'
     handle: fellowsYearTag
+  cabd95f1-5c0e-4f6a-b375-a4c4a3fc2098:
+    name: 'Blog authors'
+    handle: blogAuthors
   eeb8b6dd-a651-4913-b071-87f777b48561:
     name: Default
     handle: default

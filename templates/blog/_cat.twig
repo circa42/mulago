@@ -1,0 +1,21 @@
+{% set entryIds = craft.entries.section('blog').ids() %}
+{% set categories = craft.categories.relatedTo({ sourceElement:
+  entryIds }).groupId(8).find() %}
+
+  
+
+<ul>
+    {% nav category in categories %}
+		<li>
+            <a href="{{ category.url }}" class="text-gray-700 font-sm no-underline hover:underline hover:text-red my-2">
+            	{{ category.title }}
+            </a>
+            {% ifchildren %}
+                <ul class="ml-2">
+                    {% children %}
+                </ul>
+            {% endifchildren %}
+        </li>
+    {% endnav %}
+</ul>
+
