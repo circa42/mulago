@@ -1,5 +1,6 @@
+{% paginate entries as pageInfo, pageEntries %}
 {# Output them #}
-		{% for entry in entries %}
+		{% for entry in pageEntries %}
 
 		{% set assetQuery = entry.mainImage %}
 
@@ -7,7 +8,18 @@
 
 		<div class="flex flex-wrap-reverse m-12">
 			
-		    <div class="xs:w-full md:w-3/4 xs:p-0 xs:pt-4 md:pt-0 md:pr-12">
+		    <div class="xs:w-full md:w-1/4">
+				{% set images = assetQuery.all() %}
+					{% for image in images %}
+						<div class="flex justify-center">
+							<a href="{{ entry.url }}">
+								<img src="{{ image.geturl('index300x200') }}" alt="">
+							</a>
+						</div>
+					{% endfor %}
+			</div>
+
+			<div class="xs:w-full md:w-3/4 xs:p-0 xs:pt-4 md:pt-0 md:pl-12">
 		    	<h2 class="text-2xl">
 		    		<a href="{{ entry.url }}" class="font-bold hover:text-red">
 			    		{{ entry.title }}
@@ -21,15 +33,8 @@
 		    	</a>	
 		   
 		    </div>
-		    <div class="xs:w-full md:w-1/4">
-				{% set images = assetQuery.all() %}
-					{% for image in images %}
-						<div class="flex justify-center">
-							<a href="{{ entry.url }}">
-								<img src="{{ image.geturl('index300x200') }}" alt="">
-							</a>
-						</div>
-					{% endfor %}
-			</div>
+		    
 		</div>
 		{% endfor %}
+
+{% include "blog/_pagination" %}

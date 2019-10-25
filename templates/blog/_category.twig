@@ -13,7 +13,7 @@
 
 	<div class="xs:w-full lg:w-3/4">
 		{# all of the entries related to this section #}
-		{% set entries = craft.entries.relatedTo(category).all() %}
+		{% set entries = craft.entries.relatedTo(category).limit(10) %}
 
 		{% include "blog/_entries" %}
 	</div>

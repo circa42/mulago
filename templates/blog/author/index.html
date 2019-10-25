@@ -25,7 +25,7 @@
 
 
 {# Fetch all of the entries related to this category #}
-{% set entries = craft.entries.relatedTo(category).all() %}
+{% set entries = craft.entries.relatedTo(category).limit(10) %}
 
 {% if entries | length <= 0 %}
 	No posts written yet.

@@ -13,7 +13,7 @@
 
 	<div class="xs:w-full lg:w-3/4">
 		{# all of the entries related to this section #}
-		{% set entries = craft.entries.section('blog').all() %}
+		{% set entries = craft.entries.section('blog').limit(10) %} 
 
 		{% include "blog/_entries" %}
 	</div>
