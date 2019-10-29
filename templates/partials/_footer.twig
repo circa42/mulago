@@ -7,10 +7,11 @@
       {# email #}
         {% for row in social.newsletter %}
           
-        
-        <a class="xs:text-center md:text-right text-sm text-gray-600 hover:text-red font-semibold cursor-pointer" data-fancybox data-src="#mc" href="javascript:;">
-          {{ row.cta }} 
-        </a>
+        <button class="bg-gray-600 hover:bg-red border-white border-2 rounded-lg py-2 px-4 mt-2">
+          <a class="xs:text-center md:text-right text-sm text-white hover:text-white font-semibold cursor-pointer" data-fancybox data-src="#mc" href="javascript:;">
+            {{ row.cta }} 
+          </a>
+        </button>
         <div id="mc" class="hidden">
           {{ row.url |raw }}
         </div>
@@ -18,14 +19,14 @@
     </div>
     
 
-{# tagline & arrow #}	
+{# tagline & arrow #} 
     <div class="xs:w-full md:w-1/3">
 
       <h2 class="sm:w-full text-center uppercase text-gray-600 text-2xl tracking-wider">
         {{ tagline.text }}
       </h2>
 
-	  </div>
+    </div>
 
 {# social #}
     <div class="xs:w-full md:w-1/3 flex flex-wrap xs:justify-center md:justify-end mb-8">
