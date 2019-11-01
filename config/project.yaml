@@ -102,7 +102,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1572640496
+dateModified: 1572645531
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3732,51 +3732,6 @@ sections:
                   a09fd95d-7287-49be-9037-87edfd52cf67:
                     required: false
                     sortOrder: 2
-  c21b7a17-aef5-4947-8d1e-a7dc831644fb:
-    name: Team
-    handle: team
-    type: structure
-    enableVersioning: true
-    structure:
-      uid: dae53502-4cb0-44c5-8783-b8e11d25f52e
-      maxLevels: null
-    entryTypes:
-      05a96554-5dc2-4469-9d7d-264ca01274a0:
-        name: Team
-        handle: team
-        hasTitleField: true
-        titleLabel: Name
-        titleFormat: ''
-        sortOrder: 1
-        fieldLayouts:
-          dde213b2-e14c-41ad-b8e4-2c80f857b2bd:
-            tabs:
-              -
-                name: Team
-                sortOrder: 1
-                fields:
-                  649f3d1e-f113-4455-ba99-154a10299e9e:
-                    required: false
-                    sortOrder: 4
-                  9e640bdb-c61d-433a-8ec6-06030154c846:
-                    required: false
-                    sortOrder: 2
-                  e5f171d9-9385-48f9-a8cd-f99f5fee257b:
-                    required: false
-                    sortOrder: 5
-                  efa8e0b9-f5db-431a-8ca0-69dd11fc6c4a:
-                    required: false
-                    sortOrder: 3
-                  f8993b26-4df2-402b-bcd2-02875ac64b2b:
-                    required: false
-                    sortOrder: 1
-    siteSettings:
-      9256c07c-fdaa-41a1-a0a6-0fe587708517:
-        enabledByDefault: true
-        hasUrls: true
-        uriFormat: 'team/{slug}'
-        template: ''
-    propagationMethod: all
   df674102-48ae-412d-9cad-20d9d98cc1e7:
     name: 'Who we fund'
     handle: portfolioIndex
