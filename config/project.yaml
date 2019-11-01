@@ -102,7 +102,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1571430882
+dateModified: 1572640496
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3189,43 +3189,6 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: mulagoHoney
-  comments:
-    settings:
-      structureId: 14
-      closed: null
-      indexSidebarLimit: 25
-      allowAnonymous: '1'
-      guestRequireEmailName: '1'
-      requireModeration: ''
-      autoCloseDays: ''
-      allowVoting: '1'
-      flaggedCommentLimit: '1'
-      allowFlagging: '1'
-      downvoteCommentLimit: '5'
-      showAvatar: '1'
-      placeholderAvatar: ''
-      showTimeAgo: '1'
-      outputDefaultCss: '1'
-      outputDefaultJs: '1'
-      templateFolderOverride: ''
-      enableSpamChecks: '1'
-      recaptchaEnabled: ''
-      recaptchaKey: ''
-      recaptchaSecret: ''
-      securityMaxLength: ''
-      securityFlooding: ''
-      securityModeration: ''
-      securityBlacklist: ''
-      securityBanned: ''
-      notificationAuthorEnabled: '1'
-      notificationReplyEnabled: '1'
-      permissions:
-        craft\elements\Asset: '*'
-        craft\elements\Category: '*'
-        craft\elements\Entry: '*'
-        craft\elements\User: '*'
-      users: null
-    enabled: true
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:

@@ -1,6 +1,6 @@
 {% set entryIds = craft.entries.section('blog').ids() %}
 {% set categories = craft.categories.relatedTo({ sourceElement:
-  entryIds }).groupId(8).find() %}
+  entryIds }).groupId(8).all() %}
 
   
 

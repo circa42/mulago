@@ -1,5 +1,5 @@
 {% set entryIds = craft.entries.section('blog').all() %}
-{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(9).find() %}
+{% set categories = craft.categories.relatedTo({ sourceElement: entryIds }).groupId(9).all() %}
 
 {# Display the navigation #}
 <ul>
