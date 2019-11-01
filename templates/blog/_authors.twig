@@ -1,0 +1,12 @@
+{% set categories = entry.authors.all() %}
+{% for category in categories %}
+	<a href="{{ category.url }}" class="text-gray-700 font-sm no-underline hover:underline hover:text-red my-2">
+    	{{ category.title }}
+    </a>
+   {% if not loop.last %} 
+		&  
+	{% endif %}
+	
+{% endfor %}
+
+

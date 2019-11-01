@@ -64,7 +64,9 @@
               {% endfor %}
             {% endif %}
           <div class="text-lg"> <hr>
-            {{ matrixBlock.copy }}
+            {{ matrixBlock.copy |replace({
+                '<p>': '<p class="py-2">',  
+                  })|raw}}
           </div>
 
         </div>

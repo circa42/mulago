@@ -1,0 +1,15 @@
+
+<div class="flex justify-center">
+{% if pageInfo.prevUrl %}
+	<a href="{{ pageInfo.prevUrl }}" class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-red ml-2">
+		<i class="fas fa-arrow-left text-xl text-white "></i>
+	</a>
+{% endif %}
+
+{% if pageInfo.nextUrl %}
+	<a href="{{ pageInfo.nextUrl }}" class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-red ml-2">
+		<i class="fas fa-arrow-right text-xl text-white "></i>
+	</a>
+{% endif %}
+
+</div>

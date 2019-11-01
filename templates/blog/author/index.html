@@ -1,0 +1,42 @@
+{% extends "_layout" %}
+
+{% block content %}
+<div class="container mx-auto font-light bg-white max-w-5xl p-4 m-4">
+	<h3 class="inline-block text-xl text-gray-700 py-4">
+		{{ category.title }} — {{ category.position }} 
+	</h3>
+	{% include "blog/author/_social" %}
+	<div class="border-b border-gray-400 mb-2"></div> 	
+		<div class="mb-12">
+				
+			{% set assetQuery = category.bioPhoto %}
+			{% set images = assetQuery.all() %}
+			{% for image in images %}
+			<img class="float-left mr-4 my-2 h-32" 
+				src="{{ image.geturl('smallPortrait150x150') }}">
+			{% endfor %}
+	  		<p>{{ category.bioCopy |nl2br }}</p>
+		</div>
+	
+
+	
+    {# end bio #}
+	<div class="border-b border-gray-400 mb-12"></div> 		
+
+
+{# Fetch all of the entries related to this category #}
+{% set entries = craft.entries.relatedTo(category).limit(10) %}
+
+{% if entries | length <= 0 %}
+	No posts written yet.
+
+{% else %}
+	{% include "blog/_entries" %}
+{% endif %}
+
+</div>
+
+
+
+
+{% endblock %}

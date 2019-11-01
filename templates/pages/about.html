@@ -69,29 +69,29 @@
 
 {# team #}
 <div class="bg-gray-100">
-{% set teamQuery = craft.entries().section('team') %}       
+{% set teamQuery = craft.categories.group('authorCat') %}       
 
-{% set entries = teamQuery.all() %}
+{% set categories = teamQuery.all() %}
   <div class="flex flex-wrap justify-center items-start p-16" id="entries">
 
-  {% for entry in entries %}
+  {% for category in categories %}
   
 
-      <button data-fancybox data-src="#{{ entry.id }}" href="javascript:;" class=""> 
+      <button data-fancybox data-src="#{{ category.id }}" href="javascript:;" class=""> 
         <div class="bg-white shadow hover:border-red max-w-xs border p-4 m-4">
-            {% set assetQuery = entry.bioPhoto %}
+            {% set assetQuery = category.bioPhoto %}
             {% set images = assetQuery.all() %}
               {% for image in images %}
                <img src="{{ image.geturl('sq300x300') }}" alt="">
               {% endfor %}
               <h3 class="uppercase font-normal text-base text-center text-gray-700 py-4">
-                {{ entry.title }}
+                {{ category.title }}
               </h3>
               
               <div class="border-b border-gray-400">
               </div> 
               <h3 class="min-h-4xs uppercase font-normal text-base text-center text-gray-700 px-8 py-6">
-                {{ entry.position }} 
+                {{ category.position }} 
               </h3>
         </div>
           {% include "partials/_teambiopop.twig" %}  

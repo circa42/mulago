@@ -1,0 +1,18 @@
+<div class="flex inline-block">
+{% if category.linkedin|length %}
+	<div class="rounded-full h-8 w-8 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2 mb-2">
+		<a href="{{ category.linkedin }}" 
+          target="_blank">
+          <i class="text-white hover:text-gray-300 text-md pt-2 fab fa-linkedin-in"></i>  
+        </a>
+  	</div>
+	{% endif %}
+	{% if category.twitter|length %}
+  	<div class="rounded-full h-8 w-8 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2 mb-2">
+		<a href="{{ category.twitter }}" 
+          target="_blank">
+          <i class="text-white hover:text-gray-300 text-md pt-2 fab fa-twitter"></i>  
+        </a>
+  	</div>
+	{% endif %}
+</div>

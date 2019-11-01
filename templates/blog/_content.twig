@@ -1,0 +1,51 @@
+{% set blocks = entry.contentBuilder.all() %}
+{% for block in blocks %}
+	{% if block.type == 'copyBlock' %}
+		<div class="text-xl leading-relaxed text-gray-800">
+			
+			{{ block.copy |replace({
+					'<ul>': '<ul class="font-light list-disc py-4 pl-8">',
+					'<ol>': '<ol class="font-light list-decimal py-4 pl-8">',
+					'<p>': '<p class="py-4 font-light">',
+					'<a href': '<a class="text-gray-600 font-bold hover:text-red underline" href',
+					'<h2>': '<h2 class="text-gray-700 font-bold text-4xl">',	
+						})|raw }}
+		</div>
+	{% elseif block.type == 'imageBlock' %}
+		{% set image = block.image.one() %}
+		{% if image %}
+			<img src="{{ image.url }}" alt="{{ image.title }}">
+		{% endif %}
+		{% if block.caption %}
+			<p class="italic text-gray-600 text-center py-2">{{ block.caption }}</p>
+		{% endif %}
+	
+	{% elseif block.type == 'videoBlock' %}
+		{% css %}
+			.video-container {
+				position: relative;
+				padding-bottom: 56.25%;
+				padding-top: 30px; height: 0; overflow: hidden;
+			}
+
+			.video-container iframe,
+			.video-container object,
+			.video-container embed {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+			}
+		{% endcss %}
+			{% if block.videoId |length %}
+				<div class="video-container my-12">
+					<iframe width="660" height="315" src="https://www.youtube.com/embed/{{ block.videoId }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
+			{% endif %}
+
+
+	{% endif %}
+{% endfor %}
+
+

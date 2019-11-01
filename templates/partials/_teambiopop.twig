@@ -1,8 +1,8 @@
 
-<div class="hidden" id="{{ entry.id }}" style="padding:0; padding-top:20px;">
+<div class="hidden" id="{{ category.id }}" style="padding:0; padding-top:20px;">
 
 	<div class="text-center font-light bg-white shadow hover:border-gray-400 max-w-lg border p-4 m-4">
-		{% set assetQuery = entry.bioPhoto %}
+		{% set assetQuery = category.bioPhoto %}
 		{% set images = assetQuery.all() %}
 			{% for image in images %}
 				<div class="flex justify-center">
@@ -10,29 +10,29 @@
 				</div>
 			{% endfor %}
 			<h3 class="uppercase text-xl text-gray-700 py-4">
-			{{ entry.title }}
+			{{ category.title }}
 			</h3>
 
 			<div class="border-b border-gray-400">
 			</div> 
 			<h3 class="uppercase text-sm text-gray-700 py-4">
-			{{ entry.position }} 
+			{{ category.position }} 
 			</h3>
-			<p class="font-light text-left">{{ entry.bioCopy }}</p>
+			<p class="font-light text-left">{{ category.bioCopy |nl2br }}</p>
 			
 			
 			<div class="flex justify-center">
-				{% if entry.linkedin|length %}
+				{% if category.linkedin|length %}
 					<div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2 my-2">
-						<a href="{{ entry.linkedin }}" 
+						<a href="{{ category.linkedin }}" 
 			              target="_blank">
 			              <i class="text-white hover:text-gray-300 text-2xl pt-2 fab fa-linkedin-in"></i>  
 			            </a>
 		          	</div>
 	          	{% endif %}
-	          	{% if entry.twitter|length %}
+	          	{% if category.twitter|length %}
 		          	<div class="m-2 rounded-full h-12 w-12 flex items-center justify-center bg-gray-600 hover:bg-gray-800 border-white border-2 my-2">
-						<a href="{{ entry.twitter }}" 
+						<a href="{{ category.twitter }}" 
 			              target="_blank">
 			              <i class="text-white hover:text-gray-300 text-2xl pt-2 fab fa-twitter"></i>  
 			            </a>
