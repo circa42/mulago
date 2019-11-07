@@ -28,6 +28,9 @@
 		    	<p class="text-left">
 		    		{{ entry.excerpt }} 
 		    	</p>
+		    	<p class="text-left">
+		    		by {% include "blog/_authors" %}
+		    	</p>
 		    	<a href="{{ entry.url }}" class="font-bold text-red hover:underline">
 		    		Read More » 
 		    	</a>	

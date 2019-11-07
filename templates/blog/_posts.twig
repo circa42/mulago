@@ -2,8 +2,8 @@
 {% set entries = entryQ.all() %}
 <div class="mb-8">
 	{% for entry in entries %}
-		<ul class="">
-			<li> 
+		<ul class="ml-4 list-disc text-gray-700">
+			<li class="mb-2"> 
 				<a href="{{ entry.url }}" class="text-gray-700 font-sm no-underline hover:underline hover:text-red my-2">
 					{{ entry.title }}
 				</a>

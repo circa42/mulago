@@ -14,20 +14,19 @@
   {% if matrixBlock.type == 'panelHeader' %}
   
 
-    <div class="font-light bg-gray-200">
-      <div class="flex flex-wrap justify-between max-w-6xl m-auto">
-        <div class="xs:w-full sm:w-1/3 p-8">
-          <h1 class="xs:text-4xl md:text-6xl lg:text-8xl tracking-tight leading-tight font-light text-gray-700">{{ matrixBlock.heading1 }}</h1>
+      <div class="flex flex-col z-40">
+        <div class="relative m-auto">     
+              {% set images = matrixBlock.image.all() %}
+              {% for image in images %}
+                <img class="" src="{{ image.getUrl('view2100x610') }}" alt="{{ image.title }}">
+              {% endfor %}
+            <div class="absolute bottom-0 left-0">
+              <h1 class="text-white leading-none opacity-50 text-10xl uppercase text-shadow font-normal xs:text-4xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-10xl py-4 ml-8">
+                {{ matrixBlock.heading1 }}
+              </h1>
+            </div>
         </div>
-        <div class="xs:w-full sm:w-2/3 ">
-          {% set images = matrixBlock.image.all() %}
-         {% for image in images %}
-          <img class="" src="{{ image.getUrl('h600x410') }}" alt="{{ image.title }}">
-        {% endfor %}
-
-       </div>
       </div>
-    </div>
     
     <div class="max-w-6xl xs:mt-2 md:mt-6 lg:mt-8 m-auto p-4">
       <h2 class="text-gray-800 xs:text-lg md:text-2xl lg:text-3xl">
@@ -48,10 +47,12 @@
           {{ matrixBlock.copy |nl2br|replace
 
             ({
-              '<ul>': '<ul class=“list-disc”>',
-              '<p>': '<p class=“mb-4”>',
+              '<ul>': '<ul class="list-disc">',
+              '<p>': '<p class="mb-4">',
               '<a href': '<a class="text-gray-800 hover:text-blue-600 text-bold underline" href',
-              '<h3>': '<h3 class="text-3xl">',
+              '<h2>': '<h2 class="text-gray-700 font-bold text-4xl">',
+              '<h3>': '<h3 class="text-gray-700 font-bold text-2xl">',  
+              '<h4>': '<h4 class="text-gray-700 font-bold text-lg">',
               '<ol>': '<ol class="list-decimal my-2 mx-12">',
               '<ul>': '<ul class="list-disc my-2 mx-12">',
               '<img': '<img class="inline-block"'
