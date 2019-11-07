@@ -102,7 +102,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1572645531
+dateModified: 1573160880
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -241,6 +241,23 @@ fields:
       contentTable: '{{%matrixcontent_portfolioentry}}'
     fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
     contentColumnType: string
+  27d3f96c-fb38-4722-9883-718f4f6a13f9:
+    name: 'Blog Description'
+    handle: blogDescription
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\PlainText
+    settings:
+      placeholder: ''
+      code: ''
+      multiline: '1'
+      initialRows: '4'
+      charLimit: '230'
+      columnType: text
+    contentColumnType: text
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
   299f057e-1178-421a-bf4b-1d48fcddddc1:
     name: 'DEP -Panels home'
     handle: panelsHome
@@ -1651,7 +1668,7 @@ matrixBlockTypes:
         translationKeyFormat: null
         type: craft\redactor\Field
         settings:
-          redactorConfig: Simple.json
+          redactorConfig: Blog.json
           purifierConfig: ''
           cleanupHtml: true
           removeInlineStyles: '1'
@@ -3509,6 +3526,36 @@ sections:
         uriFormat: 'portfolio/{slug}'
         template: portfolio/_entry
     propagationMethod: all
+  53294525-7df5-4ed6-91f6-f1f28ea540c8:
+    name: 'Blog Index'
+    handle: blogIndex
+    type: single
+    enableVersioning: true
+    propagationMethod: all
+    siteSettings:
+      9256c07c-fdaa-41a1-a0a6-0fe587708517:
+        enabledByDefault: true
+        hasUrls: true
+        uriFormat: blog
+        template: blog/index
+    entryTypes:
+      24f5b9a8-4d1a-4791-a56e-46bcbf75c11b:
+        name: 'Blog Index'
+        handle: blogIndex
+        hasTitleField: false
+        titleLabel: ''
+        titleFormat: '{section.name|raw}'
+        sortOrder: 1
+        fieldLayouts:
+          9cab344e-9212-4421-987c-5a2bed33a0c2:
+            tabs:
+              -
+                name: Index
+                sortOrder: 1
+                fields:
+                  27d3f96c-fb38-4722-9883-718f4f6a13f9:
+                    required: false
+                    sortOrder: 1
   652df0af-6fee-4667-9724-2846027f8558:
     name: 'Fellows Index'
     handle: fellowsIndex
