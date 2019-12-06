@@ -102,7 +102,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1573160880
+dateModified: 1575674444
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -950,6 +950,19 @@ fields:
       columnType: text
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     contentColumnType: text
+  f2311efb-ee13-4a3a-a947-752cfc9bfdab:
+    name: 'Canonical URL'
+    handle: canonicalUrl
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Url
+    settings:
+      placeholder: ''
+      maxLength: '255'
+    contentColumnType: string(255)
+    fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
   f396ce3b-5906-46a9-94cc-482561f8aed5:
     name: 'Blog Category'
     handle: blogCategory
@@ -3361,6 +3374,9 @@ sections:
                   72fa867e-641d-436e-8a6e-25bfd62ed607:
                     required: true
                     sortOrder: 1
+                  f2311efb-ee13-4a3a-a947-752cfc9bfdab:
+                    required: false
+                    sortOrder: 4
       4adc8414-1040-44db-b090-9b7deee184aa:
         name: Videos
         handle: videos
