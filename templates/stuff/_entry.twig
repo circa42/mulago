@@ -1,5 +1,13 @@
 {% extends "_layout" %}
 
+{% block canonical %}
+	{% if entry.canonicalUrl |length %}
+
+		<link href="{{ entry.canonicalUrl }}" rel="canonical">
+
+	{% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="flex flex-col bg-gray-400 py-16 px-12 mb-12">
 
@@ -80,4 +88,6 @@
 		</div>
 	</div>
 </div>
+{% include "stuff/_tracking.js" %}
+
 {% endblock %}

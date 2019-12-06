@@ -1,7 +1,13 @@
 
 {# =====  mulagofoundation.org :: _layout template ===== #}
+<!DOCTYPE html>
 
+<head>
+	
 {% include 'partials/_header.twig' %}
+
+{% block canonical %}{% endblock %}
+</head>
 <body class="font-sans m-0">
 {% set entry = entry is defined ? entry : null %}
 {% set category = category is defined ? category : null %}
