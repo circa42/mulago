@@ -14,7 +14,15 @@
 						})|raw }}
 		</div>
 	{% elseif block.type == 'imageBlock' %}
-
+		{% set image = block.image.one() %}
+		{% if image %}
+			<div class="flex justify-center">
+				<img src="{{ image.url }}" alt="{{ image.title }}">
+			</div>
+		{% endif %}
+		{% if block.caption %}
+			<p class="italic text-gray-600 text-center py-2">{{ block.caption }}</p>
+		{% endif %}
 
 	{% endif %}
 {% endfor %}
