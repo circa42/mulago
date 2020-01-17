@@ -16,8 +16,8 @@
 	{% elseif block.type == 'imageBlock' %}
 		{% set image = block.image.one() %}
 		{% if image %}
-			<div class="flex justify-center">
-				<img src="{{ image.url }}" alt="{{ image.title }}">
+			<div class="justify-center">
+				<img src="{{ image.url ('blogImage') }}" alt="{{ image.title }}">
 			</div>
 		{% endif %}
 	

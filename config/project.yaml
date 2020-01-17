@@ -102,7 +102,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1575674444
+dateModified: 1579290127
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -1211,6 +1211,16 @@ imageTransforms:
     format: null
     quality: 82
     interlace: none
+  6f5bbc65-891a-42f7-a632-21495950d340:
+    format: null
+    handle: blogImage
+    height: null
+    interlace: none
+    mode: crop
+    name: 'Blog Image'
+    position: center-center
+    quality: null
+    width: 710
   72764379-cb54-4694-aa24-9700d0ce078e:
     name: 'Responsive Header'
     handle: responsiveHeader
