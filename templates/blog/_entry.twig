@@ -1,19 +1,19 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="flex flex-col bg-blue-700 py-16 px-12 mb-12">
+<div class="flex flex-col bg-blue-700 py-16 xs:px-0 md:px-8 mb-12">
 
     <div class="relative">
-       <h1 class="text-white leading-none text-uppercase font-semibold xs:text-2xl md:text-3xl md:text-6xl ml-8">
+       <h1 class="text-white leading-none text-uppercase font-semibold xs:text-3xl md:text-4xl md:text-6xl ml-8">
         {{ entry.title }}
       </h1>        
     </div>
 </div>
-<div class="xs:mx:2 md:mx-20">
-	<h3 class="xs:text-center md:text-left">
+<div class="xs:mx-8 md:mx-20">
+	<h3 class="text-left">
 		by {% include "blog/_authors" %}
 	</h3>
-	<h4 class="text-gray-700 font-sm xs:text-center md:text-left my-2">
+	<h4 class="text-gray-700 font-sm text-left my-2">
 		{{ entry.postDate | date("M d, Y") }}
 	</h4> 
 </div>
