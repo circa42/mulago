@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ddf0c1f86b4f32784553f3559c209c2",
+    "content-hash": "33df61c068052ed333786dfe46b23d2a",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -2964,11 +2964,11 @@
         },
         {
             "name": "verbb/comments",
-            "version": "1.1.10",
+            "version": "1.2.4",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/comments/zipball/aa905808f21f1995ad4626829131ce30f12e6d39",
-                "reference": "aa905808f21f1995ad4626829131ce30f12e6d39",
+                "url": "https://api.github.com/repos/verbb/comments/zipball/b907cd8bd2d5c3bc98b4cfb1a55f019ac29ffa12",
+                "reference": "b907cd8bd2d5c3bc98b4cfb1a55f019ac29ffa12",
                 "shasum": ""
             },
             "require": {
@@ -3011,7 +3011,7 @@
                 "docs": "https://github.com/verbb/comments",
                 "rss": "https://github.com/verbb/comments/commits/v2.atom"
             },
-            "time": "2019-09-18T00:03:47+00:00"
+            "time": "2020-02-02T11:39:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

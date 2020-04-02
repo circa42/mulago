@@ -74,7 +74,7 @@ categoryGroups:
     handle: authorCat
     structure:
       uid: 9bb708b7-575a-47c5-ad9b-ee5ce873dfdd
-      maxLevels: 2
+      maxLevels: 1
     siteSettings:
       9256c07c-fdaa-41a1-a0a6-0fe587708517:
         hasUrls: true
@@ -89,20 +89,23 @@ categoryGroups:
             fields:
               649f3d1e-f113-4455-ba99-154a10299e9e:
                 required: false
-                sortOrder: 4
+                sortOrder: 5
               9e640bdb-c61d-433a-8ec6-06030154c846:
                 required: false
                 sortOrder: 2
+              aab9a50b-d7e5-4c20-9531-8295231067ff:
+                required: false
+                sortOrder: 4
               e5f171d9-9385-48f9-a8cd-f99f5fee257b:
                 required: false
-                sortOrder: 5
+                sortOrder: 6
               efa8e0b9-f5db-431a-8ca0-69dd11fc6c4a:
                 required: false
                 sortOrder: 3
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1579290127
+dateModified: 1585867630
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -751,6 +754,18 @@ fields:
       localizeRelations: false
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
     contentColumnType: string
+  aab9a50b-d7e5-4c20-9531-8295231067ff:
+    name: 'Mulago Team Member'
+    handle: mulagoTeamMember
+    instructions: ''
+    searchable: true
+    translationMethod: none
+    translationKeyFormat: null
+    type: craft\fields\Lightswitch
+    settings:
+      default: ''
+    contentColumnType: boolean
+    fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
   ac7e1b7d-6030-462c-9b11-9d7f76286bf9:
     name: Contacts
     handle: contacts
@@ -899,7 +914,7 @@ fields:
   ec268afe-58c6-41b8-9076-7b938914dd8e:
     name: Authors
     handle: authors
-    instructions: 'Select up to two authors. An ampersand will be placed between names automatically. '
+    instructions: 'The primary author. This will also link to the author''s page to list his/her other posts.'
     searchable: true
     translationMethod: site
     translationKeyFormat: null
@@ -3229,6 +3244,53 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: mulagoHoney
+  comments:
+    settings:
+      structureUid: d455dcde-9844-4e0e-ada8-b3ab1f72bebd
+      closed: null
+      indexSidebarLimit: 25
+      indexSidebarGroup: true
+      indexSidebarIndividualElements: false
+      defaultQueryStatus:
+        - approved
+      allowAnonymous: '1'
+      guestRequireEmailName: '1'
+      requireModeration: ''
+      moderatorUserGroup: ''
+      autoCloseDays: ''
+      allowVoting: '1'
+      flaggedCommentLimit: '5'
+      allowFlagging: '1'
+      downvoteCommentLimit: '5'
+      showAvatar: '1'
+      placeholderAvatar: ''
+      showTimeAgo: '1'
+      outputDefaultCss: '1'
+      outputDefaultJs: '1'
+      templateFolderOverride: ''
+      enableSpamChecks: '1'
+      recaptchaEnabled: ''
+      recaptchaKey: ''
+      recaptchaSecret: ''
+      securityMaxLength: ''
+      securityFlooding: ''
+      securityModeration: ''
+      securityBlacklist: ''
+      securityBanned: ''
+      notificationAuthorEnabled: '1'
+      notificationReplyEnabled: '1'
+      notificationSubscribeDefault: '1'
+      notificationSubscribeEnabled: ''
+      notificationSubscribeCommentEnabled: ''
+      notificationModeratorEnabled: ''
+      notificationModeratorApprovedEnabled: ''
+      permissions:
+        craft\elements\Asset: '*'
+        craft\elements\Category: '*'
+        craft\elements\Entry: '*'
+        craft\elements\User: '*'
+      users: null
+    enabled: true
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
@@ -3654,25 +3716,25 @@ sections:
                 name: Content
                 sortOrder: 1
                 fields:
-                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                  0d4e4999-7db2-43ef-9593-07044ff53b50:
                     required: true
                     sortOrder: 1
+                  ec3e69be-68b5-4b50-b16b-bd882d89b558:
+                    required: true
+                    sortOrder: 2
               -
                 name: Meta
                 sortOrder: 2
                 fields:
-                  0d4e4999-7db2-43ef-9593-07044ff53b50:
-                    required: true
-                    sortOrder: 2
                   c730ef6e-8cb3-415a-86b7-cd996ddb2eb7:
                     required: true
-                    sortOrder: 4
+                    sortOrder: 3
                   ec268afe-58c6-41b8-9076-7b938914dd8e:
-                    required: true
+                    required: false
                     sortOrder: 1
                   f396ce3b-5906-46a9-94cc-482561f8aed5:
                     required: true
-                    sortOrder: 3
+                    sortOrder: 2
   80219d20-800c-473b-8fdb-74dc15c517ef:
     name: 'How we fund'
     handle: howWeFund
