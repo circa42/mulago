@@ -105,7 +105,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1585869044
+dateModified: 1585869337
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3244,6 +3244,48 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: mulagoHoney
+  comments:
+    settings:
+      structureUid: 5c1dd22f-9034-4518-b6d0-547cf144ee92
+      closed: null
+      indexSidebarLimit: 25
+      indexSidebarGroup: true
+      indexSidebarIndividualElements: false
+      defaultQueryStatus:
+        - approved
+      allowAnonymous: false
+      guestRequireEmailName: true
+      requireModeration: true
+      moderatorUserGroup: null
+      autoCloseDays: ''
+      allowVoting: true
+      flaggedCommentLimit: 5
+      allowFlagging: true
+      downvoteCommentLimit: 5
+      showAvatar: true
+      placeholderAvatar: null
+      showTimeAgo: true
+      outputDefaultCss: true
+      outputDefaultJs: true
+      templateFolderOverride: null
+      enableSpamChecks: true
+      recaptchaEnabled: false
+      recaptchaKey: null
+      recaptchaSecret: null
+      securityMaxLength: null
+      securityFlooding: null
+      securityModeration: null
+      securityBlacklist: null
+      securityBanned: null
+      notificationAuthorEnabled: true
+      notificationReplyEnabled: true
+      notificationSubscribeDefault: true
+      notificationSubscribeEnabled: false
+      notificationSubscribeCommentEnabled: false
+      notificationModeratorEnabled: false
+      notificationModeratorApprovedEnabled: false
+      permissions: null
+      users: null
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
