@@ -1,15 +1,2 @@
 
 {{ craft.comments.render(entry.id) }}
-
-
-
-{# Create a new comment query # }
-{% set commentsQ = craft.comments.fetch() %}
-
-{# Fetch the Comments # }
-{% set comments = commentsQ.all() %}
-
-{# Display their contents 
-{% for comment in comments %}
-    <p>{{ comment.comment }}</p>
-{% endfor %}#}

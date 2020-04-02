@@ -105,7 +105,7 @@ categoryGroups:
               f8993b26-4df2-402b-bcd2-02875ac64b2b:
                 required: false
                 sortOrder: 1
-dateModified: 1585867922
+dateModified: 1585869044
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -3244,53 +3244,6 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: mulagoHoney
-  comments:
-    settings:
-      structureUid: d455dcde-9844-4e0e-ada8-b3ab1f72bebd
-      closed: null
-      indexSidebarLimit: 25
-      indexSidebarGroup: true
-      indexSidebarIndividualElements: false
-      defaultQueryStatus:
-        - approved
-      allowAnonymous: '1'
-      guestRequireEmailName: '1'
-      requireModeration: ''
-      moderatorUserGroup: ''
-      autoCloseDays: ''
-      allowVoting: '1'
-      flaggedCommentLimit: '5'
-      allowFlagging: '1'
-      downvoteCommentLimit: '5'
-      showAvatar: '1'
-      placeholderAvatar: ''
-      showTimeAgo: '1'
-      outputDefaultCss: '1'
-      outputDefaultJs: '1'
-      templateFolderOverride: ''
-      enableSpamChecks: '1'
-      recaptchaEnabled: ''
-      recaptchaKey: ''
-      recaptchaSecret: ''
-      securityMaxLength: ''
-      securityFlooding: ''
-      securityModeration: ''
-      securityBlacklist: ''
-      securityBanned: ''
-      notificationAuthorEnabled: '1'
-      notificationReplyEnabled: '1'
-      notificationSubscribeDefault: '1'
-      notificationSubscribeEnabled: ''
-      notificationSubscribeCommentEnabled: ''
-      notificationModeratorEnabled: ''
-      notificationModeratorApprovedEnabled: ''
-      permissions:
-        craft\elements\Asset: '*'
-        craft\elements\Category: '*'
-        craft\elements\Entry: '*'
-        craft\elements\User: '*'
-      users: null
-    enabled: true
 routes:
   11f6dad3-fe2f-4c69-b35c-7600f42d5c71:
     uriParts:
