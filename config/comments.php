@@ -8,9 +8,9 @@ return [
         'defaultQueryStatus' => ['approved'],
 
         // General
-        'allowAnonymous' => false,
+        'allowAnonymous' => true,
         'guestRequireEmailName' => true,
-        'requireModeration' => true,
+        'requireModeration' => false,
         'moderatorUserGroup',
         'autoCloseDays' => '',
 
