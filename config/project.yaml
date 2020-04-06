@@ -105,7 +105,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: 9bb708b7-575a-47c5-ad9b-ee5ce873dfdd
-dateModified: 1586204929
+dateModified: 1586205227
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -443,24 +443,6 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Color
-  5849a4a6-dc3b-4ff9-a5b9-3f341cd07a42:
-    contentColumnType: text
-    fieldGroup: aa596d10-b352-4633-bfa3-0b2b5d393640
-    handle: trashme
-    instructions: ''
-    name: Trashme
-    searchable: true
-    settings:
-      byteLimit: null
-      charLimit: null
-      code: ''
-      columnType: null
-      initialRows: '4'
-      multiline: ''
-      placeholder: ''
-    translationKeyFormat: null
-    translationMethod: none
-    type: craft\fields\PlainText
   5a9f6d18-cade-45df-a79e-1ff407f065cf:
     contentColumnType: string
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
@@ -883,7 +865,7 @@ fields:
     contentColumnType: boolean
     fieldGroup: 106f1368-0508-4aa4-a3ba-1e47959693e1
     handle: mulagoTeamMember
-    instructions: ''
+    instructions: 'This allows this person to appear on the /about page. Turn it on (green) if the person is an employee and should appear there. Keep it off (gray) if this is a guest posting to the blog. '
     name: 'Mulago Team Member'
     searchable: true
     settings:
