@@ -1,17 +1,17 @@
 {% extends "_layout" %}
 
 {% block content %}
-<div class="flex flex-col bg-blue-700 py-16 px-12 mb-12">
+<div class="flex flex-col bg-blue-700 py-16 xs:px-2 md:px-12 mb-4">
     <div class="relative">
-       <h1 class="text-white leading-none text-uppercase font-semibold xs:text-2xl md:text-3xl md:text-6xl ml-8">
-        Our blog
+       <h1 class="text-white leading-none text-uppercase font-semibold xs:text-3xl md:text-5xl md:text-6xl ml-8">
+        Our Blog
       </h1>
-        <h2 class="text-white leading-none xs:text-md md:text-lg md:text-2xl mt-4 italic ml-8">{{ entry.blogDescription }}
+        <h2 class="text-white xs:text-md md:text-lg md:text-2xl mt-4 italic ml-8">{{ entry.blogDescription }}
         </h2>      
     </div>
 </div>
 
-<div class="flex flex-wrap container mx-auto font-light bg-white md:pr-12 md:pl-4 m-4">
+<div class="flex flex-wrap mx-auto font-light bg-white md:pr-2 md:pl-4 m-4">
 
 	<div class="xs:w-full lg:w-3/4">
 		{# all of the entries related to this section #}
