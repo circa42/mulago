@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "811f6805797eb1ed49d617a32f4de449",
+    "content-hash": "a1271d69ed52428418aa198eceb45808",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -2062,11 +2062,11 @@
         },
         {
             "name": "nystudio107/craft-seomatic",
-            "version": "3.2.50",
+            "version": "3.2.51",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/3fefbb8a33b12077b4bdffd1ce6c2e7e250c0293",
-                "reference": "3fefbb8a33b12077b4bdffd1ce6c2e7e250c0293",
+                "url": "https://api.github.com/repos/nystudio107/craft-seomatic/zipball/2d2241bd5b439a84ea58c6cb10dbcab5d32130d2",
+                "reference": "2d2241bd5b439a84ea58c6cb10dbcab5d32130d2",
                 "shasum": ""
             },
             "require": {
@@ -2130,7 +2130,7 @@
                 "docs": "https://nystudio107.com/plugins/seomatic/documentation",
                 "issues": "https://nystudio107.com/plugins/seomatic/support"
             },
-            "time": "2020-04-02T21:51:05+00:00"
+            "time": "2020-04-06T12:51:07+00:00"
         },
         {
             "name": "opis/closure",
@@ -3870,11 +3870,11 @@
         },
         {
             "name": "verbb/comments",
-            "version": "1.3.8",
+            "version": "1.3.10",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/verbb/comments/zipball/e09eb2513845650b6f58eefc5addb7f2d76393dc",
-                "reference": "e09eb2513845650b6f58eefc5addb7f2d76393dc",
+                "url": "https://api.github.com/repos/verbb/comments/zipball/098ea1761d551e0f5f71a8f70045a3448a7168e9",
+                "reference": "098ea1761d551e0f5f71a8f70045a3448a7168e9",
                 "shasum": ""
             },
             "require": {
@@ -3918,7 +3918,7 @@
                 "docs": "https://github.com/verbb/comments",
                 "rss": "https://github.com/verbb/comments/commits/v2.atom"
             },
-            "time": "2020-03-30T11:29:53+00:00"
+            "time": "2020-04-06T03:35:44+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
