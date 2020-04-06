@@ -105,7 +105,7 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: 9bb708b7-575a-47c5-ad9b-ee5ce873dfdd
-dateModified: 1586205227
+dateModified: 1586207219
 email:
   fromEmail: sarah@mulagofoundation.org
   fromName: Mulago
@@ -443,6 +443,24 @@ fields:
     translationKeyFormat: null
     translationMethod: none
     type: craft\fields\Color
+  5010a534-413c-4df2-ad42-c2e2a8e1585d:
+    contentColumnType: text
+    fieldGroup: 04a894a7-4869-49f1-bf9d-7bcae62fa02e
+    handle: blogIndexTitle
+    instructions: ''
+    name: 'Blog Index Title'
+    searchable: true
+    settings:
+      byteLimit: null
+      charLimit: null
+      code: ''
+      columnType: null
+      initialRows: '4'
+      multiline: ''
+      placeholder: ''
+    translationKeyFormat: null
+    translationMethod: none
+    type: craft\fields\PlainText
   5a9f6d18-cade-45df-a79e-1ff407f065cf:
     contentColumnType: string
     fieldGroup: 90595d6d-34f2-49a2-8129-d75fa7a5ed71
@@ -3850,6 +3868,9 @@ sections:
               -
                 fields:
                   27d3f96c-fb38-4722-9883-718f4f6a13f9:
+                    required: false
+                    sortOrder: 2
+                  5010a534-413c-4df2-ad42-c2e2a8e1585d:
                     required: false
                     sortOrder: 1
                 name: Index
