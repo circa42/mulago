@@ -4,22 +4,61 @@
 
 {# twitter #}
     <a class="rounded-full h-10 w-10 flex items-center justify-center bg-gray-600 hover:bg-red ml-2 twitter-share-button"
-      href="https://twitter.com/intent/tweet?text={{entry.title}}&url={{entry.url}}&via=MulagoFound" target="_blank">
+      href="https://twitter.com/intent/tweet?text={{entry.title}}&url={{entry.url}}&via=MulagoFound" target="_blank"
+           onclick="window.open(this.href,'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=600,
+                                    height=400`);
+                                    return false;">
         <i class="text-xl text-white fab fa-twitter"></i>
     </a>
 
 {# facebook #}
         <div class="" data-href="{{entry.url}}" data-layout="button" data-size="small">
-            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{entry.url}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore rounded-full h-10 w-10 flex items-center justify-center
-           bg-gray-600 hover:bg-red ml-2">
+            <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://mulagofoundation.org/{{entry.uri}}&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore rounded-full h-10 w-10 flex items-center justify-center
+           bg-gray-600 hover:bg-red ml-2" target="_blank"
+           onclick="window.open(this.href,'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=600,
+                                    height=400`);
+                                    return false;">
                 <i class="text-xl text-white fab fa-facebook-f"></i>
             </a>
         </div>
 
 
 {# linkedin #}
-<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
-<script type="IN/Share" data-url="{{ entry.url }}"></script>
+
+{# <script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+         <div class="rounded-full h-10 w-10 flex items-center justify-center
+                bg-gray-600 hover:bg-red ml-2">
+                <script type="IN/Share" data-url="https://mulagofoundation.org/{{entry.uri}}"></script>
+                
+         </div>   #}     
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://mulagofoundation.org/{{entry.uri}}&title={{entry.title}}" class="rounded-full h-10 w-10 flex items-center justify-center
+           bg-gray-600 hover:bg-red ml-2" target="_blank"
+           onclick="window.open(this.href,'targetWindow',
+                                   `toolbar=no,
+                                    location=no,
+                                    status=no,
+                                    menubar=no,
+                                    scrollbars=yes,
+                                    resizable=yes,
+                                    width=600,
+                                    height=400`);
+                                    return false;">
+    <i class="text-xl text-white fab fa-linkedin-in"></i>
+</a>
 {# 
     <a class="rounded-full h-10 w-10 flex items-center justify-center
            bg-gray-600 hover:bg-red ml-2" data-url="{{entry.url|striptags}}">
