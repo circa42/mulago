@@ -3,7 +3,7 @@
 {% block content %}
 <div class="flex flex-col bg-blue-700 py-16 xs:px-0 md:px-8 mb-12">
 
-    <div class="relative ml-8">
+    <div class="relative mx-8">
        <h1 class="text-white leading-none text-uppercase font-semibold xs:text-3xl md:text-4xl md:text-6xl ">
         {{ entry.title }}
       </h1>
@@ -24,18 +24,9 @@
 	
 	
 	<div class="xs:w-full md:w-3/4 border-t border-gray-400 p-8 my-8">
-{# removing excerpt on _entry
-	 		<div>
-				<h2 class="xs:text-center md:text-left text-gray-600 xs:text-md md:text-lg lg:text-xl my-4">
-					{{ entry.excerpt  |replace ({
-						'<a href': '<a class="text-gray-700 hover:text-red underline" href',
-					})|raw }}
-				</h2>
-			</div> 
-#}
-		<div>
 
-			{% include "blog/_content" %}
+		<div>
+            {% include "blog/_content" %}    
             {% include "blog/_comments" %}
 		</div>
 	</div>

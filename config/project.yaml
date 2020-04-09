@@ -105,19 +105,24 @@ categoryGroups:
     structure:
       maxLevels: 1
       uid: 9bb708b7-575a-47c5-ad9b-ee5ce873dfdd
-dateModified: 1586207219
+comments:
+  comments:
+    fieldLayouts:
+      452b90dd-27f5-4942-8a1f-1c855c733abb: null
+dateModified: 1586458882
 email:
-  fromEmail: sarah@mulagofoundation.org
-  fromName: Mulago
+  fromEmail: $POST_EMAIL_ADDRESS
+  fromName: $POST_SENDER_NAME
+  replyToEmail: null
   template: ''
   transportSettings:
     encryptionMethod: ''
-    host: smtp.postmarkapp.com
-    password: a259b78e-09cf-4b15-a414-bd9e7f401c8d
-    port: '587'
+    host: $POST_HOSTNAME
+    password: $POST_PASSWORD
+    port: $POST_PORT
     timeout: '10'
     useAuthentication: '1'
-    username: a259b78e-09cf-4b15-a414-bd9e7f401c8d
+    username: $POST_USERNAME
   transportType: craft\mail\transportadapters\Smtp
 fieldGroups:
   04a894a7-4869-49f1-bf9d-7bcae62fa02e:
@@ -3400,6 +3405,7 @@ matrixBlockTypes:
 plugins:
   comments:
     enabled: true
+    licenseKey: IVWPMNNURGQKLA3JKRZSWXIC
     schemaVersion: 1.1.4
     settings:
       allowAnonymous: '1'
@@ -3467,7 +3473,7 @@ plugins:
     enabled: true
     schemaVersion: 1.0.0
     settings:
-      honeypotParam: mulagoHoney
+      honeypotParam: form_handler_req
   export:
     enabled: '1'
     licenseKey: null
