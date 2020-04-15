@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "5b395995111166529b594d5fd917ea74",
+    "content-hash": "1b2d83ffeb5d32750848db81f537bfe8",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -3009,6 +3009,50 @@
                 "shell"
             ],
             "time": "2019-12-06T14:19:43+00:00"
+        },
+        {
+            "name": "putyourlightson/craft-dashboard-begone",
+            "version": "1.0.1",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/putyourlightson/craft-dashboard-begone/zipball/728aae4b6130bb7775b082b0f09a4a670344eee3",
+                "reference": "728aae4b6130bb7775b082b0f09a4a670344eee3",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.0.1"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Dashboard Begone",
+                "handle": "dashboard-begone",
+                "developer": "PutYourLightsOn",
+                "developerUrl": "https://www.putyourlightson.net/",
+                "changelogUrl": "https://raw.githubusercontent.com/putyourlightson/craft-dashboard-begone/v1/CHANGELOG.md",
+                "class": "putyourlightson\\dashboardbegone\\DashboardBegone"
+            },
+            "autoload": {
+                "psr-4": {
+                    "putyourlightson\\dashboardbegone\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Removes the dashboard and redirects users to entries.",
+            "homepage": "https://github.com/putyourlightson/craft-dashboard-begone",
+            "keywords": [
+                "cms",
+                "craft",
+                "craftcms",
+                "dashboard"
+            ],
+            "support": {
+                "docs": "https://github.com/putyourlightson/craft-dashboard-begone",
+                "source": "https://github.com/putyourlightson/craft-dashboard-begone",
+                "issues": "https://github.com/putyourlightson/craft-dashboard-begone/issues"
+            },
+            "time": "2018-06-14T19:27:23+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
