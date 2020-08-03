@@ -108,8 +108,8 @@ categoryGroups:
 comments:
   comments:
     fieldLayouts:
-      452b90dd-27f5-4942-8a1f-1c855c733abb: null
-dateModified: 1586978067
+      7f0ab0cb-793c-4a8a-b69d-1b0575cea9a9: null
+dateModified: 1596479916
 email:
   fromEmail: $POST_EMAIL_ADDRESS
   fromName: $POST_SENDER_NAME
@@ -3406,50 +3406,55 @@ plugins:
   comments:
     enabled: true
     licenseKey: IVWPMNNURGQKLA3JKRZSWXIC
-    schemaVersion: 1.1.4
+    schemaVersion: 1.1.5
     settings:
-      allowAnonymous: '1'
-      allowFlagging: ''
-      allowVoting: ''
+      allowAnonymous: null
+      allowAnonymousFlagging: null
+      allowAnonymousVoting: null
+      allowFlagging: false
+      allowGuest: true
+      allowGuestFlagging: false
+      allowGuestVoting: false
+      allowVoting: false
       autoCloseDays: ''
       closed: null
       defaultQueryStatus:
         - approved
-      downvoteCommentLimit: '5'
-      enableSpamChecks: '1'
-      flaggedCommentLimit: '5'
-      guestRequireEmailName: '1'
+      downvoteCommentLimit: 5
+      enableSpamChecks: true
+      flaggedCommentLimit: 5
+      guestRequireEmailName: true
+      guestShowEmailName: true
+      hideVotingForThreshold: false
       indexSidebarGroup: true
       indexSidebarIndividualElements: false
       indexSidebarLimit: 25
       moderatorUserGroup: ''
-      notificationAuthorEnabled: '1'
-      notificationModeratorApprovedEnabled: ''
-      notificationModeratorEnabled: ''
-      notificationReplyEnabled: '1'
-      notificationSubscribeCommentEnabled: ''
-      notificationSubscribeDefault: '1'
-      notificationSubscribeEnabled: ''
-      outputDefaultCss: '1'
-      outputDefaultJs: '1'
-      permissions:
-        craft\elements\Asset: ''
-        craft\elements\Category: ''
-        craft\elements\Entry:
-          - 742d0833-efba-4673-940e-a62f61229c25
-        craft\elements\User: ''
+      notificationAuthorEnabled: true
+      notificationModeratorApprovedEnabled: false
+      notificationModeratorEnabled: false
+      notificationReplyEnabled: true
+      notificationSubscribeAuto: false
+      notificationSubscribeCommentEnabled: false
+      notificationSubscribeDefault: true
+      notificationSubscribeEnabled: false
+      outputDefaultCss: true
+      outputDefaultJs: true
       placeholderAvatar: ''
-      recaptchaEnabled: ''
+      recaptchaEnabled: false
       recaptchaKey: ''
       recaptchaSecret: ''
-      requireModeration: ''
+      requireModeration: false
       securityBanned: ''
-      securityBlacklist: ''
       securityFlooding: ''
       securityMaxLength: ''
       securityModeration: ''
-      showAvatar: ''
-      showTimeAgo: '1'
+      securitySpamlist: null
+      showAvatar: false
+      showCustomFieldInstructions: false
+      showCustomFieldNames: false
+      showCustomFields: false
+      showTimeAgo: true
       structureUid: 5c1dd22f-9034-4518-b6d0-547cf144ee92
       templateFolderOverride: ''
       users: null
@@ -3505,7 +3510,7 @@ plugins:
     edition: standard
     enabled: true
     licenseKey: 8MFUKTKASWN1NY2O1SA9RRVQ
-    schemaVersion: 3.0.8
+    schemaVersion: 3.0.9
   sprout-forms:
     enabled: '1'
     licenseKey: null
@@ -4255,7 +4260,7 @@ system:
   edition: pro
   live: true
   name: Mulago
-  schemaVersion: 3.4.10
+  schemaVersion: 3.4.11
   timeZone: America/Los_Angeles
 tagGroups:
   90921257-5b3f-48d2-bbbd-584ad6ee126f:
