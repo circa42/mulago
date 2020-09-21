@@ -109,7 +109,7 @@ comments:
   comments:
     fieldLayouts:
       7f0ab0cb-793c-4a8a-b69d-1b0575cea9a9: null
-dateModified: 1596479916
+dateModified: 1600714361
 email:
   fromEmail: $POST_EMAIL_ADDRESS
   fromName: $POST_SENDER_NAME
@@ -3479,6 +3479,13 @@ plugins:
     schemaVersion: 1.0.0
     settings:
       honeypotParam: form_handler_req
+  craft-recaptcha-3:
+    edition: standard
+    enabled: true
+    schemaVersion: 1.0.0
+    settings:
+      secretKey: 6LeV584ZAAAAAHEZYCb1Se4arp-AobUq-AY9KkEJ
+      siteKey: 6LeV584ZAAAAALelcbztu8gAYY3om1JNSkwNuUpr
   dashboard-begone:
     edition: standard
     enabled: false
