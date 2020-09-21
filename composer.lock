@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f06ba03e65929d9372452e5cbf515a3d",
+    "content-hash": "ab2048e1b347e07305f68cdb3f6cf897",
     "packages": [
         {
             "name": "carlcs/craft-redactorcustomstyles",
@@ -109,6 +109,66 @@
                 "markdown-extra"
             ],
             "time": "2018-03-26T11:24:36+00:00"
+        },
+        {
+            "name": "clarknelson/craft-recaptcha-3",
+            "version": "1.0.16",
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clarknelson/craft-recaptcha-3/zipball/ef0183ef12b31d936d896f9f765fe6276b1fa09d",
+                "reference": "ef0183ef12b31d936d896f9f765fe6276b1fa09d",
+                "shasum": ""
+            },
+            "require": {
+                "craftcms/cms": "^3.1.0"
+            },
+            "type": "craft-plugin",
+            "extra": {
+                "name": "Craft reCAPTCHA 3",
+                "handle": "craft-recaptcha-3",
+                "hasCpSettings": true,
+                "hasCpSection": false,
+                "changelogUrl": "https://raw.githubusercontent.com/clarknelson/craft-recaptcha-3/master/CHANGELOG.md",
+                "class": "clarknelson\\craftrecaptcha3\\CraftRecaptcha3"
+            },
+            "autoload": {
+                "psr-4": {
+                    "clarknelson\\craftrecaptcha3\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Clark Nelson",
+                    "homepage": "http://clarknelson.com"
+                }
+            ],
+            "description": "Verifies via Google the site and secret codes required to verify humanity through reCAPTCHA v3.",
+            "keywords": [
+                "anti-bot",
+                "anti-bots",
+                "anti-spam",
+                "captcha",
+                "cms",
+                "contact",
+                "craft",
+                "craft recaptcha 3",
+                "craft-plugin",
+                "craftcms",
+                "forms",
+                "google",
+                "recaptcha",
+                "security",
+                "spam",
+                "validation"
+            ],
+            "support": {
+                "docs": "https://github.com/clarknelson/craft-recaptcha-3/blob/master/README.md",
+                "issues": "https://github.com/clarknelson/craft-recaptcha-3/issues"
+            },
+            "time": "2020-02-27T22:46:02+00:00"
         },
         {
             "name": "composer/ca-bundle",
@@ -434,7 +494,7 @@
             "version": "2.2.7",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/5f783a22a60a64aad42077b646e1d94734dae7fb",
+                "url": "https://api.github.com/repos/craftcms/contact-form/zipball/eea67de8fad2507770fdc25fe76bba32924e9e87",
                 "reference": "5f783a22a60a64aad42077b646e1d94734dae7fb",
                 "shasum": ""
             },
@@ -1341,11 +1401,11 @@
         },
         {
             "name": "laminas/laminas-feed",
-            "version": "2.12.2",
+            "version": "2.12.3",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/8a193ac96ebcb3e16b6ee754ac2a889eefacb654",
-                "reference": "8a193ac96ebcb3e16b6ee754ac2a889eefacb654",
+                "url": "https://api.github.com/repos/laminas/laminas-feed/zipball/3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
+                "reference": "3c91415633cb1be6f9d78683d69b7dcbfe6b4012",
                 "shasum": ""
             },
             "require": {
@@ -1388,7 +1448,7 @@
                 "feed",
                 "laminas"
             ],
-            "time": "2020-03-29T12:36:29+00:00"
+            "time": "2020-08-18T13:45:04+00:00"
         },
         {
             "name": "laminas/laminas-stdlib",

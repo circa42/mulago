@@ -87,6 +87,7 @@
                 <textarea class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-8" rows="10" cols="40" id="message" name="message">{{ message.message ?? '' }}</textarea>
                 {{ message is defined and message ? errorList(message.getErrors('message')) }}
                 <input type="text" id="form_handler_req" name="form_handler_req" class="hidden">
+                {% include ['_recaptcha/frontend'] %}
                 <div class="flex justify-center mt-8">
                     <input class="rounded-full bg-blue-800 hover:bg-red text-white h-16 w-16 flex items-center justify-center mb-8" type="submit" value="Send">
                 </div>
