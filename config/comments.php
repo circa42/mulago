@@ -42,9 +42,9 @@ return [
         'securityModeration' => '',
         'securityBlacklist' => '',
         'securityBanned' => '',
-        'recaptchaEnabled' => false,
-        'recaptchaKey' => '',
-        'recaptchaSecret' => '',
+        'recaptchaEnabled' => true,
+        'recaptchaKey' => '6LeV584ZAAAAALelcbztu8gAYY3om1JNSkwNuUpr',
+        'recaptchaSecret' => '6LeV584ZAAAAAHEZYCb1Se4arp-AobUq-AY9KkEJ',
 
         // Notifications
         'notificationAuthorEnabled' => true,

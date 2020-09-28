@@ -108,8 +108,8 @@ categoryGroups:
 comments:
   comments:
     fieldLayouts:
-      7f0ab0cb-793c-4a8a-b69d-1b0575cea9a9: null
-dateModified: 1600714361
+      4536ebc0-53dc-4005-b9cb-3d30abdf4e06: null
+dateModified: 1601323908
 email:
   fromEmail: $POST_EMAIL_ADDRESS
   fromName: $POST_SENDER_NAME
@@ -3411,50 +3411,64 @@ plugins:
       allowAnonymous: null
       allowAnonymousFlagging: null
       allowAnonymousVoting: null
-      allowFlagging: false
-      allowGuest: true
-      allowGuestFlagging: false
-      allowGuestVoting: false
-      allowVoting: false
+      allowFlagging: ''
+      allowGuest: ''
+      allowGuestFlagging: ''
+      allowGuestVoting: ''
+      allowVoting: ''
       autoCloseDays: ''
       closed: null
       defaultQueryStatus:
         - approved
-      downvoteCommentLimit: 5
-      enableSpamChecks: true
-      flaggedCommentLimit: 5
-      guestRequireEmailName: true
-      guestShowEmailName: true
-      hideVotingForThreshold: false
+      downvoteCommentLimit: '5'
+      enableSpamChecks: '1'
+      flaggedCommentLimit: '5'
+      guestRequireEmailName: '1'
+      guestShowEmailName: '1'
+      hideVotingForThreshold: ''
       indexSidebarGroup: true
       indexSidebarIndividualElements: false
       indexSidebarLimit: 25
       moderatorUserGroup: ''
-      notificationAuthorEnabled: true
-      notificationModeratorApprovedEnabled: false
-      notificationModeratorEnabled: false
-      notificationReplyEnabled: true
-      notificationSubscribeAuto: false
-      notificationSubscribeCommentEnabled: false
-      notificationSubscribeDefault: true
-      notificationSubscribeEnabled: false
-      outputDefaultCss: true
-      outputDefaultJs: true
+      notificationAuthorEnabled: '1'
+      notificationModeratorApprovedEnabled: ''
+      notificationModeratorEnabled: ''
+      notificationReplyEnabled: '1'
+      notificationSubscribeAuto: ''
+      notificationSubscribeCommentEnabled: ''
+      notificationSubscribeDefault: '1'
+      notificationSubscribeEnabled: ''
+      outputDefaultCss: '1'
+      outputDefaultJs: '1'
+      permissions:
+        __assoc__:
+          -
+            - craft\elements\Asset
+            - '*'
+          -
+            - craft\elements\Category
+            - '*'
+          -
+            - craft\elements\Entry
+            - '*'
+          -
+            - craft\elements\User
+            - '*'
       placeholderAvatar: ''
-      recaptchaEnabled: false
+      recaptchaEnabled: ''
       recaptchaKey: ''
       recaptchaSecret: ''
-      requireModeration: false
+      requireModeration: ''
       securityBanned: ''
       securityFlooding: ''
       securityMaxLength: ''
       securityModeration: ''
-      securitySpamlist: null
-      showAvatar: false
-      showCustomFieldInstructions: false
-      showCustomFieldNames: false
-      showCustomFields: false
-      showTimeAgo: true
+      securitySpamlist: ''
+      showAvatar: ''
+      showCustomFieldInstructions: ''
+      showCustomFieldNames: ''
+      showCustomFields: ''
+      showTimeAgo: '1'
       structureUid: 5c1dd22f-9034-4518-b6d0-547cf144ee92
       templateFolderOverride: ''
       users: null
